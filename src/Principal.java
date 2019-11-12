@@ -1,11 +1,18 @@
 
+import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -47,6 +54,25 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jt_nombreArchivo = new javax.swing.JTextField();
         jb_crearArchivo = new javax.swing.JButton();
+        jd_crearCampo = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jt_nombreCampo = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jt_tipoCampo = new javax.swing.JTextField();
+        js_longitud = new javax.swing.JSpinner();
+        jLabel7 = new javax.swing.JLabel();
+        rb_primaria = new javax.swing.JRadioButton();
+        rb_secundaria = new javax.swing.JRadioButton();
+        jb_crearCampo = new javax.swing.JButton();
+        buttonGroup_llave = new javax.swing.ButtonGroup();
+        jd_listarCampo = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtable_campos = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jp_archivo = new javax.swing.JPanel();
@@ -55,6 +81,10 @@ public class Principal extends javax.swing.JFrame {
         jb_cerrar = new javax.swing.JButton();
         jb_salir = new javax.swing.JButton();
         jp_campo = new javax.swing.JPanel();
+        jb_crearCampoJD = new javax.swing.JButton();
+        jb_listarCampo = new javax.swing.JButton();
+        jb_modificarCampo = new javax.swing.JButton();
+        jb_borrarCampo = new javax.swing.JButton();
         jp_registro = new javax.swing.JPanel();
         jp_indice = new javax.swing.JPanel();
         jp_estand = new javax.swing.JPanel();
@@ -89,6 +119,113 @@ public class Principal extends javax.swing.JFrame {
         jd_nuevoArchivoLayout.setVerticalGroup(
             jd_nuevoArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+        );
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel3.setText("Crear Campo");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 30));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel4.setText("Tipo de Llave:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel5.setText("Nombre:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jt_nombreCampo.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jPanel3.add(jt_nombreCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 160, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel6.setText("Tipo:");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, -1));
+
+        jt_tipoCampo.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jPanel3.add(jt_tipoCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 160, -1));
+
+        js_longitud.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        js_longitud.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel3.add(js_longitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 60, 30));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel7.setText("Longitud:");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        buttonGroup_llave.add(rb_primaria);
+        rb_primaria.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_primaria.setSelected(true);
+        rb_primaria.setText("Primaria");
+        jPanel3.add(rb_primaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
+
+        buttonGroup_llave.add(rb_secundaria);
+        rb_secundaria.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_secundaria.setText("Secundaria");
+        jPanel3.add(rb_secundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+
+        jb_crearCampo.setText("Crear");
+        jb_crearCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearCampoMouseClicked(evt);
+            }
+        });
+        jPanel3.add(jb_crearCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, 30));
+
+        javax.swing.GroupLayout jd_crearCampoLayout = new javax.swing.GroupLayout(jd_crearCampo.getContentPane());
+        jd_crearCampo.getContentPane().setLayout(jd_crearCampoLayout);
+        jd_crearCampoLayout.setHorizontalGroup(
+            jd_crearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+        );
+        jd_crearCampoLayout.setVerticalGroup(
+            jd_crearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+        );
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel8.setText("Listar Campos");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 130, 30));
+
+        jtable_campos.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jtable_campos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Tipo", "Longitud", "Llave Primaria"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtable_campos);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 370, 240));
+
+        javax.swing.GroupLayout jd_listarCampoLayout = new javax.swing.GroupLayout(jd_listarCampo.getContentPane());
+        jd_listarCampo.getContentPane().setLayout(jd_listarCampoLayout);
+        jd_listarCampoLayout.setHorizontalGroup(
+            jd_listarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+        );
+        jd_listarCampoLayout.setVerticalGroup(
+            jd_listarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -135,7 +272,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jb_salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jb_salvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jp_archivoLayout.setVerticalGroup(
             jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,15 +290,64 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Archivo", jp_archivo);
 
+        jb_crearCampoJD.setText("Crear");
+        jb_crearCampoJD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearCampoJDMouseClicked(evt);
+            }
+        });
+
+        jb_listarCampo.setText("Listar");
+        jb_listarCampo.setEnabled(false);
+        jb_listarCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_listarCampoMouseClicked(evt);
+            }
+        });
+
+        jb_modificarCampo.setText("Modificar");
+        jb_modificarCampo.setEnabled(false);
+        jb_modificarCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modificarCampoMouseClicked(evt);
+            }
+        });
+
+        jb_borrarCampo.setText("Borrar");
+        jb_borrarCampo.setEnabled(false);
+        jb_borrarCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_borrarCampoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp_campoLayout = new javax.swing.GroupLayout(jp_campo);
         jp_campo.setLayout(jp_campoLayout);
         jp_campoLayout.setHorizontalGroup(
             jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGroup(jp_campoLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_crearCampoJD, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                    .addComponent(jb_modificarCampo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_borrarCampo, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(jb_listarCampo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jp_campoLayout.setVerticalGroup(
             jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGroup(jp_campoLayout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_crearCampoJD, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_listarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_modificarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_borrarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(94, 94, 94))
         );
 
         jTabbedPane1.addTab("Campos", jp_campo);
@@ -170,7 +356,7 @@ public class Principal extends javax.swing.JFrame {
         jp_registro.setLayout(jp_registroLayout);
         jp_registroLayout.setHorizontalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGap(0, 425, Short.MAX_VALUE)
         );
         jp_registroLayout.setVerticalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +369,7 @@ public class Principal extends javax.swing.JFrame {
         jp_indice.setLayout(jp_indiceLayout);
         jp_indiceLayout.setHorizontalGroup(
             jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGap(0, 425, Short.MAX_VALUE)
         );
         jp_indiceLayout.setVerticalGroup(
             jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +382,7 @@ public class Principal extends javax.swing.JFrame {
         jp_estand.setLayout(jp_estandLayout);
         jp_estandLayout.setHorizontalGroup(
             jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGap(0, 425, Short.MAX_VALUE)
         );
         jp_estandLayout.setVerticalGroup(
             jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,13 +391,13 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Estandarización", jp_estand);
 
-        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 360));
+        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 360));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,6 +411,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         jd_nuevoArchivo.pack();
         jd_nuevoArchivo.setModal(true);
+        jd_nuevoArchivo.setLocationRelativeTo(this);
         jd_nuevoArchivo.setVisible(true);
     }//GEN-LAST:event_jb_nuevoMouseClicked
 
@@ -249,7 +436,7 @@ public class Principal extends javax.swing.JFrame {
         }
         
         jt_nombreArchivo.setText("");
-        JOptionPane.showMessageDialog(this, "Se ha creado exitosamente el archivo", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "El archivo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
         jd_nuevoArchivo.setVisible(false);
         jTabbedPane1.setEnabledAt(1, true);
         jTabbedPane1.setEnabledAt(2, true);
@@ -262,18 +449,91 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cerrarMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Se ha cerrado el archivo", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "El archivo se ha cerrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
         archivoActual = null;
+        campos.clear();
         jb_nuevo.setEnabled(true);
         jb_cerrar.setEnabled(false);
         jb_salvar.setEnabled(false);
+        jTabbedPane1.setEnabledAt(1, false);
+        jTabbedPane1.setEnabledAt(2, false);
+        jTabbedPane1.setEnabledAt(3, false);
+        jTabbedPane1.setEnabledAt(4, false);
     }//GEN-LAST:event_jb_cerrarMouseClicked
 
     private void jb_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_jb_salirMouseClicked
+
+    private void jb_crearCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoJDMouseClicked
+        // TODO add your handling code here:
+        jd_crearCampo.pack();
+        jd_crearCampo.setModal(true);
+        jd_crearCampo.setLocationRelativeTo(this);
+        jd_crearCampo.setVisible(true);
+    }//GEN-LAST:event_jb_crearCampoJDMouseClicked
+
+    private void jb_modificarCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarCampoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_modificarCampoMouseClicked
+
+    private void jb_borrarCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_borrarCampoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_borrarCampoMouseClicked
+
+    private void jb_crearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoMouseClicked
+        // TODO add your handling code here:
+        String nombreCampo = jt_nombreCampo.getText();
+        String tipoCampo = jt_tipoCampo.getText();
+        int longitud = (int)js_longitud.getValue();
+        boolean llave = false;
+        if (rb_primaria.isSelected()){
+            llave = true;
+        }
+        
+        Campo nuevoCampo = new Campo(nombreCampo, tipoCampo, longitud, llave);
+        campos.add(nuevoCampo);
+        JOptionPane.showMessageDialog(jd_crearCampo, "El campo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+        
+        jt_nombreCampo.setText("");
+        jt_tipoCampo.setText("");
+        js_longitud.setValue(0);
+        rb_primaria.setSelected(true);
+        rb_secundaria.setSelected(false);
+        if (campos.size() == 1){
+            jb_listarCampo.setEnabled(true);
+            jb_borrarCampo.setEnabled(true);
+            jb_modificarCampo.setEnabled(true);
+        }
+    }//GEN-LAST:event_jb_crearCampoMouseClicked
+
+    private void jb_listarCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarCampoMouseClicked
+        // TODO add your handling code here:
+        Campo campoActual;
+        for (int i = 0; i < campos.size();i++){
+            campoActual = (Campo) campos.get(i);
+            Object[] newRow = {
+                campoActual.getNombre(),
+                campoActual.getTipo(),
+                campoActual.getLength(),
+                campoActual.isLlavePrimaria()
+            };
+            DefaultTableModel modelo = (DefaultTableModel) jtable_campos.getModel();
+            modelo.addRow(newRow);
+            jtable_campos.setModel(modelo);
+        }
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+        tcr.setHorizontalAlignment(SwingConstants.CENTER);
+        jtable_campos.getColumnModel().getColumn(0).setCellRenderer(tcr);
+        jtable_campos.getColumnModel().getColumn(1).setCellRenderer(tcr);
+        jtable_campos.getColumnModel().getColumn(2).setCellRenderer(tcr);
+        
+        jd_listarCampo.pack();
+        jd_listarCampo.setModal(true);
+        jd_listarCampo.setLocationRelativeTo(this);
+        jd_listarCampo.setVisible(true);
+    }//GEN-LAST:event_jb_listarCampoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -310,29 +570,49 @@ public class Principal extends javax.swing.JFrame {
         });
     }
     
-    public void escribirArchivo() throws IOException {
-        
-    }
-    
 
     File archivoActual;
+    ArrayList<Campo> campos = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup_llave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jb_borrarCampo;
     private javax.swing.JButton jb_cerrar;
     private javax.swing.JButton jb_crearArchivo;
+    private javax.swing.JButton jb_crearCampo;
+    private javax.swing.JButton jb_crearCampoJD;
+    private javax.swing.JButton jb_listarCampo;
+    private javax.swing.JButton jb_modificarCampo;
     private javax.swing.JButton jb_nuevo;
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_salvar;
+    private javax.swing.JDialog jd_crearCampo;
+    private javax.swing.JDialog jd_listarCampo;
     private javax.swing.JDialog jd_nuevoArchivo;
     private javax.swing.JPanel jp_archivo;
     private javax.swing.JPanel jp_campo;
     private javax.swing.JPanel jp_estand;
     private javax.swing.JPanel jp_indice;
     private javax.swing.JPanel jp_registro;
+    private javax.swing.JSpinner js_longitud;
     private javax.swing.JTextField jt_nombreArchivo;
+    private javax.swing.JTextField jt_nombreCampo;
+    private javax.swing.JTextField jt_tipoCampo;
+    private javax.swing.JTable jtable_campos;
+    private javax.swing.JRadioButton rb_primaria;
+    private javax.swing.JRadioButton rb_secundaria;
     // End of variables declaration//GEN-END:variables
 }
