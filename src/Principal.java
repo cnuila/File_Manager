@@ -1,16 +1,15 @@
 
-import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,7 +18,6 @@ import javax.swing.table.DefaultTableModel;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Carlos Nuila
@@ -48,12 +46,6 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jd_nuevoArchivo = new javax.swing.JDialog();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jt_nombreArchivo = new javax.swing.JTextField();
-        jb_crearArchivo = new javax.swing.JButton();
         jd_crearCampo = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -61,23 +53,43 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jt_nombreCampo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jt_tipoCampo = new javax.swing.JTextField();
         js_longitud = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
-        rb_primaria = new javax.swing.JRadioButton();
-        rb_secundaria = new javax.swing.JRadioButton();
+        rb_si = new javax.swing.JRadioButton();
+        rb_no = new javax.swing.JRadioButton();
         jb_crearCampo = new javax.swing.JButton();
+        rb_int = new javax.swing.JRadioButton();
+        rb_double = new javax.swing.JRadioButton();
+        rb_char = new javax.swing.JRadioButton();
+        rb_string = new javax.swing.JRadioButton();
+        rb_bool = new javax.swing.JRadioButton();
         buttonGroup_llave = new javax.swing.ButtonGroup();
+        buttonGroup_tipo = new javax.swing.ButtonGroup();
         jd_listarCampo = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtable_campos = new javax.swing.JTable();
+        jd_modificarCampo = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_camposMod = new javax.swing.JList<>();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jt_nombreCampoMod = new javax.swing.JTextField();
+        jb_modify = new javax.swing.JButton();
+        jd_borrarCampo = new javax.swing.JDialog();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_camposDlt = new javax.swing.JList<>();
+        jLabel11 = new javax.swing.JLabel();
+        jb_deleteField = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jp_archivo = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jb_salvar = new javax.swing.JButton();
+        jb_abrir = new javax.swing.JButton();
         jb_cerrar = new javax.swing.JButton();
         jb_salir = new javax.swing.JButton();
         jp_campo = new javax.swing.JPanel();
@@ -89,38 +101,6 @@ public class Principal extends javax.swing.JFrame {
         jp_indice = new javax.swing.JPanel();
         jp_estand = new javax.swing.JPanel();
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel1.setText("Crear Archivo");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 130, 30));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
-        jLabel2.setText("Nombre:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-
-        jt_nombreArchivo.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jPanel1.add(jt_nombreArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 140, -1));
-
-        jb_crearArchivo.setText("Crear");
-        jb_crearArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_crearArchivoMouseClicked(evt);
-            }
-        });
-        jPanel1.add(jb_crearArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
-
-        javax.swing.GroupLayout jd_nuevoArchivoLayout = new javax.swing.GroupLayout(jd_nuevoArchivo.getContentPane());
-        jd_nuevoArchivo.getContentPane().setLayout(jd_nuevoArchivoLayout);
-        jd_nuevoArchivoLayout.setHorizontalGroup(
-            jd_nuevoArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-        );
-        jd_nuevoArchivoLayout.setVerticalGroup(
-            jd_nuevoArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-        );
-
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
@@ -128,8 +108,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
-        jLabel4.setText("Tipo de Llave:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        jLabel4.setText("LLave Primaria:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         jLabel5.setText("Nombre:");
@@ -142,27 +122,25 @@ public class Principal extends javax.swing.JFrame {
         jLabel6.setText("Tipo:");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, -1));
 
-        jt_tipoCampo.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jPanel3.add(jt_tipoCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 160, -1));
-
         js_longitud.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         js_longitud.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        jPanel3.add(js_longitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 60, 30));
+        js_longitud.setEnabled(false);
+        jPanel3.add(js_longitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 60, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         jLabel7.setText("Longitud:");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
-        buttonGroup_llave.add(rb_primaria);
-        rb_primaria.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        rb_primaria.setSelected(true);
-        rb_primaria.setText("Primaria");
-        jPanel3.add(rb_primaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
+        buttonGroup_llave.add(rb_si);
+        rb_si.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_si.setSelected(true);
+        rb_si.setText("Sí");
+        jPanel3.add(rb_si, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
-        buttonGroup_llave.add(rb_secundaria);
-        rb_secundaria.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        rb_secundaria.setText("Secundaria");
-        jPanel3.add(rb_secundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+        buttonGroup_llave.add(rb_no);
+        rb_no.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_no.setText("No");
+        jPanel3.add(rb_no, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
         jb_crearCampo.setText("Crear");
         jb_crearCampo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -170,17 +148,67 @@ public class Principal extends javax.swing.JFrame {
                 jb_crearCampoMouseClicked(evt);
             }
         });
-        jPanel3.add(jb_crearCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, 30));
+        jPanel3.add(jb_crearCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, 30));
+
+        buttonGroup_tipo.add(rb_int);
+        rb_int.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_int.setText("int");
+        rb_int.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_intMouseClicked(evt);
+            }
+        });
+        jPanel3.add(rb_int, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+
+        buttonGroup_tipo.add(rb_double);
+        rb_double.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_double.setText("double");
+        rb_double.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_doubleMouseClicked(evt);
+            }
+        });
+        jPanel3.add(rb_double, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+
+        buttonGroup_tipo.add(rb_char);
+        rb_char.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_char.setText("char");
+        rb_char.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_charMouseClicked(evt);
+            }
+        });
+        jPanel3.add(rb_char, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+
+        buttonGroup_tipo.add(rb_string);
+        rb_string.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_string.setText("String");
+        rb_string.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_stringMouseClicked(evt);
+            }
+        });
+        jPanel3.add(rb_string, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
+
+        buttonGroup_tipo.add(rb_bool);
+        rb_bool.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_bool.setText("boolean");
+        rb_bool.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_boolMouseClicked(evt);
+            }
+        });
+        jPanel3.add(rb_bool, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
 
         javax.swing.GroupLayout jd_crearCampoLayout = new javax.swing.GroupLayout(jd_crearCampo.getContentPane());
         jd_crearCampo.getContentPane().setLayout(jd_crearCampoLayout);
         jd_crearCampoLayout.setHorizontalGroup(
             jd_crearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
         );
         jd_crearCampoLayout.setVerticalGroup(
             jd_crearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
         );
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -228,6 +256,82 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
         );
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_camposMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jl_camposMod.setModel(new DefaultListModel());
+        jl_camposMod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_camposModMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jl_camposMod);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 160, 210));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel9.setText("Modificar Campos");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 170, 30));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel10.setText("Nombre:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 60, 30));
+
+        jt_nombreCampoMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jPanel1.add(jt_nombreCampoMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 160, -1));
+
+        jb_modify.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_modify.setText("Modificar");
+        jb_modify.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modifyMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jb_modify, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 120, 60));
+
+        javax.swing.GroupLayout jd_modificarCampoLayout = new javax.swing.GroupLayout(jd_modificarCampo.getContentPane());
+        jd_modificarCampo.getContentPane().setLayout(jd_modificarCampoLayout);
+        jd_modificarCampoLayout.setHorizontalGroup(
+            jd_modificarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jd_modificarCampoLayout.setVerticalGroup(
+            jd_modificarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_camposDlt.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jl_camposDlt.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_camposDlt);
+
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 200, 180));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel11.setText("Borrar Campos");
+        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 140, 30));
+
+        jb_deleteField.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_deleteField.setText("Borrar");
+        jb_deleteField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_deleteFieldMouseClicked(evt);
+            }
+        });
+        jPanel5.add(jb_deleteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 70, -1));
+
+        javax.swing.GroupLayout jd_borrarCampoLayout = new javax.swing.GroupLayout(jd_borrarCampo.getContentPane());
+        jd_borrarCampo.getContentPane().setLayout(jd_borrarCampoLayout);
+        jd_borrarCampoLayout.setHorizontalGroup(
+            jd_borrarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jd_borrarCampoLayout.setVerticalGroup(
+            jd_borrarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -243,6 +347,18 @@ public class Principal extends javax.swing.JFrame {
 
         jb_salvar.setText("Salvar");
         jb_salvar.setEnabled(false);
+        jb_salvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salvarMouseClicked(evt);
+            }
+        });
+
+        jb_abrir.setText("Abrir");
+        jb_abrir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_abrirMouseClicked(evt);
+            }
+        });
 
         jb_cerrar.setText("Cerrar");
         jb_cerrar.setEnabled(false);
@@ -265,27 +381,33 @@ public class Principal extends javax.swing.JFrame {
             jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_archivoLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                    .addComponent(jb_cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_salvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_abrir, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(80, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_archivoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jp_archivoLayout.setVerticalGroup(
             jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_archivoLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_abrir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94))
+                    .addComponent(jb_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63)
+                .addComponent(jb_salir)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Archivo", jp_archivo);
@@ -409,56 +531,58 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_nuevoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_nuevoMouseClicked
         // TODO add your handling code here:
-        jd_nuevoArchivo.pack();
-        jd_nuevoArchivo.setModal(true);
-        jd_nuevoArchivo.setLocationRelativeTo(this);
-        jd_nuevoArchivo.setVisible(true);
+        if (jb_nuevo.isEnabled()) {
+            JFileChooser jfc = new JFileChooser();
+            FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo de Texto", "txt");
+            jfc.addChoosableFileFilter(filtro);
+            jfc.setAcceptAllFileFilterUsed(false);
+            int seleccion = jfc.showSaveDialog(this);
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                try {
+                    archivoActual = null;
+                    archivoActual = new File(jfc.getSelectedFile().getPath() + ".txt");
+                    fw = new FileWriter(archivoActual);
+                    bw = new BufferedWriter(fw);
+                    bw.write("");
+                    bw.flush();
+                    metaData = new Metadata();
+                    JOptionPane.showMessageDialog(this, "El archivo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    jTabbedPane1.setEnabledAt(1, true);
+                    jTabbedPane1.setEnabledAt(2, true);
+                    jTabbedPane1.setEnabledAt(3, true);
+                    jTabbedPane1.setEnabledAt(4, true);
+                    jb_nuevo.setEnabled(false);
+                    jb_abrir.setEnabled(false);
+                    jb_cerrar.setEnabled(true);
+                    jb_salvar.setEnabled(true);
+                } catch (Exception e) {
+                }
+                try {
+                    bw.close();
+                    fw.close();
+                } catch (IOException ex) {
+                }
+            }
+        }
     }//GEN-LAST:event_jb_nuevoMouseClicked
-
-    private void jb_crearArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearArchivoMouseClicked
-        // TODO add your handling code here:
-        String nombreArchivo = "./Archivos/"+jt_nombreArchivo.getText()+".txt";
-        archivoActual = new File(nombreArchivo);
-        FileWriter fw = null;
-        BufferedWriter bw = null;
-        try {
-            fw = new FileWriter(archivoActual, false);
-            bw = new BufferedWriter(fw);
-            bw.write("");
-            bw.flush();
-        } catch (Exception e) {
-        }
-        try {
-            bw.close();
-            fw.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        jt_nombreArchivo.setText("");
-        JOptionPane.showMessageDialog(this, "El archivo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-        jd_nuevoArchivo.setVisible(false);
-        jTabbedPane1.setEnabledAt(1, true);
-        jTabbedPane1.setEnabledAt(2, true);
-        jTabbedPane1.setEnabledAt(3, true);
-        jTabbedPane1.setEnabledAt(4, true);
-        jb_nuevo.setEnabled(false);
-        jb_cerrar.setEnabled(true);
-        jb_salvar.setEnabled(true);
-    }//GEN-LAST:event_jb_crearArchivoMouseClicked
 
     private void jb_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cerrarMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "El archivo se ha cerrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-        archivoActual = null;
-        campos.clear();
-        jb_nuevo.setEnabled(true);
-        jb_cerrar.setEnabled(false);
-        jb_salvar.setEnabled(false);
-        jTabbedPane1.setEnabledAt(1, false);
-        jTabbedPane1.setEnabledAt(2, false);
-        jTabbedPane1.setEnabledAt(3, false);
-        jTabbedPane1.setEnabledAt(4, false);
+        if (jb_cerrar.isEnabled()) {
+            JOptionPane.showMessageDialog(this, "El archivo se ha cerrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+            archivoActual = null;
+            metaData = null;
+            jb_nuevo.setEnabled(true);
+            jb_abrir.setEnabled(true);
+            jb_cerrar.setEnabled(false);
+            jb_salvar.setEnabled(false);
+            jTabbedPane1.setEnabledAt(1, false);
+            jTabbedPane1.setEnabledAt(2, false);
+            jTabbedPane1.setEnabledAt(3, false);
+            jTabbedPane1.setEnabledAt(4, false);
+        }
     }//GEN-LAST:event_jb_cerrarMouseClicked
 
     private void jb_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirMouseClicked
@@ -468,6 +592,16 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_crearCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoJDMouseClicked
         // TODO add your handling code here:
+        jt_nombreCampo.setText("");
+        rb_int.setSelected(true);
+        rb_bool.setSelected(false);
+        rb_char.setSelected(false);
+        rb_double.setSelected(false);
+        rb_string.setSelected(false);
+        js_longitud.setValue(16);
+        rb_si.setSelected(true);
+        rb_no.setSelected(false);
+
         jd_crearCampo.pack();
         jd_crearCampo.setModal(true);
         jd_crearCampo.setLocationRelativeTo(this);
@@ -475,33 +609,80 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_crearCampoJDMouseClicked
 
     private void jb_modificarCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarCampoMouseClicked
-        // TODO add your handling code here:
+        // TODO add your handling code here:{
+        if (jb_modificarCampo.isEnabled()) {
+            jl_camposMod.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_camposMod.getModel();
+            for (int i = 0; i < metaData.getCampos().size(); i++) {
+                modelo.addElement(metaData.getCampos().get(i));
+            }
+            jl_camposMod.setModel(modelo);
+
+            jt_nombreCampoMod.setText("");
+
+            jd_modificarCampo.pack();
+            jd_modificarCampo.setModal(true);
+            jd_modificarCampo.setLocationRelativeTo(this);
+            jd_modificarCampo.setVisible(true);
+        }
     }//GEN-LAST:event_jb_modificarCampoMouseClicked
 
     private void jb_borrarCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_borrarCampoMouseClicked
         // TODO add your handling code here:
+        if (jb_borrarCampo.isEnabled()) {
+            jl_camposDlt.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_camposDlt.getModel();
+            for (int i = 0; i < metaData.getCampos().size(); i++) {
+                modelo.addElement(metaData.getCampos().get(i));
+            }
+            jl_camposDlt.setModel(modelo);
+
+            jd_borrarCampo.pack();
+            jd_borrarCampo.setModal(true);
+            jd_borrarCampo.setLocationRelativeTo(this);
+            jd_borrarCampo.setVisible(true);
+        }
     }//GEN-LAST:event_jb_borrarCampoMouseClicked
 
     private void jb_crearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoMouseClicked
         // TODO add your handling code here:
         String nombreCampo = jt_nombreCampo.getText();
-        String tipoCampo = jt_tipoCampo.getText();
-        int longitud = (int)js_longitud.getValue();
+        String tipoCampo = "";
+        if (rb_int.isSelected()) {
+            tipoCampo = "int";
+        }
+        if (rb_double.isSelected()) {
+            tipoCampo = "double";
+        }
+        if (rb_char.isSelected()) {
+            tipoCampo = "char";
+        }
+        if (rb_string.isSelected()) {
+            tipoCampo = "String";
+        }
+        if (rb_bool.isSelected()) {
+            tipoCampo = "boolean";
+        }
+        int longitud = (int) js_longitud.getValue();
         boolean llave = false;
-        if (rb_primaria.isSelected()){
+        if (rb_si.isSelected()) {
             llave = true;
         }
-        
+
         Campo nuevoCampo = new Campo(nombreCampo, tipoCampo, longitud, llave);
-        campos.add(nuevoCampo);
+        metaData.getCampos().add(nuevoCampo);
         JOptionPane.showMessageDialog(jd_crearCampo, "El campo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-        
+
         jt_nombreCampo.setText("");
-        jt_tipoCampo.setText("");
-        js_longitud.setValue(0);
-        rb_primaria.setSelected(true);
-        rb_secundaria.setSelected(false);
-        if (campos.size() == 1){
+        rb_int.setSelected(true);
+        rb_bool.setSelected(false);
+        rb_char.setSelected(false);
+        rb_double.setSelected(false);
+        rb_string.setSelected(false);
+        js_longitud.setValue(16);
+        rb_si.setSelected(true);
+        rb_no.setSelected(false);
+        if (metaData.getCampos().size() == 1) {
             jb_listarCampo.setEnabled(true);
             jb_borrarCampo.setEnabled(true);
             jb_modificarCampo.setEnabled(true);
@@ -510,30 +691,207 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_listarCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarCampoMouseClicked
         // TODO add your handling code here:
-        Campo campoActual;
-        for (int i = 0; i < campos.size();i++){
-            campoActual = (Campo) campos.get(i);
-            Object[] newRow = {
-                campoActual.getNombre(),
-                campoActual.getTipo(),
-                campoActual.getLength(),
-                campoActual.isLlavePrimaria()
-            };
-            DefaultTableModel modelo = (DefaultTableModel) jtable_campos.getModel();
-            modelo.addRow(newRow);
-            jtable_campos.setModel(modelo);
+        if (jb_listarCampo.isEnabled()) {
+            jtable_campos.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+            jtable_campos.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre", "Tipo", "Longitud", "Llave Primaria"
+                    }
+            ) {
+                Class[] types = new Class[]{
+                    java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Boolean.class
+                };
+                boolean[] canEdit = new boolean[]{
+                    false, false, false, false
+                };
+
+                public Class getColumnClass(int columnIndex) {
+                    return types[columnIndex];
+                }
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit[columnIndex];
+                }
+            });
+            jScrollPane1.setViewportView(jtable_campos);
+
+            jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 370, 240));
+            
+            
+            Campo campoActual;
+            for (int i = 0; i < metaData.getCampos().size(); i++) {
+                campoActual = (Campo) metaData.getCampos().get(i);
+                Object[] newRow = {
+                    campoActual.getNombre(),
+                    campoActual.getTipo(),
+                    campoActual.getLength(),
+                    campoActual.isLlavePrimaria()
+                };
+                DefaultTableModel modelo = (DefaultTableModel) jtable_campos.getModel();
+                modelo.addRow(newRow);
+                jtable_campos.setModel(modelo);
+            }
+            DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+            tcr.setHorizontalAlignment(SwingConstants.CENTER);
+            jtable_campos.getColumnModel().getColumn(0).setCellRenderer(tcr);
+            jtable_campos.getColumnModel().getColumn(1).setCellRenderer(tcr);
+            jtable_campos.getColumnModel().getColumn(2).setCellRenderer(tcr);
+
+            jd_listarCampo.pack();
+            jd_listarCampo.setModal(true);
+            jd_listarCampo.setLocationRelativeTo(this);
+            jd_listarCampo.setVisible(true);
         }
-        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
-        tcr.setHorizontalAlignment(SwingConstants.CENTER);
-        jtable_campos.getColumnModel().getColumn(0).setCellRenderer(tcr);
-        jtable_campos.getColumnModel().getColumn(1).setCellRenderer(tcr);
-        jtable_campos.getColumnModel().getColumn(2).setCellRenderer(tcr);
-        
-        jd_listarCampo.pack();
-        jd_listarCampo.setModal(true);
-        jd_listarCampo.setLocationRelativeTo(this);
-        jd_listarCampo.setVisible(true);
     }//GEN-LAST:event_jb_listarCampoMouseClicked
+
+    private void jb_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salvarMouseClicked
+        // TODO add your handling code here:
+        if (jb_salvar.isEnabled()) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter(archivoActual, false);
+                bw = new BufferedWriter(fw);
+                for (int i = 0; i < metaData.getCampos().size(); i++) {
+                    bw.write(metaData.getCampos().get(i).toString() + ";");
+                }
+                bw.flush();
+                JOptionPane.showMessageDialog(this, "Se ha guardado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jb_salvarMouseClicked
+
+    private void rb_stringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_stringMouseClicked
+        // TODO add your handling code here:
+        if (rb_string.isSelected()) {
+            js_longitud.setValue(0);
+            js_longitud.setEnabled(true);
+        }
+    }//GEN-LAST:event_rb_stringMouseClicked
+
+    private void rb_intMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_intMouseClicked
+        // TODO add your handling code here:
+        if (rb_int.isSelected()) {
+            js_longitud.setValue(16);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_intMouseClicked
+
+    private void rb_doubleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_doubleMouseClicked
+        // TODO add your handling code here:
+        if (rb_double.isSelected()) {
+            js_longitud.setValue(64);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_doubleMouseClicked
+
+    private void rb_charMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_charMouseClicked
+        // TODO add your handling code here:
+        if (rb_char.isSelected()) {
+            js_longitud.setValue(8);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_charMouseClicked
+
+    private void rb_boolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_boolMouseClicked
+        // TODO add your handling code here:
+        if (rb_bool.isSelected()) {
+            js_longitud.setValue(8);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_boolMouseClicked
+
+    private void jb_abrirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_abrirMouseClicked
+        // TODO add your handling code here:
+        if (jb_abrir.isEnabled()) {
+            archivoActual = null;
+            try {
+                JFileChooser jfc = new JFileChooser("./");
+                FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos de Texto", "txt");
+                jfc.addChoosableFileFilter(filtro);
+                jfc.setAcceptAllFileFilterUsed(false);
+                int seleccion = jfc.showOpenDialog(this);
+                if (seleccion == JFileChooser.APPROVE_OPTION) {
+                    archivoActual = jfc.getSelectedFile();
+                    metaData = new Metadata();
+                    JOptionPane.showMessageDialog(this, "El archivo se ha abierto exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    jTabbedPane1.setEnabledAt(1, true);
+                    jTabbedPane1.setEnabledAt(2, true);
+                    jTabbedPane1.setEnabledAt(3, true);
+                    jTabbedPane1.setEnabledAt(4, true);
+                    jb_nuevo.setEnabled(false);
+                    jb_abrir.setEnabled(false);
+                    jb_cerrar.setEnabled(true);
+                    jb_salvar.setEnabled(true);
+                }
+            } catch (Exception e) {
+            }
+            if (archivoActual != null) {
+                //revisar luego
+                //metaData.cargarCampos(archivoActual);
+            }
+        }
+    }//GEN-LAST:event_jb_abrirMouseClicked
+
+    private void jl_camposModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_camposModMouseClicked
+        // TODO add your handling code here:
+        if (jl_camposMod.getSelectedIndex() >= 0) {
+            jt_nombreCampoMod.setText(metaData.getCampos().get(jl_camposMod.getSelectedIndex()).getNombre());
+        }
+    }//GEN-LAST:event_jl_camposModMouseClicked
+
+    private void jb_modifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modifyMouseClicked
+        // TODO add your handling code here:
+        if (jl_camposMod.getSelectedIndex() >= 0) {
+            metaData.getCampos().get(jl_camposMod.getSelectedIndex()).setNombre(jt_nombreCampoMod.getText());
+
+            jl_camposMod.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_camposMod.getModel();
+            for (int i = 0; i < metaData.getCampos().size(); i++) {
+                modelo.addElement(metaData.getCampos().get(i));
+            }
+            jl_camposMod.setModel(modelo);
+
+            jt_nombreCampoMod.setText("");
+
+            JOptionPane.showMessageDialog(jd_modificarCampo, "Se ha modificado el campo exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe tener un campo seleccionado en la lista");
+        }
+    }//GEN-LAST:event_jb_modifyMouseClicked
+
+    private void jb_deleteFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_deleteFieldMouseClicked
+        // TODO add your handling code here:
+        if (jl_camposDlt.getSelectedIndex() >= 0) {
+            metaData.getCampos().remove(jl_camposDlt.getSelectedIndex());
+
+            jl_camposDlt.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_camposDlt.getModel();
+            for (int i = 0; i < metaData.getCampos().size(); i++) {
+                modelo.addElement(metaData.getCampos().get(i));
+            }
+            jl_camposDlt.setModel(modelo);
+
+            JOptionPane.showMessageDialog(jd_borrarCampo, "Se ha eliminado el campo exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+            if (metaData.getCampos().isEmpty()){
+                jb_modificarCampo.setEnabled(false);
+                jb_listarCampo.setEnabled(false);
+                jd_borrarCampo.dispose();
+                jb_borrarCampo.setEnabled(false);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe tener un campo seleccionado en la lista");
+        }
+    }//GEN-LAST:event_jb_deleteFieldMouseClicked
 
     /**
      * @param args the command line arguments
@@ -569,50 +927,63 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-    
 
     File archivoActual;
-    ArrayList<Campo> campos = new ArrayList<>();
+    Metadata metaData;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup_llave;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.ButtonGroup buttonGroup_tipo;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jb_abrir;
     private javax.swing.JButton jb_borrarCampo;
     private javax.swing.JButton jb_cerrar;
-    private javax.swing.JButton jb_crearArchivo;
     private javax.swing.JButton jb_crearCampo;
     private javax.swing.JButton jb_crearCampoJD;
+    private javax.swing.JButton jb_deleteField;
     private javax.swing.JButton jb_listarCampo;
     private javax.swing.JButton jb_modificarCampo;
+    private javax.swing.JButton jb_modify;
     private javax.swing.JButton jb_nuevo;
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_salvar;
+    private javax.swing.JDialog jd_borrarCampo;
     private javax.swing.JDialog jd_crearCampo;
     private javax.swing.JDialog jd_listarCampo;
-    private javax.swing.JDialog jd_nuevoArchivo;
+    private javax.swing.JDialog jd_modificarCampo;
+    private javax.swing.JList<String> jl_camposDlt;
+    private javax.swing.JList<String> jl_camposMod;
     private javax.swing.JPanel jp_archivo;
     private javax.swing.JPanel jp_campo;
     private javax.swing.JPanel jp_estand;
     private javax.swing.JPanel jp_indice;
     private javax.swing.JPanel jp_registro;
     private javax.swing.JSpinner js_longitud;
-    private javax.swing.JTextField jt_nombreArchivo;
     private javax.swing.JTextField jt_nombreCampo;
-    private javax.swing.JTextField jt_tipoCampo;
+    private javax.swing.JTextField jt_nombreCampoMod;
     private javax.swing.JTable jtable_campos;
-    private javax.swing.JRadioButton rb_primaria;
-    private javax.swing.JRadioButton rb_secundaria;
+    private javax.swing.JRadioButton rb_bool;
+    private javax.swing.JRadioButton rb_char;
+    private javax.swing.JRadioButton rb_double;
+    private javax.swing.JRadioButton rb_int;
+    private javax.swing.JRadioButton rb_no;
+    private javax.swing.JRadioButton rb_si;
+    private javax.swing.JRadioButton rb_string;
     // End of variables declaration//GEN-END:variables
 }

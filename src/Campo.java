@@ -58,7 +58,4 @@ public class Campo {
     public String toString() {
         return nombre + ": " + tipo + "[" + length + "]";
     }
-    
-    
-    
 }
