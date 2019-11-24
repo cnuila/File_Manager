@@ -56,6 +56,10 @@ public class Campo {
 
     @Override
     public String toString() {
-        return nombre + ": " + tipo + "[" + length + "]";
+        String llave = "0";
+        if (!llavePrimaria){
+            llave = "1";
+        }
+        return nombre + ": " + tipo + "[" + length + "]"+llave;
     }
 }
