@@ -29,6 +29,30 @@ public class Metadata {
         this.campos = campos;
     }
 
+    public void escribirCampos(RandomAccessFile archivo) throws IOException {
+        int pos = 0;
+        int acum = 0;
+        String saltoLinea = "\n";
+        for (int i = 0; i < campos.size(); i++) {
+            archivo.seek(pos);
+            archivo.write(campos.get(i).toString().getBytes());
+            String delimitador = ";";
+            archivo.write(delimitador.getBytes());
+            pos += campos.get(i).toString().length() + 1;
+            acum += campos.get(i).toString().length() + 1;
+            if (acum >= 50) {
+                archivo.write(saltoLinea.getBytes());
+                pos++;
+                acum = 0;
+            }
+        }
+        archivo.write(saltoLinea.getBytes());
+        pos++;
+        String finalMetaData = "***";
+        archivo.seek(pos);
+        archivo.write(finalMetaData.getBytes());
+    }
+
     public void cargarCampos(RandomAccessFile archivo) throws IOException {
         campos = new ArrayList<>();
         byte[] temp = new byte[400];
@@ -44,8 +68,8 @@ public class Metadata {
         }
         String tempString = new String(temp);
         String metaDataTemp = "";
-        for (int i = 0; i < ubicAst-2; i++) {
-            if (tempString.charAt(i) != '\n'){
+        for (int i = 0; i < ubicAst - 2; i++) {
+            if (tempString.charAt(i) != '\n') {
                 metaDataTemp += tempString.charAt(i);
             }
         }
@@ -71,16 +95,16 @@ public class Metadata {
                     tipoCampo += campo.charAt(j);
                     index++;
                 } else {
-                    index ++;
+                    index++;
                     j = campo.length();
                 }
             }
             String tempTamano = "";
-            for (int j = index;j < campo.length();j++) {
-                if (campo.charAt(j) != ']'){
-                    tempTamano+=campo.charAt(j);
+            for (int j = index; j < campo.length(); j++) {
+                if (campo.charAt(j) != ']') {
+                    tempTamano += campo.charAt(j);
                     index++;
-                }else{
+                } else {
                     index++;
                     j = campo.length();
                 }
@@ -91,7 +115,6 @@ public class Metadata {
             }
             campos.add(new Campo(nombreCampo, tipoCampo, tamano, llavePrimaria));
         }
-
     }
 
 }

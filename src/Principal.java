@@ -673,9 +673,15 @@ public class Principal extends javax.swing.JFrame {
             rb_double.setSelected(false);
             rb_string.setSelected(false);
             js_longitud.setValue(16);
-            rb_si.setSelected(false);
-            rb_no.setSelected(true);
-
+            if (buscarLlave()) {
+                rb_si.setSelected(false);
+                rb_si.setEnabled(false);
+                rb_no.setSelected(true);
+            } else {
+                rb_si.setEnabled(true);
+                rb_si.setSelected(false);
+                rb_no.setSelected(true);
+            }
             jd_crearCampo.pack();
             jd_crearCampo.setModal(true);
             jd_crearCampo.setLocationRelativeTo(this);
@@ -766,6 +772,7 @@ public class Principal extends javax.swing.JFrame {
             rb_si.setEnabled(false);
             rb_no.setSelected(true);
         } else {
+            rb_si.setEnabled(true);
             rb_si.setSelected(true);
             rb_no.setSelected(false);
         }
@@ -835,32 +842,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jb_salvar.isEnabled()) {
             try {
-                int pos = 0;
-                int acum = 0;
-                String saltoLinea = "\n";
-                for (int i = 0; i < metaData.getCampos().size(); i++) {
-                    archivoActual.seek(pos);
-                    archivoActual.write(metaData.getCampos().get(i).toString().getBytes());
-                    String delimitador = ";";
-                    archivoActual.write(delimitador.getBytes());
-                    pos += metaData.getCampos().get(i).toString().length() + 1;
-                    acum += metaData.getCampos().get(i).toString().length() + 1;
-                    if (acum >= 50) {
-                        archivoActual.write(saltoLinea.getBytes());
-                        pos++;
-                        acum = 0;
-                    }
-                }
-                archivoActual.write(saltoLinea.getBytes());
-                pos++;
-                String finalMetaData = "***";
-                archivoActual.seek(pos);
-                archivoActual.write(finalMetaData.getBytes());
-                
-                JOptionPane.showMessageDialog(this, "Se ha guardado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-            } catch (Exception e) {
-
+                metaData.escribirCampos(archivoActual);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
+            JOptionPane.showMessageDialog(this, "Se ha guardado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jb_salvarMouseClicked
 
@@ -926,7 +912,7 @@ public class Principal extends javax.swing.JFrame {
                     jb_cerrar.setEnabled(true);
                     jb_salvar.setEnabled(true);
                     metaData.cargarCampos(archivoActual);
-                    if (!metaData.getCampos().isEmpty()){
+                    if (!metaData.getCampos().isEmpty()) {
                         jb_listarCampoJD.setEnabled(true);
                         jb_modificarCampoJD.setEnabled(true);
                         jb_borrarCampoJD.setEnabled(true);
@@ -1115,6 +1101,7 @@ public class Principal extends javax.swing.JFrame {
         });
     }
 
+    //revisar salvar despues de borrar
     RandomAccessFile archivoActual;
     Metadata metaData;
     ArrayList<String> registros = new ArrayList<>();
