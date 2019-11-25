@@ -432,7 +432,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="260" y="300" width="120" height="30"/>
+                  <AbsoluteConstraints x="250" y="270" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -570,51 +570,6 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="270" y="200" width="60" height="30"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Symbol" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="LLave Primaria:"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="200" y="250" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rb_siMod">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroup_llaveMod"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Symbol" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="S&#xed;"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="310" y="250" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rb_noMod">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroup_llaveMod"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Symbol" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="No"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="360" y="250" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -873,12 +828,12 @@
                           <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jb_crearCampoJD" alignment="0" pref="119" max="32767" attributes="0"/>
-                              <Component id="jb_modificarCampo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jb_modificarCampoJD" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jb_borrarCampo" pref="121" max="32767" attributes="0"/>
-                              <Component id="jb_listarCampo" max="32767" attributes="0"/>
+                              <Component id="jb_borrarCampoJD" pref="121" max="32767" attributes="0"/>
+                              <Component id="jb_listarCampoJD" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="89" max="32767" attributes="0"/>
                       </Group>
@@ -890,12 +845,12 @@
                           <EmptySpace pref="68" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jb_crearCampoJD" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
-                              <Component id="jb_listarCampo" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="jb_listarCampoJD" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jb_modificarCampo" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
-                              <Component id="jb_borrarCampo" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="jb_modificarCampoJD" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="jb_borrarCampoJD" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                       </Group>
@@ -911,31 +866,31 @@
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_crearCampoJDMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jb_listarCampo">
+                <Component class="javax.swing.JButton" name="jb_listarCampoJD">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Listar"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_listarCampoMouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_listarCampoJDMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jb_modificarCampo">
+                <Component class="javax.swing.JButton" name="jb_modificarCampoJD">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_modificarCampoMouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_modificarCampoJDMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jb_borrarCampo">
+                <Component class="javax.swing.JButton" name="jb_borrarCampoJD">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_borrarCampoMouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_borrarCampoJDMouseClicked"/>
                   </Events>
                 </Component>
               </SubComponents>

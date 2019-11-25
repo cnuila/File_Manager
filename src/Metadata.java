@@ -1,5 +1,7 @@
 
 import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -27,21 +29,69 @@ public class Metadata {
         this.campos = campos;
     }
 
-    public void cargarCampos(File archivo) {
-        Scanner sc = null;
+    public void cargarCampos(RandomAccessFile archivo) throws IOException {
         campos = new ArrayList<>();
-        if (archivo.exists()) {
-            try {
-                sc = new Scanner(archivo);
-                sc.useDelimiter(";");
-                while (sc.hasNext()) {
-                    String prueba = sc.next();
-                    System.out.println(prueba);
-                }
-            } catch (Exception e) {
+        byte[] temp = new byte[400];
+        int ubicAst = 0;
+        for (int i = 0; i < archivo.length(); i++) {
+            archivo.seek(i);
+            if (!new String(temp).contains("*")) {
+                temp[i] = archivo.readByte();
+            } else {
+                ubicAst = i;
+                break;
             }
-            sc.close();
         }
+        String tempString = new String(temp);
+        String metaDataTemp = "";
+        for (int i = 0; i < ubicAst-2; i++) {
+            if (tempString.charAt(i) != '\n'){
+                metaDataTemp += tempString.charAt(i);
+            }
+        }
+        String[] metaData = metaDataTemp.split(";");
+        for (int i = 0; i < metaData.length; i++) {
+            String campo = metaData[i];
+            String nombreCampo = "";
+            String tipoCampo = "";
+            int tamano = 0;
+            boolean llavePrimaria = false;
+            int index = 0;
+            for (int j = index; j < campo.length(); j++) {
+                if (campo.charAt(j) != ':') {
+                    nombreCampo += campo.charAt(j);
+                    index++;
+                } else {
+                    index += 2;
+                    j = campo.length();
+                }
+            }
+            for (int j = index; j < campo.length(); j++) {
+                if (campo.charAt(j) != '[') {
+                    tipoCampo += campo.charAt(j);
+                    index++;
+                } else {
+                    index ++;
+                    j = campo.length();
+                }
+            }
+            String tempTamano = "";
+            for (int j = index;j < campo.length();j++) {
+                if (campo.charAt(j) != ']'){
+                    tempTamano+=campo.charAt(j);
+                    index++;
+                }else{
+                    index++;
+                    j = campo.length();
+                }
+            }
+            tamano = Integer.parseInt(tempTamano);
+            if (campo.charAt(index) == '0') {
+                llavePrimaria = true;
+            }
+            campos.add(new Campo(nombreCampo, tipoCampo, tamano, llavePrimaria));
+        }
+
     }
 
 }
