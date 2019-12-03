@@ -89,8 +89,6 @@ public class Principal extends javax.swing.JFrame {
         rb_stringMod = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         js_longitudMod = new javax.swing.JSpinner();
-        jLabel2 = new javax.swing.JLabel();
-        jt_llavePrimariaMod = new javax.swing.JTextField();
         jd_borrarCampo = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -107,8 +105,11 @@ public class Principal extends javax.swing.JFrame {
         jb_DeleteLastRow = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jd_buscarRegistros = new javax.swing.JDialog();
-        jLabel14 = new javax.swing.JLabel();
+        jl_llaveP_BuscarRegistro = new javax.swing.JLabel();
         jt_llavePrimariaBuscarRegistros = new javax.swing.JTextField();
+        jb_buscarLlavePrimaria = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jd_borrarRegistro = new javax.swing.JDialog();
         jLabel15 = new javax.swing.JLabel();
         jt_LlavePrimariaBorrarRegistro = new javax.swing.JTextField();
@@ -306,10 +307,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         jLabel10.setText("Nombre:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 60, 30));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 60, 30));
 
         jt_nombreCampoMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jPanel1.add(jt_nombreCampoMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 160, -1));
+        jPanel1.add(jt_nombreCampoMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 160, -1));
 
         jb_modify.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jb_modify.setText("Modificar");
@@ -318,11 +319,11 @@ public class Principal extends javax.swing.JFrame {
                 jb_modifyMouseClicked(evt);
             }
         });
-        jPanel1.add(jb_modify, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 120, 30));
+        jPanel1.add(jb_modify, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 120, 30));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         jLabel12.setText("Tipo:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 50, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 50, -1));
 
         buttonGroup_tipoMod.add(rb_intMod);
         rb_intMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
@@ -332,7 +333,7 @@ public class Principal extends javax.swing.JFrame {
                 rb_intModMouseClicked(evt);
             }
         });
-        jPanel1.add(rb_intMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
+        jPanel1.add(rb_intMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
 
         buttonGroup_tipoMod.add(rb_doubleMod);
         rb_doubleMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
@@ -342,7 +343,7 @@ public class Principal extends javax.swing.JFrame {
                 rb_doubleModMouseClicked(evt);
             }
         });
-        jPanel1.add(rb_doubleMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
+        jPanel1.add(rb_doubleMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
 
         buttonGroup_tipoMod.add(rb_charMod);
         rb_charMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
@@ -352,7 +353,7 @@ public class Principal extends javax.swing.JFrame {
                 rb_charModMouseClicked(evt);
             }
         });
-        jPanel1.add(rb_charMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, -1));
+        jPanel1.add(rb_charMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, -1));
 
         buttonGroup_tipoMod.add(rb_boolMod);
         rb_boolMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
@@ -362,7 +363,7 @@ public class Principal extends javax.swing.JFrame {
                 rb_boolModMouseClicked(evt);
             }
         });
-        jPanel1.add(rb_boolMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
+        jPanel1.add(rb_boolMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, -1));
 
         buttonGroup_tipoMod.add(rb_stringMod);
         rb_stringMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
@@ -372,20 +373,16 @@ public class Principal extends javax.swing.JFrame {
                 rb_stringModMouseClicked(evt);
             }
         });
-        jPanel1.add(rb_stringMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
+        jPanel1.add(rb_stringMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         jLabel13.setText("Longitud:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
 
         js_longitudMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         js_longitudMod.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         js_longitudMod.setEnabled(false);
-        jPanel1.add(js_longitudMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 60, 30));
-
-        jLabel2.setText("Llave Primaria");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
-        jPanel1.add(jt_llavePrimariaMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 150, -1));
+        jPanel1.add(js_longitudMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 60, 30));
 
         javax.swing.GroupLayout jd_modificarCampoLayout = new javax.swing.GroupLayout(jd_modificarCampo.getContentPane());
         jd_modificarCampo.getContentPane().setLayout(jd_modificarCampoLayout);
@@ -395,7 +392,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jd_modificarCampoLayout.setVerticalGroup(
             jd_modificarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
         );
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -513,27 +510,60 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel14.setText("Llave Primaria");
+        jl_llaveP_BuscarRegistro.setText("Llave Primaria");
+
+        jt_llavePrimariaBuscarRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_llavePrimariaBuscarRegistrosActionPerformed(evt);
+            }
+        });
+
+        jb_buscarLlavePrimaria.setText("Buscar Llave");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable1);
 
         javax.swing.GroupLayout jd_buscarRegistrosLayout = new javax.swing.GroupLayout(jd_buscarRegistros.getContentPane());
         jd_buscarRegistros.getContentPane().setLayout(jd_buscarRegistrosLayout);
         jd_buscarRegistrosLayout.setHorizontalGroup(
             jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel14)
-                .addGap(32, 32, 32)
-                .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jl_llaveP_BuscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_buscarLlavePrimaria)))
+                .addContainerGap())
         );
         jd_buscarRegistrosLayout.setVerticalGroup(
             jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(8, 8, 8)
+                .addComponent(jl_llaveP_BuscarRegistro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
+                    .addComponent(jb_buscarLlavePrimaria)
                     .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jLabel15.setText("Llave Primaria");
@@ -736,6 +766,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jb_buscarRegistro.setText("Buscar Registro");
+        jb_buscarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_buscarRegistroMouseClicked(evt);
+            }
+        });
 
         jb_borrarRegistro.setText("Borrar Registro");
 
@@ -744,24 +779,24 @@ public class Principal extends javax.swing.JFrame {
         jp_registroLayout.setHorizontalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_registroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_CrearRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                .addGap(74, 74, 74)
+                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jb_CrearRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         jp_registroLayout.setVerticalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_registroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_CrearRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(jb_CrearRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Registros", jp_registro);
@@ -1336,6 +1371,19 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_CrearRegistroActionPerformed
 
+    private void jb_buscarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarRegistroMouseClicked
+        String llavePrimaria = encontrarLlavePrimaria().getNombre()+":";
+        jl_llaveP_BuscarRegistro.setText(llavePrimaria);
+        jd_buscarRegistros.pack();
+        jd_buscarRegistros.setLocationRelativeTo(jd_CrearRegistros);
+        jd_buscarRegistros.setModal(true);
+        jd_buscarRegistros.setVisible(true);
+    }//GEN-LAST:event_jb_buscarRegistroMouseClicked
+
+    private void jt_llavePrimariaBuscarRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_llavePrimariaBuscarRegistrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_llavePrimariaBuscarRegistrosActionPerformed
+
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
             if (metaData.getCampos().get(i).isLlavePrimaria()) {
@@ -1344,7 +1392,15 @@ public class Principal extends javax.swing.JFrame {
         }
         return false;
     }
-
+    
+    public Campo encontrarLlavePrimaria() {
+        for (int i = 0; i < metaData.getCampos().size(); i++) {
+            if (metaData.getCampos().get(i).isLlavePrimaria()) {
+                return metaData.getCampos().get(i);
+            }
+        }
+        return null;
+    }
     /**
      * @param args the command line arguments
      */
@@ -1395,9 +1451,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1414,7 +1468,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton jb_AddNewRow;
     private javax.swing.JButton jb_CrearRegistro;
     private javax.swing.JButton jb_DeleteLastRow;
@@ -1422,6 +1478,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_abrir;
     private javax.swing.JButton jb_borrarCampoJD;
     private javax.swing.JToggleButton jb_borrarRegistro;
+    private javax.swing.JButton jb_buscarLlavePrimaria;
     private javax.swing.JToggleButton jb_buscarRegistro;
     private javax.swing.JButton jb_cerrar;
     private javax.swing.JButton jb_crearCampo;
@@ -1443,6 +1500,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_modificarCampo;
     private javax.swing.JList<String> jl_camposDlt;
     private javax.swing.JList<String> jl_camposMod;
+    private javax.swing.JLabel jl_llaveP_BuscarRegistro;
     private javax.swing.JPanel jp_archivo;
     private javax.swing.JPanel jp_campo;
     private javax.swing.JPanel jp_estand;
@@ -1452,7 +1510,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSpinner js_longitudMod;
     private javax.swing.JTextField jt_LlavePrimariaBorrarRegistro;
     private javax.swing.JTextField jt_llavePrimariaBuscarRegistros;
-    private javax.swing.JTextField jt_llavePrimariaMod;
     private javax.swing.JTextField jt_nombreCampo;
     private javax.swing.JTextField jt_nombreCampoMod;
     private javax.swing.JTable jtable_campos;
