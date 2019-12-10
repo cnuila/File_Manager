@@ -93,7 +93,7 @@
                   <Font name="Segoe UI Symbol" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                  <SpinnerModel initial="0" maximum="10" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -662,7 +662,7 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup_tipoMod">
     </Component>
-    <Container class="javax.swing.JDialog" name="jd_CrearRegistros">
+    <Container class="javax.swing.JDialog" name="jd_crearRegistros">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -675,11 +675,11 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jb_DeleteLastRow" min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="jb_deleteLastRow" min="-2" pref="38" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jb_AddNewRow" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jb_addNewRow" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jb_GuardarRegistros" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="jb_guardarRegistros" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -702,11 +702,11 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jb_AddNewRow" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jb_DeleteLastRow" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jb_addNewRow" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jb_deleteLastRow" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jb_GuardarRegistros" min="-2" max="-2" attributes="0"/>
+                          <Component id="jb_guardarRegistros" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -734,7 +734,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jb_GuardarRegistros">
+        <Component class="javax.swing.JButton" name="jb_guardarRegistros">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Symbol" size="12" style="0"/>
@@ -742,10 +742,10 @@
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_GuardarRegistrosMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_guardarRegistrosMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jb_AddNewRow">
+        <Component class="javax.swing.JButton" name="jb_addNewRow">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Symbol" size="10" style="0"/>
@@ -756,11 +756,11 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_AddNewRowMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_AddNewRowActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_addNewRowMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_addNewRowActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jb_DeleteLastRow">
+        <Component class="javax.swing.JButton" name="jb_deleteLastRow">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Symbol" size="10" style="0"/>
@@ -768,7 +768,7 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_DeleteLastRowMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_deleteLastRowMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -1181,14 +1181,14 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jb_CrearRegistro" min="-2" pref="117" max="-2" attributes="0"/>
-                              <Component id="jb_buscarRegistro" min="-2" pref="119" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                          <Component id="jb_crearRegistro" min="-2" pref="122" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jb_borrarRegistro" min="-2" pref="117" max="-2" attributes="0"/>
-                          <EmptySpace pref="102" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jb_borrarRegistro" max="32767" attributes="0"/>
+                              <Component id="jb_buscarRegistro" pref="122" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="85" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1196,19 +1196,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Component id="jb_CrearRegistro" min="-2" pref="64" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jb_borrarRegistro" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
-                              <Component id="jb_buscarRegistro" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jb_crearRegistro" pref="80" max="32767" attributes="0"/>
+                              <Component id="jb_buscarRegistro" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="118" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jb_borrarRegistro" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace pref="98" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jb_CrearRegistro">
+                <Component class="javax.swing.JButton" name="jb_crearRegistro">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Symbol" size="12" style="0"/>
@@ -1216,13 +1216,14 @@
                     <Property name="text" type="java.lang.String" value="Crear Registro"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_CrearRegistroMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_CrearRegistroActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_crearRegistroMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_crearRegistroActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="jb_buscarRegistro">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Buscar Registro"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_buscarRegistroMouseClicked"/>
@@ -1231,6 +1232,7 @@
                 <Component class="javax.swing.JToggleButton" name="jb_borrarRegistro">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar Registro"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
               </SubComponents>

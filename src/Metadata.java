@@ -1,9 +1,7 @@
 
-import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +15,7 @@ import java.util.Scanner;
 public class Metadata {
 
     private ArrayList<Campo> campos = new ArrayList<>();
+    private int tamanoMeta = 0;
 
     public Metadata() {
     }
@@ -29,7 +28,16 @@ public class Metadata {
         this.campos = campos;
     }
 
+    public int getTamanoMeta() {
+        return tamanoMeta;
+    }
+
+    public void setTamanoMeta(int tamanoMeta) {
+        this.tamanoMeta = tamanoMeta;
+    }    
+
     public void escribirCampos(RandomAccessFile archivo) throws IOException {
+        archivo.setLength(0);
         int pos = 0;
         int acum = 0;
         String saltoLinea = "\n";
@@ -40,7 +48,7 @@ public class Metadata {
             archivo.write(delimitador.getBytes());
             pos += campos.get(i).toString().length() + 1;
             acum += campos.get(i).toString().length() + 1;
-            if (acum >= 50) {
+            if (acum >= 50 && i != campos.size()-1) {
                 archivo.write(saltoLinea.getBytes());
                 pos++;
                 acum = 0;
@@ -51,6 +59,8 @@ public class Metadata {
         String finalMetaData = "***";
         archivo.seek(pos);
         archivo.write(finalMetaData.getBytes());
+        pos+=3;
+        tamanoMeta = pos;
     }
 
     public void cargarCampos(RandomAccessFile archivo) throws IOException {

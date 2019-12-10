@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -97,12 +98,12 @@ public class Principal extends javax.swing.JFrame {
         jb_deleteField = new javax.swing.JButton();
         buttonGroup_llaveMod = new javax.swing.ButtonGroup();
         buttonGroup_tipoMod = new javax.swing.ButtonGroup();
-        jd_CrearRegistros = new javax.swing.JDialog();
+        jd_crearRegistros = new javax.swing.JDialog();
         jScrollPane4 = new javax.swing.JScrollPane();
         Tabla_agregarRegistros = new javax.swing.JTable();
-        jb_GuardarRegistros = new javax.swing.JButton();
-        jb_AddNewRow = new javax.swing.JButton();
-        jb_DeleteLastRow = new javax.swing.JButton();
+        jb_guardarRegistros = new javax.swing.JButton();
+        jb_addNewRow = new javax.swing.JButton();
+        jb_deleteLastRow = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jd_buscarRegistros = new javax.swing.JDialog();
         jl_llaveP_BuscarRegistro = new javax.swing.JLabel();
@@ -128,7 +129,7 @@ public class Principal extends javax.swing.JFrame {
         jb_modificarCampoJD = new javax.swing.JButton();
         jb_borrarCampoJD = new javax.swing.JButton();
         jp_registro = new javax.swing.JPanel();
-        jb_CrearRegistro = new javax.swing.JButton();
+        jb_crearRegistro = new javax.swing.JButton();
         jb_buscarRegistro = new javax.swing.JToggleButton();
         jb_borrarRegistro = new javax.swing.JToggleButton();
         jp_indice = new javax.swing.JPanel();
@@ -156,7 +157,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, -1));
 
         js_longitud.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        js_longitud.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        js_longitud.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
         js_longitud.setEnabled(false);
         jPanel3.add(js_longitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 60, 30));
 
@@ -438,75 +439,75 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(Tabla_agregarRegistros);
 
-        jb_GuardarRegistros.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_GuardarRegistros.setText("Guardar");
-        jb_GuardarRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_guardarRegistros.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_guardarRegistros.setText("Guardar");
+        jb_guardarRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_GuardarRegistrosMouseClicked(evt);
+                jb_guardarRegistrosMouseClicked(evt);
             }
         });
 
-        jb_AddNewRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
-        jb_AddNewRow.setText("+");
-        jb_AddNewRow.setPreferredSize(new java.awt.Dimension(38, 28));
-        jb_AddNewRow.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_addNewRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
+        jb_addNewRow.setText("+");
+        jb_addNewRow.setPreferredSize(new java.awt.Dimension(38, 28));
+        jb_addNewRow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_AddNewRowMouseClicked(evt);
+                jb_addNewRowMouseClicked(evt);
             }
         });
-        jb_AddNewRow.addActionListener(new java.awt.event.ActionListener() {
+        jb_addNewRow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_AddNewRowActionPerformed(evt);
+                jb_addNewRowActionPerformed(evt);
             }
         });
 
-        jb_DeleteLastRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
-        jb_DeleteLastRow.setText("-");
-        jb_DeleteLastRow.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_deleteLastRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
+        jb_deleteLastRow.setText("-");
+        jb_deleteLastRow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_DeleteLastRowMouseClicked(evt);
+                jb_deleteLastRowMouseClicked(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel1.setText("Rows");
 
-        javax.swing.GroupLayout jd_CrearRegistrosLayout = new javax.swing.GroupLayout(jd_CrearRegistros.getContentPane());
-        jd_CrearRegistros.getContentPane().setLayout(jd_CrearRegistrosLayout);
-        jd_CrearRegistrosLayout.setHorizontalGroup(
-            jd_CrearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_CrearRegistrosLayout.createSequentialGroup()
+        javax.swing.GroupLayout jd_crearRegistrosLayout = new javax.swing.GroupLayout(jd_crearRegistros.getContentPane());
+        jd_crearRegistros.getContentPane().setLayout(jd_crearRegistrosLayout);
+        jd_crearRegistrosLayout.setHorizontalGroup(
+            jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jd_CrearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_CrearRegistrosLayout.createSequentialGroup()
+                .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jd_CrearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_CrearRegistrosLayout.createSequentialGroup()
-                                .addComponent(jb_DeleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
+                                .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jb_AddNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jb_GuardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jd_CrearRegistrosLayout.createSequentialGroup()
+                                .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jb_guardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jd_CrearRegistrosLayout.setVerticalGroup(
-            jd_CrearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_CrearRegistrosLayout.createSequentialGroup()
+        jd_crearRegistrosLayout.setVerticalGroup(
+            jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jd_CrearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jd_CrearRegistrosLayout.createSequentialGroup()
+                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jd_CrearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jb_AddNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_DeleteLastRow))
+                        .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_deleteLastRow))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jb_GuardarRegistros)))
+                        .addComponent(jb_guardarRegistros)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -752,20 +753,21 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Campos", jp_campo);
 
-        jb_CrearRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_CrearRegistro.setText("Crear Registro");
-        jb_CrearRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_crearRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_crearRegistro.setText("Crear Registro");
+        jb_crearRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_CrearRegistroMouseClicked(evt);
+                jb_crearRegistroMouseClicked(evt);
             }
         });
-        jb_CrearRegistro.addActionListener(new java.awt.event.ActionListener() {
+        jb_crearRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_CrearRegistroActionPerformed(evt);
+                jb_crearRegistroActionPerformed(evt);
             }
         });
 
         jb_buscarRegistro.setText("Buscar Registro");
+        jb_buscarRegistro.setEnabled(false);
         jb_buscarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_buscarRegistroMouseClicked(evt);
@@ -773,30 +775,31 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jb_borrarRegistro.setText("Borrar Registro");
+        jb_borrarRegistro.setEnabled(false);
 
         javax.swing.GroupLayout jp_registroLayout = new javax.swing.GroupLayout(jp_registro);
         jp_registro.setLayout(jp_registroLayout);
         jp_registroLayout.setHorizontalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_registroLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_CrearRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78)
+                .addComponent(jb_crearRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jp_registroLayout.setVerticalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_registroLayout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addComponent(jb_CrearRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_crearRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Registros", jp_registro);
@@ -851,8 +854,6 @@ public class Principal extends javax.swing.JFrame {
             jfc.addChoosableFileFilter(filtro);
             jfc.setAcceptAllFileFilterUsed(false);
             int seleccion = jfc.showSaveDialog(this);
-            FileWriter fw = null;
-            BufferedWriter bw = null;
             if (seleccion == JFileChooser.APPROVE_OPTION) {
                 try {
                     archivoActual = null;
@@ -860,9 +861,6 @@ public class Principal extends javax.swing.JFrame {
                     metaData = new Metadata();
                     JOptionPane.showMessageDialog(this, "El archivo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
                     jTabbedPane1.setEnabledAt(1, true);
-                    jTabbedPane1.setEnabledAt(2, true);
-                    jTabbedPane1.setEnabledAt(3, true);
-                    jTabbedPane1.setEnabledAt(4, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
                     jb_cerrar.setEnabled(true);
@@ -905,14 +903,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_crearCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoJDMouseClicked
         // TODO add your handling code here:
-        if (metaData.getCampos().size() <= 14) {
+        if (metaData.getCampos().size() <= 14 && arbolB.getRaiz() == null && jb_crearCampoJD.isEnabled()) {
             jt_nombreCampo.setText("");
             rb_int.setSelected(true);
             rb_bool.setSelected(false);
             rb_char.setSelected(false);
             rb_double.setSelected(false);
             rb_string.setSelected(false);
-            js_longitud.setValue(16);
+            js_longitud.setValue(2);
             if (buscarLlave()) {
                 rb_si.setSelected(false);
                 rb_si.setEnabled(false);
@@ -935,7 +933,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_modificarCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarCampoJDMouseClicked
         // TODO add your handling code here:{
-        if (jb_modificarCampoJD.isEnabled() && registros.isEmpty()) {
+        if (jb_modificarCampoJD.isEnabled() && arbolB.getRaiz() == null) {
             jl_camposMod.setModel(new DefaultListModel());
             DefaultListModel modelo = (DefaultListModel) jl_camposMod.getModel();
             for (int i = 0; i < metaData.getCampos().size(); i++) {
@@ -954,7 +952,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_borrarCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_borrarCampoJDMouseClicked
         // TODO add your handling code here:
-        if (jb_borrarCampoJD.isEnabled()) {
+        if (jb_borrarCampoJD.isEnabled() && arbolB.getRaiz() == null) {
             jl_camposDlt.setModel(new DefaultListModel());
             DefaultListModel modelo = (DefaultListModel) jl_camposDlt.getModel();
             for (int i = 0; i < metaData.getCampos().size(); i++) {
@@ -971,57 +969,71 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_crearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoMouseClicked
         // TODO add your handling code here:
-        String nombreCampo = jt_nombreCampo.getText();
-        String tipoCampo = "";
-        if (rb_int.isSelected()) {
-            tipoCampo = "int";
-        }
-        if (rb_double.isSelected()) {
-            tipoCampo = "double";
-        }
-        if (rb_char.isSelected()) {
-            tipoCampo = "char";
-        }
-        if (rb_string.isSelected()) {
-            tipoCampo = "String";
-        }
-        if (rb_bool.isSelected()) {
-            tipoCampo = "boolean";
-        }
-        int longitud = (int) js_longitud.getValue();
-        boolean llave = false;
-        if (rb_si.isSelected()) {
-            llave = true;
-        }
+        if (jb_crearCampo.isEnabled()) {
+            String nombreCampo = jt_nombreCampo.getText();
+            String tipoCampo = "";
+            if (rb_int.isSelected()) {
+                tipoCampo = "int";
+            }
+            if (rb_double.isSelected()) {
+                tipoCampo = "double";
+            }
+            if (rb_char.isSelected()) {
+                tipoCampo = "char";
+            }
+            if (rb_string.isSelected()) {
+                tipoCampo = "String";
+            }
+            if (rb_bool.isSelected()) {
+                tipoCampo = "boolean";
+            }
+            int longitud = (int) js_longitud.getValue();
+            boolean llave = false;
+            if (rb_si.isSelected()) {
+                llave = true;
+            }
 
-        if (metaData.getCampos().size() <= 14) {
-            Campo nuevoCampo = new Campo(nombreCampo, tipoCampo, longitud, llave);
-            metaData.getCampos().add(nuevoCampo);
-            JOptionPane.showMessageDialog(jd_crearCampo, "El campo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            Toolkit.getDefaultToolkit().beep();
-            JOptionPane.showMessageDialog(jd_crearCampo, "Ya ha creado el máximo de campos que es 15", "Información", JOptionPane.INFORMATION_MESSAGE);
-        }
+            if (metaData.getCampos().size() <= 14) {
+                Campo nuevoCampo = new Campo(nombreCampo, tipoCampo, longitud, llave);
+                metaData.getCampos().add(nuevoCampo);
+                JOptionPane.showMessageDialog(jd_crearCampo, "El campo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+                if (nuevoCampo.isLlavePrimaria()) {
+                    for (int i = metaData.getCampos().size() - 1; i >= 1; i--) {
+                        Campo temp = nuevoCampo;
+                        metaData.getCampos().set(i, metaData.getCampos().get(i - 1));
+                        metaData.getCampos().set(i - 1, temp);
+                    }
+                }
+                if (buscarLlave()) {
+                    jTabbedPane1.setEnabledAt(2, true);
+                    jTabbedPane1.setEnabledAt(3, true);
+                    jTabbedPane1.setEnabledAt(4, true);
+                }
+            } else {
+                Toolkit.getDefaultToolkit().beep();
+                JOptionPane.showMessageDialog(jd_crearCampo, "Ya ha creado el máximo de campos que es 15", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
 
-        jt_nombreCampo.setText("");
-        rb_int.setSelected(true);
-        rb_bool.setSelected(false);
-        rb_char.setSelected(false);
-        rb_double.setSelected(false);
-        rb_string.setSelected(false);
-        js_longitud.setValue(16);
-        if (buscarLlave()) {
-            rb_si.setEnabled(false);
-            rb_no.setSelected(true);
-        } else {
-            rb_si.setEnabled(true);
-            rb_si.setSelected(true);
-            rb_no.setSelected(false);
-        }
-        if (metaData.getCampos().size() == 1) {
-            jb_listarCampoJD.setEnabled(true);
-            jb_borrarCampoJD.setEnabled(true);
-            jb_modificarCampoJD.setEnabled(true);
+            jt_nombreCampo.setText("");
+            rb_int.setSelected(true);
+            rb_bool.setSelected(false);
+            rb_char.setSelected(false);
+            rb_double.setSelected(false);
+            rb_string.setSelected(false);
+            js_longitud.setValue(16);
+            if (buscarLlave()) {
+                rb_si.setEnabled(false);
+                rb_no.setSelected(true);
+            } else {
+                rb_si.setEnabled(true);
+                rb_si.setSelected(true);
+                rb_no.setSelected(false);
+            }
+            if (metaData.getCampos().size() == 1) {
+                jb_listarCampoJD.setEnabled(true);
+                jb_borrarCampoJD.setEnabled(true);
+                jb_modificarCampoJD.setEnabled(true);
+            }
         }
     }//GEN-LAST:event_jb_crearCampoMouseClicked
 
@@ -1103,7 +1115,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_intMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_intMouseClicked
         // TODO add your handling code here:
         if (rb_int.isSelected()) {
-            js_longitud.setValue(16);
+            js_longitud.setValue(2);
             js_longitud.setEnabled(false);
         }
     }//GEN-LAST:event_rb_intMouseClicked
@@ -1111,7 +1123,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_doubleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_doubleMouseClicked
         // TODO add your handling code here:
         if (rb_double.isSelected()) {
-            js_longitud.setValue(64);
+            js_longitud.setValue(8);
             js_longitud.setEnabled(false);
         }
     }//GEN-LAST:event_rb_doubleMouseClicked
@@ -1119,7 +1131,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_charMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_charMouseClicked
         // TODO add your handling code here:
         if (rb_char.isSelected()) {
-            js_longitud.setValue(8);
+            js_longitud.setValue(1);
             js_longitud.setEnabled(false);
         }
     }//GEN-LAST:event_rb_charMouseClicked
@@ -1127,7 +1139,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_boolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_boolMouseClicked
         // TODO add your handling code here:
         if (rb_bool.isSelected()) {
-            js_longitud.setValue(8);
+            js_longitud.setValue(1);
             js_longitud.setEnabled(false);
         }
     }//GEN-LAST:event_rb_boolMouseClicked
@@ -1146,9 +1158,6 @@ public class Principal extends javax.swing.JFrame {
                     archivoActual = new RandomAccessFile(jfc.getSelectedFile(), "rw");
                     metaData = new Metadata();
                     jTabbedPane1.setEnabledAt(1, true);
-                    jTabbedPane1.setEnabledAt(2, true);
-                    jTabbedPane1.setEnabledAt(3, true);
-                    jTabbedPane1.setEnabledAt(4, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
                     jb_cerrar.setEnabled(true);
@@ -1158,6 +1167,11 @@ public class Principal extends javax.swing.JFrame {
                         jb_listarCampoJD.setEnabled(true);
                         jb_modificarCampoJD.setEnabled(true);
                         jb_borrarCampoJD.setEnabled(true);
+                        if (buscarLlave()) {
+                            jTabbedPane1.setEnabledAt(2, true);
+                            jTabbedPane1.setEnabledAt(3, true);
+                            jTabbedPane1.setEnabledAt(4, true);
+                        }
                     }
                     JOptionPane.showMessageDialog(this, "El archivo se ha abierto exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -1264,7 +1278,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_intModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_intModMouseClicked
         // TODO add your handling code here:
         if (rb_intMod.isSelected()) {
-            js_longitudMod.setValue(16);
+            js_longitudMod.setValue(2);
             js_longitudMod.setEnabled(false);
         }
     }//GEN-LAST:event_rb_intModMouseClicked
@@ -1272,7 +1286,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_doubleModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_doubleModMouseClicked
         // TODO add your handling code here:
         if (rb_doubleMod.isSelected()) {
-            js_longitudMod.setValue(64);
+            js_longitudMod.setValue(8);
             js_longitudMod.setEnabled(false);
         }
     }//GEN-LAST:event_rb_doubleModMouseClicked
@@ -1280,7 +1294,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_charModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_charModMouseClicked
         // TODO add your handling code here:
         if (rb_charMod.isSelected()) {
-            js_longitudMod.setValue(8);
+            js_longitudMod.setValue(1);
             js_longitudMod.setEnabled(false);
         }
     }//GEN-LAST:event_rb_charModMouseClicked
@@ -1288,7 +1302,7 @@ public class Principal extends javax.swing.JFrame {
     private void rb_boolModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_boolModMouseClicked
         // TODO add your handling code here:
         if (rb_boolMod.isSelected()) {
-            js_longitudMod.setValue(8);
+            js_longitudMod.setValue(1);
             js_longitudMod.setEnabled(false);
         }
     }//GEN-LAST:event_rb_boolModMouseClicked
@@ -1301,7 +1315,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rb_stringModMouseClicked
 
-    private void jb_CrearRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_CrearRegistroMouseClicked
+    private void jb_crearRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearRegistroMouseClicked
         Tabla_agregarRegistros.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{},
                 new String[]{}
@@ -1318,64 +1332,75 @@ public class Principal extends javax.swing.JFrame {
         String row[] = new String[metaData.getCampos().size()];
         modelo.addRow(row);
         Tabla_agregarRegistros.setModel(modelo);
-        jd_CrearRegistros.pack();
-        jd_CrearRegistros.setLocationRelativeTo(jd_CrearRegistros);
-        jd_CrearRegistros.setModal(true);
-        jd_CrearRegistros.setVisible(true);
-    }//GEN-LAST:event_jb_CrearRegistroMouseClicked
+        jd_crearRegistros.pack();
+        jd_crearRegistros.setLocationRelativeTo(jd_crearRegistros);
+        jd_crearRegistros.setModal(true);
+        jd_crearRegistros.setVisible(true);
+    }//GEN-LAST:event_jb_crearRegistroMouseClicked
 
-    private void jb_AddNewRowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_AddNewRowMouseClicked
+    private void jb_addNewRowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_addNewRowMouseClicked
         DefaultTableModel modelo = (DefaultTableModel) Tabla_agregarRegistros.getModel();
         String row[] = new String[metaData.getCampos().size()];
         modelo.addRow(row);
         Tabla_agregarRegistros.setModel(modelo);
-    }//GEN-LAST:event_jb_AddNewRowMouseClicked
+    }//GEN-LAST:event_jb_addNewRowMouseClicked
 
-    private void jb_GuardarRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardarRegistrosMouseClicked
+    private void jb_guardarRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarRegistrosMouseClicked
         DefaultTableModel modelo = (DefaultTableModel) Tabla_agregarRegistros.getModel();
-        int rows = modelo.getRowCount(),columns = modelo.getColumnCount();
+        int rows = modelo.getRowCount(), columns = modelo.getColumnCount();
         Object data[][] = new String[rows][columns];
+        boolean flag = true;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                data[i][j] = modelo.getValueAt(i,j);
+                if (modelo.getValueAt(i, j).equals("")) {
+                    JOptionPane.showMessageDialog(jd_crearRegistros, "No pueden haber campos vacíos", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    flag = false;
+                } else {
+                    data[i][j] = modelo.getValueAt(i, j);
+                }
             }
         }
-        //////////////
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.println(data[i][j]);
+        if (flag) {
+            for (int i = 0; i < rows; i++) {
+                String registro = "";
+                String llavePrimaria = (String)data[i][0];
+                for (int j = 0; j < columns; j++) {
+                    registro += data[i][j];
+                }
+                
             }
         }
-    }//GEN-LAST:event_jb_GuardarRegistrosMouseClicked
+
+    }//GEN-LAST:event_jb_guardarRegistrosMouseClicked
 
     private void jb_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_nuevoActionPerformed
     }//GEN-LAST:event_jb_nuevoActionPerformed
 
-    private void jb_AddNewRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AddNewRowActionPerformed
-    }//GEN-LAST:event_jb_AddNewRowActionPerformed
+    private void jb_addNewRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_addNewRowActionPerformed
+    }//GEN-LAST:event_jb_addNewRowActionPerformed
 
-    private void jb_DeleteLastRowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_DeleteLastRowMouseClicked
+    private void jb_deleteLastRowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_deleteLastRowMouseClicked
         DefaultTableModel modelo = (DefaultTableModel) Tabla_agregarRegistros.getModel();
         int rows = modelo.getRowCount();
-        if (rows>0) {
-            modelo.removeRow(modelo.getRowCount()-1);
-        }else{
-           Toolkit.getDefaultToolkit().beep();
-           JOptionPane.showMessageDialog(jd_CrearRegistros, "La tabla ya esta vacia", "Información", JOptionPane.INFORMATION_MESSAGE);
+        if (rows > 0) {
+            modelo.removeRow(modelo.getRowCount() - 1);
+        } else {
+            Toolkit.getDefaultToolkit().beep();
+            JOptionPane.showMessageDialog(jd_crearRegistros, "La tabla ya esta vacia", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        Tabla_agregarRegistros.setModel(modelo);
-    }//GEN-LAST:event_jb_DeleteLastRowMouseClicked
 
-    private void jb_CrearRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CrearRegistroActionPerformed
+        Tabla_agregarRegistros.setModel(modelo);
+    }//GEN-LAST:event_jb_deleteLastRowMouseClicked
+
+    private void jb_crearRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearRegistroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jb_CrearRegistroActionPerformed
+    }//GEN-LAST:event_jb_crearRegistroActionPerformed
 
     private void jb_buscarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarRegistroMouseClicked
-        String llavePrimaria = encontrarLlavePrimaria().getNombre()+":";
+        String llavePrimaria = encontrarLlavePrimaria().getNombre() + ":";
         jl_llaveP_BuscarRegistro.setText(llavePrimaria);
         jd_buscarRegistros.pack();
-        jd_buscarRegistros.setLocationRelativeTo(jd_CrearRegistros);
+        jd_buscarRegistros.setLocationRelativeTo(jd_crearRegistros);
         jd_buscarRegistros.setModal(true);
         jd_buscarRegistros.setVisible(true);
     }//GEN-LAST:event_jb_buscarRegistroMouseClicked
@@ -1392,7 +1417,7 @@ public class Principal extends javax.swing.JFrame {
         }
         return false;
     }
-    
+
     public Campo encontrarLlavePrimaria() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
             if (metaData.getCampos().get(i).isLlavePrimaria()) {
@@ -1401,6 +1426,7 @@ public class Principal extends javax.swing.JFrame {
         }
         return null;
     }
+
     /**
      * @param args the command line arguments
      */
@@ -1439,7 +1465,7 @@ public class Principal extends javax.swing.JFrame {
     //revisar salvar despues de borrar
     RandomAccessFile archivoActual;
     Metadata metaData;
-    ArrayList<String> registros = new ArrayList<>();
+    BTree arbolB = new BTree(6);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_agregarRegistros;
     private javax.swing.ButtonGroup buttonGroup_llave;
@@ -1471,11 +1497,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton jb_AddNewRow;
-    private javax.swing.JButton jb_CrearRegistro;
-    private javax.swing.JButton jb_DeleteLastRow;
-    private javax.swing.JButton jb_GuardarRegistros;
     private javax.swing.JButton jb_abrir;
+    private javax.swing.JButton jb_addNewRow;
     private javax.swing.JButton jb_borrarCampoJD;
     private javax.swing.JToggleButton jb_borrarRegistro;
     private javax.swing.JButton jb_buscarLlavePrimaria;
@@ -1483,19 +1506,22 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_cerrar;
     private javax.swing.JButton jb_crearCampo;
     private javax.swing.JButton jb_crearCampoJD;
+    private javax.swing.JButton jb_crearRegistro;
     private javax.swing.JButton jb_deleteField;
+    private javax.swing.JButton jb_deleteLastRow;
     private javax.swing.JToggleButton jb_deleteRegistro;
+    private javax.swing.JButton jb_guardarRegistros;
     private javax.swing.JButton jb_listarCampoJD;
     private javax.swing.JButton jb_modificarCampoJD;
     private javax.swing.JButton jb_modify;
     private javax.swing.JButton jb_nuevo;
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_salvar;
-    private javax.swing.JDialog jd_CrearRegistros;
     private javax.swing.JDialog jd_borrarCampo;
     private javax.swing.JDialog jd_borrarRegistro;
     private javax.swing.JDialog jd_buscarRegistros;
     private javax.swing.JDialog jd_crearCampo;
+    private javax.swing.JDialog jd_crearRegistros;
     private javax.swing.JDialog jd_listarCampo;
     private javax.swing.JDialog jd_modificarCampo;
     private javax.swing.JList<String> jl_camposDlt;
