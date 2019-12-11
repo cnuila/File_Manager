@@ -34,7 +34,7 @@ public class Metadata {
 
     public void setTamanoMeta(int tamanoMeta) {
         this.tamanoMeta = tamanoMeta;
-    }    
+    }
 
     public void escribirCampos(RandomAccessFile archivo) throws IOException {
         archivo.setLength(0);
@@ -48,7 +48,7 @@ public class Metadata {
             archivo.write(delimitador.getBytes());
             pos += campos.get(i).toString().length() + 1;
             acum += campos.get(i).toString().length() + 1;
-            if (acum >= 50 && i != campos.size()-1) {
+            if (acum >= 50 && i != campos.size() - 1) {
                 archivo.write(saltoLinea.getBytes());
                 pos++;
                 acum = 0;
@@ -56,10 +56,10 @@ public class Metadata {
         }
         archivo.write(saltoLinea.getBytes());
         pos++;
-        String finalMetaData = "***";
+        String finalMetaData = "***\n";
         archivo.seek(pos);
         archivo.write(finalMetaData.getBytes());
-        pos+=3;
+        pos += 4;
         tamanoMeta = pos;
     }
 
@@ -124,6 +124,11 @@ public class Metadata {
                 llavePrimaria = true;
             }
             campos.add(new Campo(nombreCampo, tipoCampo, tamano, llavePrimaria));
+            tamanoMeta += campos.get(campos.size() - 1).toString().length();
+            tamanoMeta += 1;
+        }
+        if (!campos.isEmpty()) {
+            tamanoMeta += 4;
         }
     }
 

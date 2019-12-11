@@ -40,7 +40,7 @@ public class BTree {
         }
     }
 
-    public NodoArbol search(String k) {
+    public NodoArbol search(Llave k) {
         if (raiz == null) {
             return null;
         } else {
@@ -48,10 +48,10 @@ public class BTree {
         }
     }
 
-    public void insert(String k) {
+    public void insert(Llave k) {
         if (raiz == null) {
             raiz = new NodoArbol(orden, true);
-            raiz.getKeys()[0].setLlave(k);
+            raiz.getKeys()[0] = k;
             raiz.setKeyNumber(1);
         } else {
             if (raiz.getKeyNumber() == (orden - 1)) {
@@ -59,7 +59,7 @@ public class BTree {
                 s.getChildren()[0] = raiz;
                 s.splitChild(0, raiz);
                 int i = 0;
-                if (comparacion(s.getKeys()[0].getLlave(), k).equals("Menor")) {
+                if (comparacion(s.getKeys()[0].getLlave(), k.getLlave()).equals("Menor")) {
                     i++;
                 }
                 s.getChildren()[i].insertNonFull(k);
@@ -70,7 +70,7 @@ public class BTree {
         }
     }
 
-    public void remove(String k) {
+    public void remove(Llave k) {
         if (raiz == null) {
             System.out.println("El arbol está vacio");
         } else {

@@ -612,11 +612,6 @@ public class Principal extends javax.swing.JFrame {
                 jb_nuevoMouseClicked(evt);
             }
         });
-        jb_nuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_nuevoActionPerformed(evt);
-            }
-        });
 
         jb_salvar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jb_salvar.setText("Salvar");
@@ -1163,6 +1158,8 @@ public class Principal extends javax.swing.JFrame {
                     jb_cerrar.setEnabled(true);
                     jb_salvar.setEnabled(true);
                     metaData.cargarCampos(archivoActual);
+                    System.out.println(archivoActual.length());
+                    System.out.println(metaData.getTamanoMeta());
                     if (!metaData.getCampos().isEmpty()) {
                         jb_listarCampoJD.setEnabled(true);
                         jb_modificarCampoJD.setEnabled(true);
@@ -1361,20 +1358,36 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         if (flag) {
+            posArchivo = metaData.getTamanoMeta()+1;
+            int acum = 0;
             for (int i = 0; i < rows; i++) {
                 String registro = "";
                 String llavePrimaria = (String)data[i][0];
+                int offset = posArchivo;
+                Llave llave = new Llave();
+                llave.setLlave(llavePrimaria);
+                llave.setOffset(offset);
+                llave.setTamano(registro.length());
                 for (int j = 0; j < columns; j++) {
                     registro += data[i][j];
+                }
+                try {
+                    if (arbolB.getRaiz() == null){
+                        
+                    }
+                    archivoActual.seek(posArchivo);
+                    archivoActual.write(registro.getBytes());
+                    posArchivo+= llave.getTamano();
+                    
+                    
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
             }
         }
 
     }//GEN-LAST:event_jb_guardarRegistrosMouseClicked
-
-    private void jb_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_nuevoActionPerformed
-    }//GEN-LAST:event_jb_nuevoActionPerformed
 
     private void jb_addNewRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_addNewRowActionPerformed
     }//GEN-LAST:event_jb_addNewRowActionPerformed
@@ -1466,6 +1479,7 @@ public class Principal extends javax.swing.JFrame {
     RandomAccessFile archivoActual;
     Metadata metaData;
     BTree arbolB = new BTree(6);
+    int posArchivo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_agregarRegistros;
     private javax.swing.ButtonGroup buttonGroup_llave;

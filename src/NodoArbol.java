@@ -100,18 +100,18 @@ public class NodoArbol {
         return "";
     }
 
-    private int findKey(String k) {
+    private int findKey(Llave k) {
         int index = 0;
-        while (index < keyNumber && comparacion(keys[index].getLlave(), k).equals("Menor")) {
+        while (index < keyNumber && comparacion(keys[index].getLlave(), k.getLlave()).equals("Menor")) {
             index++;
         }
         return index;
     }
 
-    public void remove(String k) {
+    public void remove(Llave k) {
         int index = findKey(k);
 
-        if (index < keyNumber && keys[index].getLlave().equals(k)) {
+        if (index < keyNumber && keys[index].getLlave().equals(k.getLlave())) {
 
             if (leaf) {
                 removeFromLeaf(index);
@@ -149,16 +149,16 @@ public class NodoArbol {
     }
 
     private void removeFromNonLeaf(int index) {
-        String k = keys[index].getLlave();
+        Llave k = keys[index];
 
         if (children[index].getKeyNumber() >= (t / 2)) {
-            String pred = getPred(index);
-            keys[index].setLlave(pred);
+            Llave pred = getPred(index);
+            keys[index] = pred;
             children[index].remove(pred);
         } else {
             if (children[index + 1].getKeyNumber() >= (t / 2)) {
-                String succ = getSucc(index);
-                keys[index].setLlave(succ);
+                Llave succ = getSucc(index);
+                keys[index] = succ;
                 children[index + 1].remove(succ);
             } else {
 
@@ -168,20 +168,20 @@ public class NodoArbol {
         }
     }
 
-    private String getPred(int index) {
+    private Llave getPred(int index) {
         NodoArbol cur = children[index];
         while (!cur.isLeaf()) {
             cur = cur.getChildren()[cur.getKeyNumber()];
         }
-        return cur.getKeys()[cur.getKeyNumber() - 1].getLlave();
+        return cur.getKeys()[cur.getKeyNumber() - 1];
     }
 
-    private String getSucc(int index) {
+    private Llave getSucc(int index) {
         NodoArbol cur = children[index + 1];
         while (!cur.isLeaf()) {
             cur = cur.getChildren()[0];
         }
-        return cur.getKeys()[0].getLlave();
+        return cur.getKeys()[0];
     }
 
     private void fill(int index) {
@@ -280,25 +280,24 @@ public class NodoArbol {
         keyNumber--;
     }
 
-    public void insertNonFull(String k) {
+    public void insertNonFull(Llave k) {
         int i = keyNumber - 1;
         if (leaf) {
-            while (i >= 0 && comparacion(keys[i].getLlave(), k).equals("Mayor")) {
+            while (i >= 0 && comparacion(keys[i].getLlave(), k.getLlave()).equals("Mayor")) {
                 keys[i + 1] = keys[i];
                 i--;
             }
-            keys[i + 1] = new Llave();
-            keys[i + 1].setLlave(k);
+            keys[i + 1] = k;
             keyNumber++;
         } else {
-            while (i >= 0 && comparacion(keys[i].getLlave(), k).equals("Mayor")) {
+            while (i >= 0 && comparacion(keys[i].getLlave(), k.getLlave()).equals("Mayor")) {
                 i--;
             }
 
             if (children[i + 1].getKeyNumber() == (t - 1)) {
 
                 splitChild(i + 1, children[i + 1]);
-                if (comparacion(keys[i + 1].getLlave(), k).equals("Menor")) {
+                if (comparacion(keys[i + 1].getLlave(), k.getLlave()).equals("Menor")) {
                     i++;
                 }
             }
@@ -337,12 +336,12 @@ public class NodoArbol {
         keyNumber++;
     }
 
-    public NodoArbol search(String k) {
+    public NodoArbol search(Llave k) {
         int i = 0;
-        while (i < keyNumber && comparacion(k, keys[i].getLlave()).equals("Mayor")) {
+        while (i < keyNumber && comparacion(k.getLlave(), keys[i].getLlave()).equals("Mayor")) {
             i++;
         }
-        if (keys[i].getLlave().equals(k)) {
+        if (keys[i].getLlave().equals(k.getLlave())) {
             return this;
         }
         if (leaf) {
