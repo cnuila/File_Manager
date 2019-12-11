@@ -124,11 +124,9 @@ public class Metadata {
                 llavePrimaria = true;
             }
             campos.add(new Campo(nombreCampo, tipoCampo, tamano, llavePrimaria));
-            tamanoMeta += campos.get(campos.size() - 1).toString().length();
-            tamanoMeta += 1;
         }
         if (!campos.isEmpty()) {
-            tamanoMeta += 4;
+            tamanoMeta = ubicAst + 3;
         }
     }
 

@@ -880,6 +880,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jb_ModificarRegistro.setText("Modificar Registro");
+        jb_ModificarRegistro.setEnabled(false);
         jb_ModificarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_ModificarRegistroMouseClicked(evt);
@@ -887,6 +888,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jb_listarRegistros.setText("Listar Registros");
+        jb_listarRegistros.setEnabled(false);
         jb_listarRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_listarRegistrosMouseClicked(evt);
@@ -1146,7 +1148,7 @@ public class Principal extends javax.swing.JFrame {
             rb_char.setSelected(false);
             rb_double.setSelected(false);
             rb_string.setSelected(false);
-            js_longitud.setValue(16);
+            js_longitud.setValue(2);
             if (buscarLlave()) {
                 rb_si.setEnabled(false);
                 rb_no.setSelected(true);
@@ -1223,6 +1225,7 @@ public class Principal extends javax.swing.JFrame {
         if (jb_salvar.isEnabled()) {
             try {
                 metaData.escribirCampos(archivoActual);
+                guardarRegistros();
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1289,8 +1292,6 @@ public class Principal extends javax.swing.JFrame {
                     jb_cerrar.setEnabled(true);
                     jb_salvar.setEnabled(true);
                     metaData.cargarCampos(archivoActual);
-                    System.out.println(archivoActual.length());
-                    System.out.println(metaData.getTamanoMeta());
                     if (!metaData.getCampos().isEmpty()) {
                         jb_listarCampoJD.setEnabled(true);
                         jb_modificarCampoJD.setEnabled(true);
@@ -1480,42 +1481,31 @@ public class Principal extends javax.swing.JFrame {
         boolean flag = true;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (modelo.getValueAt(i, j).equals("")) {
+                if (modelo.getValueAt(i, j) == null) {
                     JOptionPane.showMessageDialog(jd_crearRegistros, "No pueden haber campos vacíos", "Información", JOptionPane.INFORMATION_MESSAGE);
                     flag = false;
+                    j = columns;
+                    i = rows;
                 } else {
                     data[i][j] = modelo.getValueAt(i, j);
                 }
             }
         }
         if (flag) {
-            posArchivo = metaData.getTamanoMeta()+1;
-            int acum = 0;
             for (int i = 0; i < rows; i++) {
                 String registro = "";
-                String llavePrimaria = (String)data[i][0];
-                int offset = posArchivo;
+                String llavePrimaria = (String) data[i][0];
                 Llave llave = new Llave();
                 llave.setLlave(llavePrimaria);
-                llave.setOffset(offset);
-                llave.setTamano(registro.length());
                 for (int j = 0; j < columns; j++) {
                     registro += data[i][j];
+                    registro += "|";
                 }
-                try {
-                    if (arbolB.getRaiz() == null){
-                        
-                    }
-                    archivoActual.seek(posArchivo);
-                    archivoActual.write(registro.getBytes());
-                    posArchivo+= llave.getTamano();
-                    
-                    
-                } catch (IOException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
+                llave.setTamano(registro.length());
+                registros.add(registro);
+                llaves.add(llave);
             }
+            JOptionPane.showMessageDialog(jd_crearRegistros, "Se han guardado los registros", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
 
     }//GEN-LAST:event_jb_guardarRegistrosMouseClicked
@@ -1564,7 +1554,7 @@ public class Principal extends javax.swing.JFrame {
         jd_modificarRegistro.setLocationRelativeTo(jd_crearRegistros);
         jd_modificarRegistro.setModal(true);
         jd_modificarRegistro.setVisible(true);
-        
+
     }//GEN-LAST:event_jb_ModificarRegistroMouseClicked
 
     private void jb_borrarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_borrarRegistroMouseClicked
@@ -1577,7 +1567,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_borrarRegistroMouseClicked
 
     private void jb_listarRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarRegistrosMouseClicked
-       
+
     }//GEN-LAST:event_jb_listarRegistrosMouseClicked
 
     public boolean buscarLlave() {
@@ -1596,6 +1586,43 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         return null;
+    }
+
+    public void guardarRegistros() throws IOException {
+        int acum = 0;
+        String saltoLinea = "\n";
+        if (arbolB.getRaiz() == null) {
+            System.out.println("dsa");
+            posArchivo = metaData.getTamanoMeta();
+        } else {
+            posArchivo = archivoActual.length() + 1;
+        }
+        for (int i = 0; i < registros.size(); i++) {
+            try {
+                llaves.get(i).setOffset(posArchivo);
+                arbolB.insert(llaves.get(i));
+                System.out.println("posArchantes =" + posArchivo);
+                System.out.println("lengthantes = " + archivoActual.length());
+                archivoActual.seek(posArchivo);
+                archivoActual.write(registros.get(i).getBytes());
+                posArchivo += registros.get(i).length();
+                posArchivo++;
+                archivoActual.setLength(posArchivo);
+                System.out.println("regis= " + registros.get(i).length() + 1);
+                System.out.println("posArch =" + posArchivo);
+                System.out.println("length = " + archivoActual.length());
+                acum += registros.get(i).length();
+                if (acum >= 50) {
+                    archivoActual.write(saltoLinea.getBytes());
+                    posArchivo++;
+                    acum = 0;
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        registros.clear();
+        llaves.clear();
     }
 
     /**
@@ -1637,7 +1664,9 @@ public class Principal extends javax.swing.JFrame {
     RandomAccessFile archivoActual;
     Metadata metaData;
     BTree arbolB = new BTree(6);
-    int posArchivo;
+    ArrayList<String> registros = new ArrayList<>();
+    ArrayList<Llave> llaves = new ArrayList<>();
+    long posArchivo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_agregarRegistros;
     private javax.swing.ButtonGroup buttonGroup_llave;

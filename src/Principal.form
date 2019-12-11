@@ -1412,6 +1412,7 @@
                 <Component class="javax.swing.JButton" name="jb_ModificarRegistro">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Modificar Registro"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_ModificarRegistroMouseClicked"/>
@@ -1420,6 +1421,7 @@
                 <Component class="javax.swing.JButton" name="jb_listarRegistros">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Listar Registros"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_listarRegistrosMouseClicked"/>

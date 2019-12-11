@@ -11,7 +11,7 @@
 public class Llave {
     
     private String llave;
-    private int offset;
+    private long offset;
     private int tamano;
 
     public Llave() {
@@ -28,11 +28,11 @@ public class Llave {
         this.llave = llave;
     }
 
-    public int getOffset() {
+    public long getOffset() {
         return offset;
     }
 
-    public void setOffset(int offset) {
+    public void setOffset(long offset) {
         this.offset = offset;
     }
 

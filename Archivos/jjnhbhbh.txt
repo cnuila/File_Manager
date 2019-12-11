@@ -1,0 +1,2 @@
+nmm: String[7]0;nkomk: String[7]1;ko: int[2]1;nmnm: char[1]1;
+***
