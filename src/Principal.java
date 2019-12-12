@@ -135,6 +135,8 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable_listarRegistro = new javax.swing.JTable();
         jLabel17 = new javax.swing.JLabel();
+        jd_cruzarArchivo = new javax.swing.JDialog();
+        jb_seleccionarArchivo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jp_archivo = new javax.swing.JPanel();
@@ -155,7 +157,10 @@ public class Principal extends javax.swing.JFrame {
         jb_cargarRegristrosPrueba = new javax.swing.JButton();
         jb_borrarRegistro = new javax.swing.JButton();
         jb_buscarRegistro = new javax.swing.JButton();
+        jb_cruzarArchivos = new javax.swing.JButton();
         jp_indice = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jp_estand = new javax.swing.JPanel();
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -789,6 +794,25 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        jb_seleccionarArchivo.setText("Seleccionar");
+
+        javax.swing.GroupLayout jd_cruzarArchivoLayout = new javax.swing.GroupLayout(jd_cruzarArchivo.getContentPane());
+        jd_cruzarArchivo.getContentPane().setLayout(jd_cruzarArchivoLayout);
+        jd_cruzarArchivoLayout.setHorizontalGroup(
+            jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_cruzarArchivoLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jb_seleccionarArchivo)
+                .addContainerGap(336, Short.MAX_VALUE))
+        );
+        jd_cruzarArchivoLayout.setVerticalGroup(
+            jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_cruzarArchivoLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jb_seleccionarArchivo)
+                .addContainerGap(309, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -980,22 +1004,33 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jb_cruzarArchivos.setText("Cruzar Archivos");
+
         javax.swing.GroupLayout jp_registroLayout = new javax.swing.GroupLayout(jp_registro);
         jp_registro.setLayout(jp_registroLayout);
         jp_registroLayout.setHorizontalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_registroLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jb_ModificarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_crearRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_listarRegistros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_registroLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jb_crearRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_registroLayout.createSequentialGroup()
+                        .addContainerGap(24, Short.MAX_VALUE)
+                        .addComponent(jb_ModificarRegistro)
+                        .addGap(18, 18, 18)
+                        .addComponent(jb_borrarRegistro)
+                        .addGap(18, 18, 18)
+                        .addComponent(jb_listarRegistros)))
+                .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(jp_registroLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                    .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addComponent(jb_cruzarArchivos, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp_registroLayout.setVerticalGroup(
             jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1004,28 +1039,45 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jb_crearRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                     .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_ModificarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                    .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(18, 27, Short.MAX_VALUE)
                 .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_listarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(jp_registroLayout.createSequentialGroup()
+                        .addComponent(jb_ModificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                    .addComponent(jb_cruzarArchivos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Registros", jp_registro);
+
+        jButton1.setText("Crear Índices");
+
+        jButton2.setText("Reindexar");
 
         javax.swing.GroupLayout jp_indiceLayout = new javax.swing.GroupLayout(jp_indice);
         jp_indice.setLayout(jp_indiceLayout);
         jp_indiceLayout.setHorizontalGroup(
             jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
+            .addGroup(jp_indiceLayout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addGroup(jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jp_indiceLayout.setVerticalGroup(
             jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGroup(jp_indiceLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Índices", jp_indice);
@@ -1070,6 +1122,10 @@ public class Principal extends javax.swing.JFrame {
             if (seleccion == JFileChooser.APPROVE_OPTION) {
                 try {
                     archivoActual = null;
+                    nombreArchivo = jfc.getSelectedFile().getName();
+                    path = jfc.getSelectedFile().getPath();
+                    System.out.println("no = " + nombreArchivo);
+                    System.out.println("path =" + path);
                     archivoActual = new RandomAccessFile(jfc.getSelectedFile().getPath() + ".txt", "rw");
                     metaData = new Metadata();
                     llaves = new ArrayList<>();
@@ -1099,6 +1155,8 @@ public class Principal extends javax.swing.JFrame {
             metaData = null;
             registros = null;
             llaves = null;
+            path = "";
+            nombreArchivo = "";
             jb_nuevo.setEnabled(true);
             jb_abrir.setEnabled(true);
             jb_cerrar.setEnabled(false);
@@ -1317,7 +1375,7 @@ public class Principal extends javax.swing.JFrame {
                     metaData.escribirCampos(archivoActual);
                 } else {
                     guardarRegistros();
-                    AdministrarArbol adar = new AdministrarArbol("./temp/prueba.cans");
+                    AdministrarArbol adar = new AdministrarArbol(path+"Arbol.eagle");
                     adar.setArbol(arbolB);
                     adar.escribirArchivo();
                 }
@@ -1383,6 +1441,16 @@ public class Principal extends javax.swing.JFrame {
                     metaData = new Metadata();
                     llaves = new ArrayList<>();
                     registros = new ArrayList<>();
+                    for (int i = 0; i < jfc.getSelectedFile().getName().length(); i++) {
+                        if (jfc.getSelectedFile().getName().charAt(i) != '.') {
+                            nombreArchivo += jfc.getSelectedFile().getName().charAt(i);
+                        } else {
+                            i = jfc.getSelectedFile().getName().length();
+                        }
+                    }
+                    path = jfc.getSelectedFile().getPath();
+                    System.out.println("no = " + nombreArchivo);
+                    System.out.println("path =" + path);
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
@@ -1609,17 +1677,18 @@ public class Principal extends javax.swing.JFrame {
             }
             jTable_listarRegistro.setModel(modelo);
             if (arbolB.getRaiz() != null) {
-                Llave[] llaves = arbolB.getRaiz().traverse();
-                for (int i = 0; i < llaves.length; i++) {
-                    try {
-                        llenarTabla(jTable_listarRegistro, llaves[i]);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Llave[] temp = arbolB.getRaiz().traverse();
+                for (int i = 0; i < temp.length; i++) {
+                    if (temp[i] != null) {
+                        try {
+                            llenarTabla(jTable_listarRegistro, temp[i]);
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
                 }
 
             }
-
             jd_listarRegistros.pack();
             jd_listarRegistros.setLocationRelativeTo(this);
             jd_listarRegistros.setModal(true);
@@ -1774,7 +1843,7 @@ public class Principal extends javax.swing.JFrame {
                 llaves.add(llave);
             }
             JOptionPane.showMessageDialog(jd_crearRegistros, "Se han guardado los registros", "Información", JOptionPane.INFORMATION_MESSAGE);
-            
+
             jTable_agregarRegistro.setModel(new javax.swing.table.DefaultTableModel(
                     new Object[][]{},
                     new String[]{}
@@ -1961,6 +2030,8 @@ public class Principal extends javax.swing.JFrame {
 
     //revisar salvar despues de borrar
     RandomAccessFile archivoActual;
+    String path;
+    String nombreArchivo;
     Metadata metaData;
     BTree arbolB = new BTree(6);
     ArrayList<String> registros;
@@ -1972,6 +2043,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup_llaveMod;
     private javax.swing.ButtonGroup buttonGroup_tipo;
     private javax.swing.ButtonGroup buttonGroup_tipoMod;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2022,6 +2095,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_crearCampo;
     private javax.swing.JButton jb_crearCampoJD;
     private javax.swing.JButton jb_crearRegistro;
+    private javax.swing.JButton jb_cruzarArchivos;
     private javax.swing.JButton jb_deleteField;
     private javax.swing.JButton jb_deleteLastRow;
     private javax.swing.JToggleButton jb_deleteRegistro;
@@ -2034,11 +2108,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_nuevo;
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_salvar;
+    private javax.swing.JButton jb_seleccionarArchivo;
     private javax.swing.JDialog jd_borrarCampo;
     private javax.swing.JDialog jd_borrarRegistro;
     private javax.swing.JDialog jd_buscarRegistros;
     private javax.swing.JDialog jd_crearCampo;
     private javax.swing.JDialog jd_crearRegistros;
+    private javax.swing.JDialog jd_cruzarArchivo;
     private javax.swing.JDialog jd_listarCampo;
     private javax.swing.JDialog jd_listarRegistros;
     private javax.swing.JDialog jd_modificarCampo;
