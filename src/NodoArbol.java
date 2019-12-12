@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /*
@@ -10,13 +11,15 @@ import java.util.Arrays;
  *
  * @author Carlos Nuila
  */
-public class NodoArbol {
+public class NodoArbol implements Serializable {
 
     private int keyNumber;
     private Llave[] keys;
     private boolean leaf;
     private NodoArbol[] children;
     private int t;
+
+    private static final long SerialVersionUID = 1008l;
 
     public NodoArbol(int orden, boolean leaf) {
         this.leaf = leaf;
@@ -361,7 +364,7 @@ public class NodoArbol {
                 pos++;
             }
 
-            if (pos > 9 || i == keyNumber-1) {
+            if (pos > 9 || i == keyNumber - 1) {
                 return llaves;
             }
         }

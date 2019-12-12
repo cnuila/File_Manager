@@ -1,3 +1,6 @@
+
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,12 +11,14 @@
  *
  * @author Carlos Nuila
  */
-public class Llave {
+public class Llave implements Serializable{
     
     private String llave;
     private long offset;
     private int tamano;
 
+    private static final long SerialVersionUID = 1008L;
+    
     public Llave() {
         llave = "";
         offset = 0;

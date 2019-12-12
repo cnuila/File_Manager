@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /*
@@ -11,10 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author Carlos Nuila
  */
-public class BTree {
+public class BTree implements Serializable{
 
     private NodoArbol raiz;
     private int orden;
+    
+    private static final long SerialVersionUID = 1008;
 
     public BTree(int orden) {
         this.raiz = null;

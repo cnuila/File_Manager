@@ -1521,6 +1521,10 @@ public class Principal extends javax.swing.JFrame {
                         }
                     }
                     path = jfc.getSelectedFile().getPath();
+                    AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
+                    adar.setArbol(arbolB);
+                    adar.cargarArchivo();
+                    System.out.println(arbolB.toString());
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
@@ -2134,7 +2138,6 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         }
-        
         JOptionPane.showMessageDialog(jd_modificarRegistro, "Se ha modificado el registro exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jb_modificarRegistroMouseClicked
 
