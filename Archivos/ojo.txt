@@ -1,0 +1,3 @@
+cuenta: String[3]0;age: int[2]1;sexo: char[1]1;
+***
+11811215|18|m|
