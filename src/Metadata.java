@@ -2,6 +2,7 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -183,11 +184,11 @@ public class Metadata {
         llave.setOffset(posInicial);
         llave.setTamano(tamanLlave);
         availList.inserta(llave, availList.size + 1);
-        
+
         byte[] infoLLaveByte = new byte[8];
         int pos = 0;
         for (int i = posInicial; i < posInicial + 8; i++) {
-            archivo.seek(posInicial);
+            archivo.seek(i);
             infoLLaveByte[pos] = archivo.readByte();
             pos++;
         }
