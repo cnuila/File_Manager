@@ -1,3 +1,4 @@
+
 public class LinkedList {
 
     ListNode inicio = null;
@@ -5,7 +6,7 @@ public class LinkedList {
     int size = 0;
 
     public LinkedList() {
-        
+
     }
 
     //Agrega elemento a la lista en la posicion ingresada
@@ -60,7 +61,7 @@ public class LinkedList {
             size = size - 1;
             System.out.println("Elemento 1 borrado con exito");
         } else if (posicion == size) {
-            for (int i = 1; i <=size-1; i++) {
+            for (int i = 1; i <= size - 1; i++) {
                 tmp = tmp.getSiguiente();
             }
             tmp.getAnterior().setSiguiente(null);
@@ -68,7 +69,7 @@ public class LinkedList {
             size = size - 1;
             System.out.println("Elemento " + posicion + " borrado con exito");
         } else if (posicion > 1 && posicion < size) {
-            for (int i = 1; i <=posicion-1; i++) {
+            for (int i = 1; i <= posicion - 1; i++) {
                 tmp = tmp.getSiguiente();
             }
             tmp.getSiguiente().setAnterior(tmp.getAnterior());
@@ -88,13 +89,18 @@ public class LinkedList {
     }
 
     //Devuelve el dato en la posicion mandada
-    public String elementoPosicion(int posicion) {
+    public Llave elementoPosicion(int posicion) {
         if (posicion >= 1 && posicion <= size) {
             tmp = inicio;
-            for (int i = 1; i < posicion; i++) {
-                tmp = tmp.getSiguiente();
-            }
-            return tmp.getData().getLlave();
+//            if (posicion == size) {
+//                for (int i = 1; i <=posicion - 1; i++) {
+//                    tmp = tmp.getSiguiente();
+//                }
+//            }
+                for (int i = 1; i <=posicion-1; i++) {
+                    tmp = tmp.getSiguiente();
+                }
+            return tmp.getData();
         } else {
             System.out.println("Ingreso una posicion incorrecta");
             return null;
@@ -105,7 +111,7 @@ public class LinkedList {
     public String ObtenerSiguiente(int posicion) {
         if (posicion >= 1 && posicion < size) {
             tmp = inicio;
-            for (int i = 1; i <=posicion; i++) {
+            for (int i = 1; i <= posicion; i++) {
                 tmp = tmp.getSiguiente();
             }
             return tmp.getData().getLlave();
@@ -119,7 +125,7 @@ public class LinkedList {
     public String ObtenerAnterior(int posicion) {
         if (posicion > 1 && posicion < size) {
             tmp = inicio;
-            for (int i = 1; i <=posicion-2; i++) {
+            for (int i = 1; i <= posicion - 2; i++) {
                 tmp = tmp.getSiguiente();
             }
             return tmp.getData().getLlave();

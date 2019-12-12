@@ -1124,8 +1124,6 @@ public class Principal extends javax.swing.JFrame {
                     archivoActual = null;
                     nombreArchivo = jfc.getSelectedFile().getName();
                     path = jfc.getSelectedFile().getPath();
-                    System.out.println("no = " + nombreArchivo);
-                    System.out.println("path =" + path);
                     archivoActual = new RandomAccessFile(jfc.getSelectedFile().getPath() + ".txt", "rw");
                     metaData = new Metadata();
                     llaves = new ArrayList<>();
@@ -1376,7 +1374,7 @@ public class Principal extends javax.swing.JFrame {
                     metaData.escribirCampos(archivoActual);
                 } else {
                     guardarRegistros();
-                    AdministrarArbol adar = new AdministrarArbol(path+"Arbol.eagle");
+                    AdministrarArbol adar = new AdministrarArbol(path + "Arbol.eagle");
                     adar.setArbol(arbolB);
                     adar.escribirArchivo();
                 }
@@ -1450,8 +1448,6 @@ public class Principal extends javax.swing.JFrame {
                         }
                     }
                     path = jfc.getSelectedFile().getPath();
-                    System.out.println("no = " + nombreArchivo);
-                    System.out.println("path =" + path);
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
@@ -1892,7 +1888,35 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_deleteRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_deleteRegistroMouseClicked
         // TODO add your handling code here:
-
+        if (metaData.getAvailList().vacia()) {
+            try {
+                arbolB.remove(llaveActual);
+                archivoActual.seek(metaData.getPosAvailList());
+                String offsetPos = llaveActual.getOffset() + "$" + llaveActual.getTamano();
+                archivoActual.write(offsetPos.getBytes());
+                metaData.getAvailList().inserta(llaveActual, metaData.getAvailList().size + 1);
+                archivoActual.seek(llaveActual.getOffset());
+                String keyBorrado = "*-1$"+llaveActual.getTamano()+"*";
+                archivoActual.write(keyBorrado.getBytes());
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            arbolB.remove(llaveActual);
+            metaData.getAvailList().inserta(llaveActual, metaData.getAvailList().size+1);
+            Llave llaveFinal = metaData.getAvailList().elementoPosicion(metaData.getAvailList().size);
+            Llave llaveAnterior = metaData.getAvailList().elementoPosicion(metaData.getAvailList().size - 1);
+            try {
+                archivoActual.seek(llaveAnterior.getOffset());
+                String keyBorrado = "*" + llaveFinal.getOffset() + "$"+ llaveAnterior.getTamano()+"*";
+                archivoActual.write(keyBorrado.getBytes());
+                String keyBorrado2 = "*-1"+"$"+llaveFinal.getTamano()+"*";
+                archivoActual.seek(llaveFinal.getOffset());
+                archivoActual.write(keyBorrado2.getBytes());
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_jb_deleteRegistroMouseClicked
 
     private void jb_buscarLlaveModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarLlaveModificarMouseClicked

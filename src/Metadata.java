@@ -17,6 +17,7 @@ public class Metadata {
     private ArrayList<Campo> campos = new ArrayList<>();
     private int tamanoMeta = 0;
     private LinkedList availList = new LinkedList();
+    private int posAvailList = 0;
 
     public Metadata() {
     }
@@ -37,6 +38,22 @@ public class Metadata {
         this.tamanoMeta = tamanoMeta;
     }
 
+    public int getPosAvailList() {
+        return posAvailList;
+    }
+
+    public void setPosAvailList(int posAvailList) {
+        this.posAvailList = posAvailList;
+    }
+
+    public LinkedList getAvailList() {
+        return availList;
+    }
+
+    public void setAvailList(LinkedList availList) {
+        this.availList = availList;
+    }
+
     public void escribirCampos(RandomAccessFile archivo) throws IOException {
         archivo.setLength(0);
         int pos = 0;
@@ -55,6 +72,11 @@ public class Metadata {
                 acum = 0;
             }
         }
+        archivo.seek(pos);
+        String espacioAvail = "      ";
+        archivo.write(espacioAvail.getBytes());
+        posAvailList = pos;
+        pos += 6;
         archivo.write(saltoLinea.getBytes());
         pos++;
         String finalMetaData = "***\n";
@@ -79,7 +101,32 @@ public class Metadata {
         }
         String tempString = new String(temp);
         String metaDataTemp = "";
-        for (int i = 0; i < ubicAst - 2; i++) {
+
+        posAvailList = ubicAst - 8;
+        byte[] infoLlaveByte = new byte[6];
+        int pos = 0;
+        for (int i = posAvailList; i < posAvailList + 6; i++) {
+            archivo.seek(i);
+            infoLlaveByte[pos] = archivo.readByte();
+            pos++;
+        }
+        String infoLLaveString = new String(infoLlaveByte);
+        String infoLLaveRev = "";
+        for (int i = 0; i < infoLLaveString.length(); i++) {
+            if (infoLLaveString.charAt(i) != ' ') {
+                infoLLaveRev += infoLLaveString.charAt(i);
+            } else {
+                i = infoLLaveString.length();
+            }
+        }
+        if (infoLLaveRev.length() != 0) {
+            String[] infoLlaveArray = infoLLaveRev.split("[$]");
+            int posLlave = Integer.parseInt(infoLlaveArray[0]);
+            int tamanoLlave = Integer.parseInt(infoLlaveArray[1]);
+            llenarAvailList(archivo, posLlave, tamanoLlave);
+        }
+
+        for (int i = 0; i < ubicAst - 8; i++) {
             if (tempString.charAt(i) != '\n') {
                 metaDataTemp += tempString.charAt(i);
             }
@@ -128,6 +175,40 @@ public class Metadata {
         }
         if (!campos.isEmpty()) {
             tamanoMeta = ubicAst + 3;
+        }
+    }
+
+    public void llenarAvailList(RandomAccessFile archivo, int posInicial, int tamanLlave) throws IOException {
+        Llave llave = new Llave();
+        llave.setOffset(posInicial);
+        llave.setTamano(tamanLlave);
+        availList.inserta(llave, availList.size + 1);
+        
+        byte[] infoLLaveByte = new byte[8];
+        int pos = 0;
+        for (int i = posInicial; i < posInicial + 8; i++) {
+            archivo.seek(posInicial);
+            infoLLaveByte[pos] = archivo.readByte();
+            pos++;
+        }
+        String infoLlaveString = new String(infoLLaveByte);
+        String infoLlaveRev = "";
+        int acum = 0;
+        for (int i = 0; i < infoLlaveString.length(); i++) {
+            if (infoLlaveString.charAt(i) != '*') {
+                infoLlaveRev += infoLlaveString.charAt(i);
+            } else {
+                acum++;
+            }
+            if (acum == 2) {
+                i = infoLlaveString.length();
+            }
+        }
+        String[] infoLLaveArray = infoLlaveRev.split("[$]");
+        int nuevaPos = Integer.parseInt(infoLLaveArray[0]);
+        int nuevoTam = Integer.parseInt(infoLLaveArray[1]);
+        if (nuevaPos != -1) {
+            llenarAvailList(archivo, nuevaPos, nuevoTam);
         }
     }
 
