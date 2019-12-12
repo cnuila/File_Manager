@@ -595,13 +595,13 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jb_guardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                                .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_guardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
+                                        .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jd_crearRegistrosLayout.setVerticalGroup(
             jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,9 +614,9 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jb_guardarRegistros)
-                        .addGap(0, 141, Short.MAX_VALUE))
+                        .addGap(0, 136, Short.MAX_VALUE))
                     .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel2)
@@ -715,6 +715,11 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane6.setViewportView(jTable_modificarRegistro);
 
         jb_modificarRegistro.setText("Modificar");
+        jb_modificarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modificarRegistroMouseClicked(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
         jLabel16.setText("Modifcar Registro");
@@ -1374,7 +1379,7 @@ public class Principal extends javax.swing.JFrame {
                     metaData.escribirCampos(archivoActual);
                 } else {
                     guardarRegistros();
-                    AdministrarArbol adar = new AdministrarArbol(path + "Arbol.eagle");
+                    AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
                     adar.setArbol(arbolB);
                     adar.escribirArchivo();
                 }
@@ -1851,8 +1856,10 @@ public class Principal extends javax.swing.JFrame {
                 cabezas[i] = metaData.getCampos().get(i).getNombre();
             }
             for (Object a : cabezas) {
-                modelo.addColumn(a);
+                modeloT.addColumn(a);
             }
+            String row[] = new String[metaData.getCampos().size()];
+            modeloT.addRow(row);
             jTable_agregarRegistro.setModel(modeloT);
             jb_ModificarRegistro.setEnabled(true);
             jb_borrarRegistro.setEnabled(true);
@@ -1896,21 +1903,21 @@ public class Principal extends javax.swing.JFrame {
                 archivoActual.write(offsetPos.getBytes());
                 metaData.getAvailList().inserta(llaveActual, metaData.getAvailList().size + 1);
                 archivoActual.seek(llaveActual.getOffset());
-                String keyBorrado = "*-1$"+llaveActual.getTamano()+"*";
+                String keyBorrado = "*-1$" + llaveActual.getTamano() + "*";
                 archivoActual.write(keyBorrado.getBytes());
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             arbolB.remove(llaveActual);
-            metaData.getAvailList().inserta(llaveActual, metaData.getAvailList().size+1);
+            metaData.getAvailList().inserta(llaveActual, metaData.getAvailList().size + 1);
             Llave llaveFinal = metaData.getAvailList().elementoPosicion(metaData.getAvailList().size);
             Llave llaveAnterior = metaData.getAvailList().elementoPosicion(metaData.getAvailList().size - 1);
             try {
                 archivoActual.seek(llaveAnterior.getOffset());
-                String keyBorrado = "*" + llaveFinal.getOffset() + "$"+ llaveAnterior.getTamano()+"*";
+                String keyBorrado = "*" + llaveFinal.getOffset() + "$" + llaveAnterior.getTamano() + "*";
                 archivoActual.write(keyBorrado.getBytes());
-                String keyBorrado2 = "*-1"+"$"+llaveFinal.getTamano()+"*";
+                String keyBorrado2 = "*-1" + "$" + llaveFinal.getTamano() + "*";
                 archivoActual.seek(llaveFinal.getOffset());
                 archivoActual.write(keyBorrado2.getBytes());
             } catch (IOException ex) {
@@ -1945,6 +1952,27 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_deleteLastRowActionPerformed
 
+    private void jb_modificarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarRegistroMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel modelo = (DefaultTableModel) jTable_modificarRegistro.getModel();
+        int rows = modelo.getRowCount(), columns = modelo.getColumnCount();
+        Object data[][] = new String[rows][columns];
+        boolean flag = true;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (modelo.getValueAt(i, j) == null) {
+                    JOptionPane.showMessageDialog(jd_modificarRegistro, "No pueden haber campos vacíos", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    flag = false;
+                    j = columns;
+                    i = rows;
+                } else {
+                    data[i][j] = modelo.getValueAt(i, j);
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_jb_modificarRegistroMouseClicked
+
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
             if (metaData.getCampos().get(i).isLlavePrimaria()) {
@@ -1967,8 +1995,49 @@ public class Principal extends javax.swing.JFrame {
         long acum = archivoActual.length() - metaData.getTamanoMeta();
         String saltoLinea = "\n";
         posArchivo = archivoActual.length();
+        boolean flag = false;
         for (int i = 0; i < registros.size(); i++) {
             try {
+                if (!metaData.getAvailList().vacia()) {
+                    int j;
+                    Llave temp = new Llave();
+                    for (j = 1; j <= metaData.getAvailList().size; j++) {
+                        if (metaData.getAvailList().elementoPosicion(j).getTamano() >= registros.get(i).length()) {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    temp = metaData.getAvailList().elementoPosicion(j);
+                    posArchivo = metaData.getAvailList().elementoPosicion(j).getOffset();
+                    if (flag) {
+                        if (j == 1 && j != metaData.getAvailList().size) {
+                            archivoActual.seek(metaData.getPosAvailList());
+                            Llave tempSiguiente = metaData.getAvailList().elementoPosicion(j + 1);
+                            String nuevoPosAvail = tempSiguiente.getOffset() + "$" + tempSiguiente.getTamano();
+                            archivoActual.write(nuevoPosAvail.getBytes());
+                        }
+                        if (j == 1 && j == metaData.getAvailList().size) {
+                            archivoActual.seek(metaData.getPosAvailList());
+                            String espacios = "      ";
+                            archivoActual.write(espacios.getBytes());
+                        } else {
+                            if (j == metaData.getAvailList().size) {
+                                Llave tempAnterior = metaData.getAvailList().elementoPosicion(j - 1);
+                                archivoActual.seek(tempAnterior.getOffset());
+                                String nuevoPosAvail = "*-1$" + tempAnterior.getTamano() + "*";
+                                archivoActual.write(nuevoPosAvail.getBytes());
+                            }
+                        }
+                        if (j > 1 && j < metaData.getAvailList().size) {
+                            Llave tempAnterior = metaData.getAvailList().elementoPosicion(j - 1);
+                            Llave tempSiguiente = metaData.getAvailList().elementoPosicion(j + 1);
+                            archivoActual.seek(tempAnterior.getOffset());
+                            String nuevoPosAvail = "*" + tempSiguiente.getOffset() + "$" + tempAnterior.getTamano() + "*";
+                            archivoActual.write(nuevoPosAvail.getBytes());
+                        }
+                    }
+                    metaData.getAvailList().borrarElemento(j);
+                }
                 llaves.get(i).setOffset(posArchivo);
                 arbolB.insert(llaves.get(i));
                 archivoActual.seek(posArchivo);
@@ -1998,6 +2067,22 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void llenarTabla(JTable tabla, Llave llave) throws IOException {
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{}
+        ));
+        DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
+        String cabezas[] = new String[metaData.getCampos().size()];
+        for (int i = 0; i < cabezas.length; i++) {
+            cabezas[i] = metaData.getCampos().get(i).getNombre();
+        }
+        for (Object a : cabezas) {
+            modeloT.addColumn(a);
+        }
+        String rowT[] = new String[metaData.getCampos().size()];
+        modeloT.addRow(rowT);
+        tabla.setModel(modeloT);
+
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         String row[] = new String[metaData.getCampos().size()];
         archivoActual.seek(llave.getOffset());
