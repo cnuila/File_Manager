@@ -2026,34 +2026,22 @@ public class Principal extends javax.swing.JFrame {
         int rows = modelo.getRowCount(), columns = modelo.getColumnCount();
         Object data[][] = new String[rows][columns];
         boolean flag = true;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                if (modelo.getValueAt(i, j) == null) {
-                    JOptionPane.showMessageDialog(jd_modificarRegistro, "No pueden haber campos vacíos", "Información", JOptionPane.INFORMATION_MESSAGE);
-                    flag = false;
-                    j = columns;
-                    i = rows;
-                } else {
-                    data[i][j] = modelo.getValueAt(i, j);
-                }
+        for (int j = 0; j < columns; j++) {
+            if (modelo.getValueAt(0, j) == null) {
+                JOptionPane.showMessageDialog(jd_modificarRegistro, "No pueden haber campos vacíos", "Información", JOptionPane.INFORMATION_MESSAGE);
+                flag = false;
+                j = columns;
+            } else {
+                data[0][j] = modelo.getValueAt(0, j);
             }
         }
         if (flag) {
             String registro = "";
-            for (int i = 0; i < rows; i++) {
-                String llavePrimaria = (String) data[i][0];
-                Llave llave = new Llave();
-                llave.setLlave(llavePrimaria);
-                if (arbolB.search(llave) == null) {
-                    JOptionPane.showMessageDialog(jd_modificarRegistro, "No puede modificar la llave primaria", "Información", JOptionPane.INFORMATION_MESSAGE);
-                }
-                for (int j = 0; j < columns; j++) {
-                    registro += data[i][j];
-                    registro += "|";
-                }
+            for (int j = 0; j < columns; j++) {
+                registro += data[0][j];
+                registro += "|";
             }
-            int tamanoLlave = llaveActual.getTamano();
-            if (tamanoLlave >= registro.length()) {
+            if (llaveActual.getTamano() >= registro.length()) {
                 try {
                     archivoActual.seek(llaveActual.getOffset());
                     archivoActual.write(registro.getBytes());
@@ -2061,10 +2049,93 @@ public class Principal extends javax.swing.JFrame {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
-
+                if (metaData.getAvailList().vacia()) {
+                    int i;
+                    Llave temp = new Llave();
+                    boolean flag2 = false;
+                    for (i = 1; i < metaData.getAvailList().size; i++) {
+                        if (metaData.getAvailList().elementoPosicion(i).getTamano() >= registro.length()) {
+                            flag2 = true;
+                            break;
+                        }
+                    }
+                    temp = metaData.getAvailList().elementoPosicion(i);
+                    posArchivo = metaData.getAvailList().elementoPosicion(i).getOffset();
+                    if (flag2) {
+                        if (i == 1 && i != metaData.getAvailList().size) {
+                            try {
+                                archivoActual.seek(metaData.getPosAvailList());
+                                Llave tempSiguiente = metaData.getAvailList().elementoPosicion(i + 1);
+                                String nuevoPosAvail = tempSiguiente.getOffset() + "$" + tempSiguiente.getTamano();
+                                archivoActual.write(nuevoPosAvail.getBytes());
+                            } catch (IOException ex) {
+                                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                        if (i == 1 && i == metaData.getAvailList().size) {
+                            try {
+                                archivoActual.seek(metaData.getPosAvailList());
+                                String espacios = "      ";
+                                archivoActual.write(espacios.getBytes());
+                            } catch (IOException ex) {
+                                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        } else {
+                            if (i == metaData.getAvailList().size) {
+                                try {
+                                    Llave tempAnterior = metaData.getAvailList().elementoPosicion(i - 1);
+                                    archivoActual.seek(tempAnterior.getOffset());
+                                    String nuevoPosAvail = "*-1$" + tempAnterior.getTamano() + "*";
+                                    archivoActual.write(nuevoPosAvail.getBytes());
+                                } catch (IOException ex) {
+                                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            }
+                        }
+                        if (i > 1 && i < metaData.getAvailList().size) {
+                            try {
+                                Llave tempAnterior = metaData.getAvailList().elementoPosicion(i - 1);
+                                Llave tempSiguiente = metaData.getAvailList().elementoPosicion(i + 1);
+                                archivoActual.seek(tempAnterior.getOffset());
+                                String nuevoPosAvail = "*" + tempSiguiente.getOffset() + "$" + tempAnterior.getTamano() + "*";
+                                archivoActual.write(nuevoPosAvail.getBytes());
+                            } catch (IOException ex) {
+                                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                        try {
+                            archivoActual.seek(metaData.getAvailList().elementoPosicion(i).getOffset());
+                            llaveActual.setOffset(metaData.getAvailList().elementoPosicion(i).getOffset());
+                            llaveActual.setTamano(registro.length());
+                            archivoActual.write(registro.getBytes());
+                            metaData.getAvailList().borrarElemento(i);
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                } else {
+                    long posLlave = llaveActual.getOffset();
+                    int tamaño = llaveActual.getTamano();
+                    Llave temp = new Llave();
+                    temp.setOffset(posLlave);
+                    temp.setTamano(tamaño);
+                    metaData.getAvailList().inserta(temp, metaData.getAvailList().size + 1);
+                    Llave tempAnterior = metaData.getAvailList().elementoPosicion(metaData.getAvailList().size - 1);
+                    String nuevaPosAvail = "*" + temp.getOffset() + "$" + tempAnterior.getTamano() + "*";
+                    try {
+                        archivoActual.seek(tempAnterior.getOffset());
+                        archivoActual.write(nuevaPosAvail.getBytes());
+                        archivoActual.seek(temp.getOffset());
+                        String ultimoPosAvail = "*-1$" + temp.getTamano() + "*";
+                        archivoActual.write(ultimoPosAvail.getBytes());
+                    } catch (IOException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
             }
         }
-
+        
+        JOptionPane.showMessageDialog(jd_modificarRegistro, "Se ha modificado el registro exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jb_modificarRegistroMouseClicked
 
     private void jb_crearIndiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearIndiceMouseClicked
@@ -2082,7 +2153,7 @@ public class Principal extends javax.swing.JFrame {
         if (jl_camposRein.getSelectedIndex() >= 0) {
             BTree nuevoArbol = new BTree(6);
             try {
-                llenarArbol(arbolB.getRaiz(),jl_camposRein.getSelectedIndex(), nuevoArbol);
+                llenarArbol(arbolB.getRaiz(), jl_camposRein.getSelectedIndex(), nuevoArbol);
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2104,16 +2175,16 @@ public class Principal extends javax.swing.JFrame {
         }
         return false;
     }
-    
-    public void llenarArbol(NodoArbol nodo, int ubicCampo, BTree arbol) throws IOException{
+
+    public void llenarArbol(NodoArbol nodo, int ubicCampo, BTree arbol) throws IOException {
         int i;
-        for (i = 0; i < nodo.getKeyNumber();i++){
-            if (!nodo.isLeaf()){
-                llenarArbol(nodo.getChildren()[i], ubicCampo,arbol);
+        for (i = 0; i < nodo.getKeyNumber(); i++) {
+            if (!nodo.isLeaf()) {
+                llenarArbol(nodo.getChildren()[i], ubicCampo, arbol);
             } else {
                 byte[] registro = new byte[nodo.getKeys()[i].getTamano()];
                 int pos = 0;
-                for (int j = (int)nodo.getKeys()[i].getOffset(); j < (int)nodo.getKeys()[i].getOffset()+ nodo.getKeys()[i].getTamano();j++){
+                for (int j = (int) nodo.getKeys()[i].getOffset(); j < (int) nodo.getKeys()[i].getOffset() + nodo.getKeys()[i].getTamano(); j++) {
                     archivoActual.seek(j);
                     registro[pos] = archivoActual.readByte();
                 }
@@ -2127,7 +2198,7 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         if (!nodo.isLeaf()) {
-            llenarArbol(nodo.getChildren()[i], ubicCampo,arbol);
+            llenarArbol(nodo.getChildren()[i], ubicCampo, arbol);
         }
     }
 
