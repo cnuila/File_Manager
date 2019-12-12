@@ -16,6 +16,7 @@ public class Metadata {
 
     private ArrayList<Campo> campos = new ArrayList<>();
     private int tamanoMeta = 0;
+    private LinkedList availList = new LinkedList();
 
     public Metadata() {
     }

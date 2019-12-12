@@ -26,7 +26,7 @@ public class NodoArbol {
         this.children = new NodoArbol[t];
         this.keyNumber = 0;
     }
-    
+
     private void llenarArreglo() {
         for (int i = 0; i < t - 1; i++) {
             keys[i] = new Llave();
@@ -135,8 +135,6 @@ public class NodoArbol {
                 } else {
                     children[index].remove(k);
                 }
-            } else {
-                System.out.println("La llave no existen en el arbol");
             }
         }
     }
@@ -350,17 +348,27 @@ public class NodoArbol {
         return children[i].search(k);
     }
 
-    public void traverse() {
+    public Llave[] traverse() {
         int i;
+        int pos = 0;
+        Llave[] llaves = new Llave[10];
         for (i = 0; i < keyNumber; i++) {
             if (!leaf) {
                 children[i].traverse();
             }
-            System.out.print(" " + keys[i]);
+            if (pos <= 9) {
+                llaves[pos] = keys[i];
+                pos++;
+            }
+
+            if (pos > 9 || i == keyNumber-1) {
+                return llaves;
+            }
         }
         if (!leaf) {
             children[i].traverse();
         }
+        return llaves;
     }
 
     @Override

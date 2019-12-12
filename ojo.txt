@@ -1,2 +1,0 @@
-cuenta: String[3]0;age: int[2]1;sexo: char[1]1;
-***

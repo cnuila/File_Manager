@@ -1,2 +1,0 @@
-nmm: String[8]0;jjn: int[2]1;klkl: double[8]1;jn: char[1]1;
-***

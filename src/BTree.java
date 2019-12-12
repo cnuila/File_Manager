@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -72,7 +75,7 @@ public class BTree {
 
     public void remove(Llave k) {
         if (raiz == null) {
-            System.out.println("El arbol está vacio");
+            JOptionPane.showMessageDialog(null, "No hay registros", "Información", JOptionPane.INFORMATION_MESSAGE);
         } else {
             raiz.remove(k);
             if (raiz.getKeyNumber() == 0) {

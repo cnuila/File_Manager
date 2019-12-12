@@ -12,12 +12,10 @@ public class LinkedList {
         if (inicio == null) {
             inicio = newNode;
             size++;
-            System.out.println("Se agrego el elemento exitosamente al primer nodo");
         } else if (posicion == 1) {
             tmp.setAnterior(newNode);
             newNode.setSiguiente(tmp);
             size++;
-            System.out.println("Se agrego el elemento exitosamente en la posicion 1");
         } else if (posicion > 1 && posicion < size) {
             for (int i = 0; i < posicion - 1; i++) {
                 tmp = tmp.getSiguiente();
@@ -27,7 +25,6 @@ public class LinkedList {
             newNode.setAnterior(tmp);
             tmp.setSiguiente(newNode);
             size++;
-            System.out.println("Se agrego el elemento exitosamente en la posicion " + posicion);
         } else if (posicion == size + 1) {
             ListNode temporal = new ListNode();
             temporal.setData(dato);
@@ -38,7 +35,6 @@ public class LinkedList {
             temporal.setSiguiente(newNode);
             newNode.setAnterior(temporal);
             size++;
-            System.out.println("Se agrego el elemento exitosamente en la posicion " + posicion);
         } else {
             System.out.println("No se agrego el elemento, Ingrese una posicion valida");
         }
@@ -57,7 +53,6 @@ public class LinkedList {
                 inicio = null;
             }
             size = size - 1;
-            System.out.println("Elemento 1 borrado con exito");
         } else if (posicion > 1 && posicion < size) {
             tmp = inicio;
             for (int i = 0; i < posicion; i++) {
@@ -68,7 +63,6 @@ public class LinkedList {
             tmp.setSiguiente(null);
             tmp.setAnterior(null);
             size = size - 1;
-            System.out.println("Elemento " + posicion + " borrado con exito");
         } else if (posicion == size) {
             for (int i = 0; i < size; i++) {
                 tmp = tmp.getSiguiente();
@@ -76,7 +70,6 @@ public class LinkedList {
             tmp.getAnterior().setSiguiente(null);
             tmp.setAnterior(null);
             size = size - 1;
-            System.out.println("Elemento " + posicion + " borrado con exito");
         } else {
             System.out.println("No se borro ningun elemento");
         }

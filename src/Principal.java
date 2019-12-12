@@ -100,28 +100,28 @@ public class Principal extends javax.swing.JFrame {
         jb_deleteField = new javax.swing.JButton();
         buttonGroup_llaveMod = new javax.swing.ButtonGroup();
         buttonGroup_tipoMod = new javax.swing.ButtonGroup();
+        jd_buscarRegistros = new javax.swing.JDialog();
+        jl_llaveP_BuscarRegistro = new javax.swing.JLabel();
+        jt_llavePrimariaBuscarRegistros = new javax.swing.JTextField();
+        jb_buscarLlaveBR = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable_buscarRegistro = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
         jd_crearRegistros = new javax.swing.JDialog();
         jScrollPane4 = new javax.swing.JScrollPane();
-        Tabla_agregarRegistros = new javax.swing.JTable();
+        jTable_agregarRegistro = new javax.swing.JTable();
         jb_guardarRegistros = new javax.swing.JButton();
         jb_addNewRow = new javax.swing.JButton();
         jb_deleteLastRow = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jd_buscarRegistros = new javax.swing.JDialog();
-        jl_llaveP_BuscarRegistro = new javax.swing.JLabel();
-        jt_llavePrimariaBuscarRegistros = new javax.swing.JTextField();
-        jb_buscarLlavePrimaria = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable_buscarRegistro = new javax.swing.JTable();
-        jLabel14 = new javax.swing.JLabel();
         jd_borrarRegistro = new javax.swing.JDialog();
         jl_llaveP_BorrarRegistro = new javax.swing.JLabel();
         jt_LlavePrimariaBorrarRegistro = new javax.swing.JTextField();
         jb_deleteRegistro = new javax.swing.JToggleButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable_borrarRegistro = new javax.swing.JTable();
-        jb_buscarLLave = new javax.swing.JButton();
+        jb_buscarLLaveBoR = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jd_modificarRegistro = new javax.swing.JDialog();
         jl_llaveP_ModificarRegistro = new javax.swing.JLabel();
@@ -451,8 +451,22 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        Tabla_agregarRegistros.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        Tabla_agregarRegistros.setModel(new javax.swing.table.DefaultTableModel(
+        jl_llaveP_BuscarRegistro.setText("Llave Primaria");
+
+        jt_llavePrimariaBuscarRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_llavePrimariaBuscarRegistrosActionPerformed(evt);
+            }
+        });
+
+        jb_buscarLlaveBR.setText("Buscar ");
+        jb_buscarLlaveBR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_buscarLlaveBRMouseClicked(evt);
+            }
+        });
+
+        jTable_buscarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -460,7 +474,62 @@ public class Principal extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane4.setViewportView(Tabla_agregarRegistros);
+        jScrollPane5.setViewportView(jTable_buscarRegistro);
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jLabel14.setText("Buscar Registro");
+
+        javax.swing.GroupLayout jd_buscarRegistrosLayout = new javax.swing.GroupLayout(jd_buscarRegistros.getContentPane());
+        jd_buscarRegistros.getContentPane().setLayout(jd_buscarRegistrosLayout);
+        jd_buscarRegistrosLayout.setHorizontalGroup(
+            jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
+                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                        .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jl_llaveP_BuscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jb_buscarLlaveBR, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                                .addGap(220, 220, 220)
+                                .addComponent(jLabel14)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jd_buscarRegistrosLayout.setVerticalGroup(
+            jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addComponent(jl_llaveP_BuscarRegistro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_buscarLlaveBR)
+                    .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTable_agregarRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jTable_agregarRegistro.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(jTable_agregarRegistro);
 
         jb_guardarRegistros.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jb_guardarRegistros.setText("Guardar");
@@ -489,6 +558,11 @@ public class Principal extends javax.swing.JFrame {
         jb_deleteLastRow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_deleteLastRowMouseClicked(evt);
+            }
+        });
+        jb_deleteLastRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_deleteLastRowActionPerformed(evt);
             }
         });
 
@@ -546,83 +620,14 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jl_llaveP_BuscarRegistro.setText("Llave Primaria");
-
-        jt_llavePrimariaBuscarRegistros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jt_llavePrimariaBuscarRegistrosActionPerformed(evt);
-            }
-        });
-
-        jb_buscarLlavePrimaria.setText("Buscar Llave");
-        jb_buscarLlavePrimaria.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_buscarLlavePrimariaMouseClicked(evt);
-            }
-        });
-
-        jTable_buscarRegistro.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane5.setViewportView(jTable_buscarRegistro);
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
-        jLabel14.setText("Buscar Registro");
-
-        javax.swing.GroupLayout jd_buscarRegistrosLayout = new javax.swing.GroupLayout(jd_buscarRegistros.getContentPane());
-        jd_buscarRegistros.getContentPane().setLayout(jd_buscarRegistrosLayout);
-        jd_buscarRegistrosLayout.setHorizontalGroup(
-            jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
-                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                        .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jl_llaveP_BuscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jb_buscarLlavePrimaria))
-                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                                .addGap(220, 220, 220)
-                                .addComponent(jLabel14)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jd_buscarRegistrosLayout.setVerticalGroup(
-            jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jl_llaveP_BuscarRegistro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_buscarLlavePrimaria)
-                    .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jd_borrarRegistro.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jl_llaveP_BorrarRegistro.setText("Llave Primaria");
-        jd_borrarRegistro.getContentPane().add(jl_llaveP_BorrarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 370, -1));
-        jd_borrarRegistro.getContentPane().add(jt_LlavePrimariaBorrarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 290, -1));
 
         jb_deleteRegistro.setText("Borrar ");
-        jd_borrarRegistro.getContentPane().add(jb_deleteRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 70, -1));
+        jb_deleteRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_deleteRegistroMouseClicked(evt);
+            }
+        });
 
         jTable_borrarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -634,21 +639,63 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(jTable_borrarRegistro);
 
-        jd_borrarRegistro.getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 580, 80));
-
-        jb_buscarLLave.setText("Buscar");
-        jd_borrarRegistro.getContentPane().add(jb_buscarLLave, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 80, -1));
+        jb_buscarLLaveBoR.setText("Buscar");
+        jb_buscarLLaveBoR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_buscarLLaveBoRMouseClicked(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
         jLabel15.setText("Borrar Registro");
-        jd_borrarRegistro.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
+
+        javax.swing.GroupLayout jd_borrarRegistroLayout = new javax.swing.GroupLayout(jd_borrarRegistro.getContentPane());
+        jd_borrarRegistro.getContentPane().setLayout(jd_borrarRegistroLayout);
+        jd_borrarRegistroLayout.setHorizontalGroup(
+            jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
+                .addGroup(jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel15))
+                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jl_llaveP_BorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jt_LlavePrimariaBorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jb_buscarLLaveBoR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jb_deleteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jd_borrarRegistroLayout.setVerticalGroup(
+            jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel15)
+                .addGap(15, 15, 15)
+                .addComponent(jl_llaveP_BorrarRegistro)
+                .addGap(6, 6, 6)
+                .addGroup(jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jt_LlavePrimariaBorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_buscarLLaveBoR)
+                    .addComponent(jb_deleteRegistro))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
 
         jl_llaveP_ModificarRegistro.setText("Llave");
 
         jb_buscarLlaveModificar.setText("Buscar");
-        jb_buscarLlaveModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_buscarLlaveModificarActionPerformed(evt);
+        jb_buscarLlaveModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_buscarLlaveModificarMouseClicked(evt);
             }
         });
 
@@ -671,21 +718,22 @@ public class Principal extends javax.swing.JFrame {
         jd_modificarRegistro.getContentPane().setLayout(jd_modificarRegistroLayout);
         jd_modificarRegistroLayout.setHorizontalGroup(
             jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_modificarRegistroLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(233, 233, 233))
             .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addGroup(jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_llaveP_ModificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
-                        .addComponent(jt_llavePrimariaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jb_buscarLlaveModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jb_modificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14)
+                        .addGroup(jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_llaveP_ModificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
+                                .addComponent(jt_llavePrimariaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jb_buscarLlaveModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jb_modificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(jLabel16)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jd_modificarRegistroLayout.setVerticalGroup(
@@ -726,10 +774,10 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_listarRegistrosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
+                .addGap(186, 186, 186)
                 .addComponent(jLabel17)
-                .addGap(186, 186, 186))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jd_listarRegistrosLayout.setVerticalGroup(
             jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1024,6 +1072,8 @@ public class Principal extends javax.swing.JFrame {
                     archivoActual = null;
                     archivoActual = new RandomAccessFile(jfc.getSelectedFile().getPath() + ".txt", "rw");
                     metaData = new Metadata();
+                    llaves = new ArrayList<>();
+                    registros = new ArrayList<>();
                     JOptionPane.showMessageDialog(this, "El archivo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
@@ -1047,6 +1097,8 @@ public class Principal extends javax.swing.JFrame {
             }
             archivoActual = null;
             metaData = null;
+            registros = null;
+            llaves = null;
             jb_nuevo.setEnabled(true);
             jb_abrir.setEnabled(true);
             jb_cerrar.setEnabled(false);
@@ -1261,13 +1313,14 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jb_salvar.isEnabled()) {
             try {
-                if (metaData.getCampos().isEmpty()) {
+                if (llaves.isEmpty()) {
                     metaData.escribirCampos(archivoActual);
+                } else {
+                    guardarRegistros();
+                    AdministrarArbol adar = new AdministrarArbol("./temp/prueba.cans");
+                    adar.setArbol(arbolB);
+                    adar.escribirArchivo();
                 }
-                guardarRegistros();
-                AdministrarArbol adar = new AdministrarArbol("./temp/prueba.cans");
-                adar.setArbol(arbolB);
-                adar.escribirArchivo();
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1328,6 +1381,8 @@ public class Principal extends javax.swing.JFrame {
                 if (seleccion == JFileChooser.APPROVE_OPTION) {
                     archivoActual = new RandomAccessFile(jfc.getSelectedFile(), "rw");
                     metaData = new Metadata();
+                    llaves = new ArrayList<>();
+                    registros = new ArrayList<>();
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
@@ -1487,11 +1542,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_rb_stringModMouseClicked
 
     private void jb_crearRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearRegistroMouseClicked
-        Tabla_agregarRegistros.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_agregarRegistro.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{},
                 new String[]{}
         ));
-        DefaultTableModel modelo = (DefaultTableModel) Tabla_agregarRegistros.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTable_agregarRegistro.getModel();
         String cabezas[] = new String[metaData.getCampos().size()];
         for (int i = 0; i < cabezas.length; i++) {
             cabezas[i] = metaData.getCampos().get(i).getNombre();
@@ -1501,7 +1556,7 @@ public class Principal extends javax.swing.JFrame {
         }
         String row[] = new String[metaData.getCampos().size()];
         modelo.addRow(row);
-        Tabla_agregarRegistros.setModel(modelo);
+        jTable_agregarRegistro.setModel(modelo);
         jd_crearRegistros.pack();
         jd_crearRegistros.setLocationRelativeTo(jd_crearRegistros);
         jd_crearRegistros.setModal(true);
@@ -1511,10 +1566,6 @@ public class Principal extends javax.swing.JFrame {
     private void jt_llavePrimariaBuscarRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_llavePrimariaBuscarRegistrosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jt_llavePrimariaBuscarRegistrosActionPerformed
-
-    private void jb_buscarLlaveModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_buscarLlaveModificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jb_buscarLlaveModificarActionPerformed
 
     private void jb_ModificarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ModificarRegistroMouseClicked
         if (jb_ModificarRegistro.isEnabled()) {
@@ -1557,7 +1608,18 @@ public class Principal extends javax.swing.JFrame {
                 modelo.addColumn(a);
             }
             jTable_listarRegistro.setModel(modelo);
-            
+            if (arbolB.getRaiz() != null) {
+                Llave[] llaves = arbolB.getRaiz().traverse();
+                for (int i = 0; i < llaves.length; i++) {
+                    try {
+                        llenarTabla(jTable_listarRegistro, llaves[i]);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+
+            }
+
             jd_listarRegistros.pack();
             jd_listarRegistros.setLocationRelativeTo(this);
             jd_listarRegistros.setModal(true);
@@ -1620,7 +1682,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_buscarRegistroMouseClicked
 
-    private void jb_buscarLlavePrimariaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarLlavePrimariaMouseClicked
+    private void jb_buscarLlaveBRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarLlaveBRMouseClicked
         // TODO add your handling code here:
         if (jt_llavePrimariaBuscarRegistros.getText().equals("")) {
             JOptionPane.showMessageDialog(jd_buscarRegistros, "No puede estar vacío el campo", "Información", JOptionPane.INFORMATION_MESSAGE);
@@ -1628,8 +1690,22 @@ public class Principal extends javax.swing.JFrame {
             Llave temp = new Llave();
             temp.setLlave(jt_llavePrimariaBuscarRegistros.getText());
             NodoArbol nodo = arbolB.search(temp);
+            jTable_buscarRegistro.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{}
+            ));
+            DefaultTableModel modelo = (DefaultTableModel) jTable_buscarRegistro.getModel();
+            String cabezas[] = new String[metaData.getCampos().size()];
+            for (int i = 0; i < cabezas.length; i++) {
+                cabezas[i] = metaData.getCampos().get(i).getNombre();
+            }
+            for (Object a : cabezas) {
+                modelo.addColumn(a);
+            }
+            jTable_buscarRegistro.setModel(modelo);
             if (nodo == null) {
                 JOptionPane.showMessageDialog(jd_buscarRegistros, "No se encontró la llave", "Información", JOptionPane.INFORMATION_MESSAGE);
+                jt_llavePrimariaBuscarRegistros.setText("");
             } else {
                 temp = buscarKey(jt_llavePrimariaBuscarRegistros.getText(), nodo);
                 try {
@@ -1637,12 +1713,13 @@ public class Principal extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
             }
         }
-    }//GEN-LAST:event_jb_buscarLlavePrimariaMouseClicked
+    }//GEN-LAST:event_jb_buscarLlaveBRMouseClicked
 
     private void jb_deleteLastRowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_deleteLastRowMouseClicked
-        DefaultTableModel modelo = (DefaultTableModel) Tabla_agregarRegistros.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTable_agregarRegistro.getModel();
         int rows = modelo.getRowCount();
         if (rows > 0) {
             modelo.removeRow(modelo.getRowCount() - 1);
@@ -1651,7 +1728,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jd_crearRegistros, "La tabla ya esta vacia", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
 
-        Tabla_agregarRegistros.setModel(modelo);
+        jTable_agregarRegistro.setModel(modelo);
     }//GEN-LAST:event_jb_deleteLastRowMouseClicked
 
     private void jb_addNewRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_addNewRowActionPerformed
@@ -1659,14 +1736,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_addNewRowActionPerformed
 
     private void jb_addNewRowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_addNewRowMouseClicked
-        DefaultTableModel modelo = (DefaultTableModel) Tabla_agregarRegistros.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTable_agregarRegistro.getModel();
         String row[] = new String[metaData.getCampos().size()];
         modelo.addRow(row);
-        Tabla_agregarRegistros.setModel(modelo);
+        jTable_agregarRegistro.setModel(modelo);
     }//GEN-LAST:event_jb_addNewRowMouseClicked
 
     private void jb_guardarRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarRegistrosMouseClicked
-        DefaultTableModel modelo = (DefaultTableModel) Tabla_agregarRegistros.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTable_agregarRegistro.getModel();
         int rows = modelo.getRowCount(), columns = modelo.getColumnCount();
         Object data[][] = new String[rows][columns];
         boolean flag = true;
@@ -1697,6 +1774,20 @@ public class Principal extends javax.swing.JFrame {
                 llaves.add(llave);
             }
             JOptionPane.showMessageDialog(jd_crearRegistros, "Se han guardado los registros", "Información", JOptionPane.INFORMATION_MESSAGE);
+            
+            jTable_agregarRegistro.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{}
+            ));
+            DefaultTableModel modeloT = (DefaultTableModel) jTable_agregarRegistro.getModel();
+            String cabezas[] = new String[metaData.getCampos().size()];
+            for (int i = 0; i < cabezas.length; i++) {
+                cabezas[i] = metaData.getCampos().get(i).getNombre();
+            }
+            for (Object a : cabezas) {
+                modelo.addColumn(a);
+            }
+            jTable_agregarRegistro.setModel(modeloT);
             jb_ModificarRegistro.setEnabled(true);
             jb_borrarRegistro.setEnabled(true);
             jb_buscarRegistro.setEnabled(true);
@@ -1704,25 +1795,61 @@ public class Principal extends javax.swing.JFrame {
             jb_borrarCampoJD.setEnabled(false);
             jb_crearCampoJD.setEnabled(false);
             jb_modificarCampoJD.setEnabled(false);
-            Tabla_agregarRegistros
-                    .setModel(new javax.swing.table.DefaultTableModel(
-                            new Object[][]{},
-                            new String[]{}
-                    ));
-            DefaultTableModel modeloTabla = (DefaultTableModel) Tabla_agregarRegistros.getModel();
-
-            String cabezas[] = new String[metaData.getCampos().size()];
-            for (int i = 0; i < cabezas.length; i++) {
-                cabezas[i] = metaData.getCampos().get(i).getNombre();
-            }
-            for (Object a : cabezas) {
-                modeloTabla.addColumn(a);
-            }
-            String row[] = new String[metaData.getCampos().size()];
-            modeloTabla.addRow(row);
-            Tabla_agregarRegistros.setModel(modelo);
         }
     }//GEN-LAST:event_jb_guardarRegistrosMouseClicked
+
+    private void jb_buscarLLaveBoRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarLLaveBoRMouseClicked
+        // TODO add your handling code here:
+        if (jt_LlavePrimariaBorrarRegistro.getText().equals("")) {
+            JOptionPane.showMessageDialog(jd_borrarRegistro, "No puede estar vacío el campo", "Información", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            Llave temp = new Llave();
+            temp.setLlave(jt_LlavePrimariaBorrarRegistro.getText());
+            NodoArbol nodo = arbolB.search(temp);
+            if (nodo == null) {
+                JOptionPane.showMessageDialog(jd_borrarRegistro, "No se encontró la llave", "Información", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                temp = buscarKey(jt_LlavePrimariaBorrarRegistro.getText(), nodo);
+                llaveActual = temp;
+                try {
+                    llenarTabla(jTable_borrarRegistro, temp);
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_jb_buscarLLaveBoRMouseClicked
+
+    private void jb_deleteRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_deleteRegistroMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jb_deleteRegistroMouseClicked
+
+    private void jb_buscarLlaveModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarLlaveModificarMouseClicked
+        // TODO add your handling code here:
+        if (jt_llavePrimariaModificar.getText().equals("")) {
+            JOptionPane.showMessageDialog(jd_modificarRegistro, "No puede estar vacío el campo", "Información", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            Llave temp = new Llave();
+            temp.setLlave(jt_llavePrimariaModificar.getText());
+            NodoArbol nodo = arbolB.search(temp);
+            if (nodo == null) {
+                JOptionPane.showMessageDialog(jd_modificarRegistro, "No se encontró la llave", "Información", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                temp = buscarKey(jt_llavePrimariaModificar.getText(), nodo);
+                llaveActual = temp;
+                try {
+                    llenarTabla(jTable_modificarRegistro, temp);
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_jb_buscarLlaveModificarMouseClicked
+
+    private void jb_deleteLastRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_deleteLastRowActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_deleteLastRowActionPerformed
 
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
@@ -1789,9 +1916,7 @@ public class Principal extends javax.swing.JFrame {
             pos++;
         }
         String tempString = new String(temp);
-        System.out.println(tempString);
         String[] registro = tempString.split("[|]");
-        System.out.println(Arrays.toString(registro));
         for (int i = 0; i < row.length; i++) {
             row[i] = registro[i];
         }
@@ -1838,11 +1963,11 @@ public class Principal extends javax.swing.JFrame {
     RandomAccessFile archivoActual;
     Metadata metaData;
     BTree arbolB = new BTree(6);
-    ArrayList<String> registros = new ArrayList<>();
-    ArrayList<Llave> llaves = new ArrayList<>();
+    ArrayList<String> registros;
+    ArrayList<Llave> llaves;
     long posArchivo;
+    Llave llaveActual = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Tabla_agregarRegistros;
     private javax.swing.ButtonGroup buttonGroup_llave;
     private javax.swing.ButtonGroup buttonGroup_llaveMod;
     private javax.swing.ButtonGroup buttonGroup_tipo;
@@ -1878,6 +2003,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable_agregarRegistro;
     private javax.swing.JTable jTable_borrarRegistro;
     private javax.swing.JTable jTable_buscarRegistro;
     private javax.swing.JTable jTable_listarRegistro;
@@ -1887,9 +2013,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_addNewRow;
     private javax.swing.JButton jb_borrarCampoJD;
     private javax.swing.JButton jb_borrarRegistro;
-    private javax.swing.JButton jb_buscarLLave;
+    private javax.swing.JButton jb_buscarLLaveBoR;
+    private javax.swing.JButton jb_buscarLlaveBR;
     private javax.swing.JButton jb_buscarLlaveModificar;
-    private javax.swing.JButton jb_buscarLlavePrimaria;
     private javax.swing.JButton jb_buscarRegistro;
     private javax.swing.JButton jb_cargarRegristrosPrueba;
     private javax.swing.JButton jb_cerrar;

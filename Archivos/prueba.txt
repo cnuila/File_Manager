@@ -1,4 +1,0 @@
-dsds: String[8]0;sddsa: double[8]1;dsd: char[1]1;dsas: boolean[1]1;
-dsdsas: String[6]1;fdawww: double[8]1;zxcxvcz: int[16]1;
-bxdasfca: double[8]1;vxdaw: int[2]1;
-***
