@@ -807,6 +807,11 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jb_seleccionarArchivo.setText("Seleccionar");
+        jb_seleccionarArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_seleccionarArchivoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_cruzarArchivoLayout = new javax.swing.GroupLayout(jd_cruzarArchivo.getContentPane());
         jd_cruzarArchivo.getContentPane().setLayout(jd_cruzarArchivoLayout);
@@ -1222,10 +1227,12 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El archivo se ha cerrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
             try {
                 archivoActual.close();
+                archivoCruzar.close();
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
             archivoActual = null;
+            archivoCruzar = null;
             metaData = null;
             registros = null;
             llaves = null;
@@ -1524,7 +1531,6 @@ public class Principal extends javax.swing.JFrame {
                     AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
                     adar.setArbol(arbolB);
                     adar.cargarArchivo();
-                    System.out.println(arbolB.toString());
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
@@ -2170,6 +2176,23 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_reindexarMouseClicked
 
+    private void jb_seleccionarArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_seleccionarArchivoMouseClicked
+        // TODO add your handling code here:
+        archivoCruzar = null;
+            try {
+                JFileChooser jfc = new JFileChooser("./");
+                FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos de Texto", "txt");
+                jfc.addChoosableFileFilter(filtro);
+                jfc.setAcceptAllFileFilterUsed(false);
+                int seleccion = jfc.showOpenDialog(this);
+                if (seleccion == JFileChooser.APPROVE_OPTION) {
+                    archivoActual = new RandomAccessFile(jfc.getSelectedFile(), "rw");
+                    JOptionPane.showMessageDialog(this, "El archivo se ha abierto exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+                }
+            } catch (Exception e) {
+            }
+    }//GEN-LAST:event_jb_seleccionarArchivoMouseClicked
+
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
             if (metaData.getCampos().get(i).isLlavePrimaria()) {
@@ -2371,6 +2394,7 @@ public class Principal extends javax.swing.JFrame {
     ArrayList<Llave> llaves;
     long posArchivo;
     Llave llaveActual = null;
+    RandomAccessFile archivoCruzar;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup_llave;
     private javax.swing.ButtonGroup buttonGroup_llaveMod;
