@@ -162,6 +162,8 @@ public class Principal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jp_estand = new javax.swing.JPanel();
+        jb_exportarExcel = new javax.swing.JButton();
+        jb_exportarXML = new javax.swing.JButton();
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1087,15 +1089,29 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Índices", jp_indice);
 
+        jb_exportarExcel.setText("Exportar a Excel");
+
+        jb_exportarXML.setText("Exportar a XML");
+
         javax.swing.GroupLayout jp_estandLayout = new javax.swing.GroupLayout(jp_estand);
         jp_estand.setLayout(jp_estandLayout);
         jp_estandLayout.setHorizontalGroup(
             jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
+            .addGroup(jp_estandLayout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addGroup(jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_exportarXML, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_exportarExcel, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jp_estandLayout.setVerticalGroup(
             jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGroup(jp_estandLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jb_exportarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_exportarXML, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Estandarización", jp_estand);
@@ -1970,7 +1986,33 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         }
-        
+        if (flag) {
+            String registro = "";
+            for (int i = 0; i < rows; i++) {
+                String llavePrimaria = (String) data[i][0];
+                Llave llave = new Llave();
+                llave.setLlave(llavePrimaria);
+                if (arbolB.search(llave) == null) {
+                    JOptionPane.showMessageDialog(jd_modificarRegistro, "No puede modificar la llave primaria", "Información", JOptionPane.INFORMATION_MESSAGE);
+                }
+                for (int j = 0; j < columns; j++) {
+                    registro += data[i][j];
+                    registro += "|";
+                }
+            }
+            int tamanoLlave = llaveActual.getTamano();
+            if (tamanoLlave >= registro.length()) {
+                try {
+                    archivoActual.seek(llaveActual.getOffset());
+                    archivoActual.write(registro.getBytes());
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                
+            }
+        }
+
     }//GEN-LAST:event_jb_modificarRegistroMouseClicked
 
     public boolean buscarLlave() {
@@ -2209,6 +2251,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_deleteField;
     private javax.swing.JButton jb_deleteLastRow;
     private javax.swing.JToggleButton jb_deleteRegistro;
+    private javax.swing.JButton jb_exportarExcel;
+    private javax.swing.JButton jb_exportarXML;
     private javax.swing.JButton jb_guardarRegistros;
     private javax.swing.JButton jb_listarCampoJD;
     private javax.swing.JButton jb_listarRegistros;
