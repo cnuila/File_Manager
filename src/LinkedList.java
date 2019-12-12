@@ -4,6 +4,10 @@ public class LinkedList {
     ListNode tmp = new ListNode();
     int size = 0;
 
+    public LinkedList() {
+        
+    }
+
     //Agrega elemento a la lista en la posicion ingresada
     public void inserta(Llave dato, int posicion) {
         tmp = inicio;
@@ -12,29 +16,30 @@ public class LinkedList {
         if (inicio == null) {
             inicio = newNode;
             size++;
+            System.out.println("Se agrego el elemento exitosamente al primer nodo");
         } else if (posicion == 1) {
             tmp.setAnterior(newNode);
             newNode.setSiguiente(tmp);
             size++;
-        } else if (posicion > 1 && posicion < size) {
-            for (int i = 0; i < posicion - 1; i++) {
+            System.out.println("Se agrego el elemento exitosamente en la posicion 1");
+        } else if (posicion == size + 1) {
+            for (int i = 1; i <= posicion - 2; i++) {
                 tmp = tmp.getSiguiente();
             }
-            tmp.getSiguiente().setAnterior(newNode);
-            newNode.setSiguiente(tmp.getSiguiente());
-            newNode.setAnterior(tmp);
             tmp.setSiguiente(newNode);
+            newNode.setAnterior(tmp);
             size++;
-        } else if (posicion == size + 1) {
-            ListNode temporal = new ListNode();
-            temporal.setData(dato);
-            temporal.setSiguiente(temporal);
-            for (int i = 0; i < posicion - 1; i++) {
-                temporal = temporal.getSiguiente();
+            System.out.println("Se agrego el elemento exitosamente en la posicion " + posicion);
+        } else if (posicion > 1 && posicion <= size) {
+            for (int i = 1; i <= posicion - 1; i++) {
+                tmp = tmp.getSiguiente();
             }
-            temporal.setSiguiente(newNode);
-            newNode.setAnterior(temporal);
+            newNode.setSiguiente(tmp);
+            newNode.setAnterior(tmp.getAnterior());
+            tmp.getAnterior().setSiguiente(newNode);
+            tmp.setAnterior(newNode);
             size++;
+            System.out.println("Se agrego el elemento exitosamente en la posicion " + posicion);
         } else {
             System.out.println("No se agrego el elemento, Ingrese una posicion valida");
         }
@@ -53,9 +58,17 @@ public class LinkedList {
                 inicio = null;
             }
             size = size - 1;
+            System.out.println("Elemento 1 borrado con exito");
+        } else if (posicion == size) {
+            for (int i = 1; i <=size-1; i++) {
+                tmp = tmp.getSiguiente();
+            }
+            tmp.getAnterior().setSiguiente(null);
+            tmp.setAnterior(null);
+            size = size - 1;
+            System.out.println("Elemento " + posicion + " borrado con exito");
         } else if (posicion > 1 && posicion < size) {
-            tmp = inicio;
-            for (int i = 0; i < posicion; i++) {
+            for (int i = 1; i <=posicion-1; i++) {
                 tmp = tmp.getSiguiente();
             }
             tmp.getSiguiente().setAnterior(tmp.getAnterior());
@@ -63,33 +76,10 @@ public class LinkedList {
             tmp.setSiguiente(null);
             tmp.setAnterior(null);
             size = size - 1;
-        } else if (posicion == size) {
-            for (int i = 0; i < size; i++) {
-                tmp = tmp.getSiguiente();
-            }
-            tmp.getAnterior().setSiguiente(null);
-            tmp.setAnterior(null);
-            size = size - 1;
+            System.out.println("Elemento " + posicion + " borrado con exito");
         } else {
             System.out.println("No se borro ningun elemento");
         }
-    }
-
-    //Devuelve la posicion del dato a buscar
-    public int buscar(Llave dato) {
-        tmp = inicio;
-        int pos = -1;
-        for (int i = 0; i < size; i++) {
-            if (tmp.getData().getLlave().equals(dato.getLlave())) {
-                pos = i;
-            } else {
-                tmp = tmp.getSiguiente();
-            }
-        }
-        if (pos == -1) {
-            System.out.println("no se encontro la Llave buscada");
-        }
-        return pos;
     }
 
     //Verifica si la lista esta vacia
@@ -101,7 +91,7 @@ public class LinkedList {
     public String elementoPosicion(int posicion) {
         if (posicion >= 1 && posicion <= size) {
             tmp = inicio;
-            for (int i = 0; i < posicion; i++) {
+            for (int i = 1; i < posicion; i++) {
                 tmp = tmp.getSiguiente();
             }
             return tmp.getData().getLlave();
@@ -115,7 +105,7 @@ public class LinkedList {
     public String ObtenerSiguiente(int posicion) {
         if (posicion >= 1 && posicion < size) {
             tmp = inicio;
-            for (int i = 0; i < posicion; i++) {
+            for (int i = 1; i <=posicion; i++) {
                 tmp = tmp.getSiguiente();
             }
             return tmp.getData().getLlave();
@@ -129,23 +119,13 @@ public class LinkedList {
     public String ObtenerAnterior(int posicion) {
         if (posicion > 1 && posicion < size) {
             tmp = inicio;
-            for (int i = 0; i < posicion; i++) {
+            for (int i = 1; i <=posicion-2; i++) {
                 tmp = tmp.getSiguiente();
             }
             return tmp.getData().getLlave();
         } else {
             System.out.println("Ingreso una posicion incorrecta");
             return null;
-        }
-    }
-
-    //Vacia la lista
-    public void Anula() {
-        if (inicio != null) {
-            inicio = null;
-            System.out.println("La lista se vacio correctamente");
-        } else {
-            System.out.println("La lista ya esta vacia");
         }
     }
 }
