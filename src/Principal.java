@@ -137,6 +137,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jd_cruzarArchivo = new javax.swing.JDialog();
         jb_seleccionarArchivo = new javax.swing.JButton();
+        jd_reindexar = new javax.swing.JDialog();
+        jb_reindexar = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jl_camposRein = new javax.swing.JList<>();
+        jLabel18 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jp_archivo = new javax.swing.JPanel();
@@ -159,8 +164,8 @@ public class Principal extends javax.swing.JFrame {
         jb_buscarRegistro = new javax.swing.JButton();
         jb_cruzarArchivos = new javax.swing.JButton();
         jp_indice = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jb_crearIndice = new javax.swing.JButton();
+        jb_reindJD = new javax.swing.JButton();
         jp_estand = new javax.swing.JPanel();
         jb_exportarExcel = new javax.swing.JButton();
         jb_exportarXML = new javax.swing.JButton();
@@ -820,6 +825,51 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(309, Short.MAX_VALUE))
         );
 
+        jb_reindexar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_reindexar.setText("Reindexar");
+        jb_reindexar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_reindexarMouseClicked(evt);
+            }
+        });
+
+        jl_camposRein.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jl_camposRein.setModel(new DefaultListModel());
+        jScrollPane9.setViewportView(jl_camposRein);
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel18.setText("Campos");
+
+        javax.swing.GroupLayout jd_reindexarLayout = new javax.swing.GroupLayout(jd_reindexar.getContentPane());
+        jd_reindexar.getContentPane().setLayout(jd_reindexarLayout);
+        jd_reindexarLayout.setHorizontalGroup(
+            jd_reindexarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_reindexarLayout.createSequentialGroup()
+                .addGroup(jd_reindexarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_reindexarLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel18))
+                    .addGroup(jd_reindexarLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_reindexarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jb_reindexar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
+        jd_reindexarLayout.setVerticalGroup(
+            jd_reindexarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_reindexarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(jb_reindexar)
+                .addGap(21, 21, 21))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1033,8 +1083,8 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jb_listarRegistros)))
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(jp_registroLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jb_cruzarArchivos, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1054,17 +1104,22 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jb_listarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(jb_cruzarArchivos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_cruzarArchivos, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Registros", jp_registro);
 
-        jButton1.setText("Crear Índices");
+        jb_crearIndice.setText("Crear Índices");
+        jb_crearIndice.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearIndiceMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText("Reindexar");
+        jb_reindJD.setText("Reindexar");
 
         javax.swing.GroupLayout jp_indiceLayout = new javax.swing.GroupLayout(jp_indice);
         jp_indice.setLayout(jp_indiceLayout);
@@ -1073,17 +1128,17 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jp_indiceLayout.createSequentialGroup()
                 .addGap(153, 153, 153)
                 .addGroup(jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_reindJD, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_crearIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(154, Short.MAX_VALUE))
         );
         jp_indiceLayout.setVerticalGroup(
             jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_indiceLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_crearIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_reindJD, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(96, Short.MAX_VALUE))
         );
 
@@ -1395,9 +1450,6 @@ public class Principal extends javax.swing.JFrame {
                     metaData.escribirCampos(archivoActual);
                 } else {
                     guardarRegistros();
-                    AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
-                    adar.setArbol(arbolB);
-                    adar.escribirArchivo();
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -2009,11 +2061,40 @@ public class Principal extends javax.swing.JFrame {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
-                
+
             }
         }
 
     }//GEN-LAST:event_jb_modificarRegistroMouseClicked
+
+    private void jb_crearIndiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearIndiceMouseClicked
+        // TODO add your handling code here:
+        if (arbolB.getRaiz() != null) {
+            AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
+            adar.setArbol(arbolB);
+            adar.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Se ha guardado el archivo del arbol donde esta ubicado el archivo de texto", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jb_crearIndiceMouseClicked
+
+    private void jb_reindexarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_reindexarMouseClicked
+        // TODO add your handling code here:
+        if (jl_camposRein.getSelectedIndex() >= 0) {
+            BTree nuevoArbol = new BTree(6);
+            try {
+                llenarArbol(arbolB.getRaiz(),jl_camposRein.getSelectedIndex(), nuevoArbol);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "REINArbol.eagle");
+            adar.setArbol(nuevoArbol);
+            adar.escribirArchivo();
+            JOptionPane.showMessageDialog(jd_reindexar, "Se han reindexado los registros exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            Toolkit.getDefaultToolkit().beep();
+            JOptionPane.showMessageDialog(this, "Debe tener un campo seleccionado en la lista");
+        }
+    }//GEN-LAST:event_jb_reindexarMouseClicked
 
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
@@ -2022,6 +2103,32 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         return false;
+    }
+    
+    public void llenarArbol(NodoArbol nodo, int ubicCampo, BTree arbol) throws IOException{
+        int i;
+        for (i = 0; i < nodo.getKeyNumber();i++){
+            if (!nodo.isLeaf()){
+                llenarArbol(nodo.getChildren()[i], ubicCampo,arbol);
+            } else {
+                byte[] registro = new byte[nodo.getKeys()[i].getTamano()];
+                int pos = 0;
+                for (int j = (int)nodo.getKeys()[i].getOffset(); j < (int)nodo.getKeys()[i].getOffset()+ nodo.getKeys()[i].getTamano();j++){
+                    archivoActual.seek(j);
+                    registro[pos] = archivoActual.readByte();
+                }
+                String regristroString = new String(registro);
+                String[] registrosArray = regristroString.split("[|]");
+                Llave nuevaLlave = new Llave();
+                nuevaLlave.setLlave(registrosArray[ubicCampo]);
+                nuevaLlave.setOffset(nodo.getKeys()[i].getOffset());
+                nuevaLlave.setTamano(nodo.getKeys()[i].getTamano());
+                arbol.insert(nuevaLlave);
+            }
+        }
+        if (!nodo.isLeaf()) {
+            llenarArbol(nodo.getChildren()[i], ubicCampo,arbol);
+        }
     }
 
     public Campo encontrarLlavePrimaria() {
@@ -2195,8 +2302,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup_llaveMod;
     private javax.swing.ButtonGroup buttonGroup_tipo;
     private javax.swing.ButtonGroup buttonGroup_tipoMod;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2206,6 +2311,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2227,6 +2333,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable_agregarRegistro;
     private javax.swing.JTable jTable_borrarRegistro;
@@ -2246,6 +2353,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_cerrar;
     private javax.swing.JButton jb_crearCampo;
     private javax.swing.JButton jb_crearCampoJD;
+    private javax.swing.JButton jb_crearIndice;
     private javax.swing.JButton jb_crearRegistro;
     private javax.swing.JButton jb_cruzarArchivos;
     private javax.swing.JButton jb_deleteField;
@@ -2260,6 +2368,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_modificarRegistro;
     private javax.swing.JButton jb_modify;
     private javax.swing.JButton jb_nuevo;
+    private javax.swing.JButton jb_reindJD;
+    private javax.swing.JButton jb_reindexar;
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_salvar;
     private javax.swing.JButton jb_seleccionarArchivo;
@@ -2273,8 +2383,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_listarRegistros;
     private javax.swing.JDialog jd_modificarCampo;
     private javax.swing.JDialog jd_modificarRegistro;
+    private javax.swing.JDialog jd_reindexar;
     private javax.swing.JList<String> jl_camposDlt;
     private javax.swing.JList<String> jl_camposMod;
+    private javax.swing.JList<String> jl_camposRein;
     private javax.swing.JLabel jl_llaveP_BorrarRegistro;
     private javax.swing.JLabel jl_llaveP_BuscarRegistro;
     private javax.swing.JLabel jl_llaveP_ModificarRegistro;
