@@ -1517,15 +1517,16 @@
                               <Component id="jb_buscarRegistro" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" pref="27" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jb_borrarRegistro" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                              <Component id="jb_listarRegistros" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jb_ModificarRegistro" min="-2" pref="77" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jb_borrarRegistro" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="jb_listarRegistros" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jb_cargarRegristrosPrueba" pref="75" max="32767" attributes="0"/>
                               <Component id="jb_cruzarArchivos" max="32767" attributes="0"/>
