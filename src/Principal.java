@@ -348,9 +348,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel8.setText("Listar Campos");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 130, 30));
 
-        jtable_campos.setBackground(new java.awt.Color(255, 255, 255));
         jtable_campos.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jtable_campos.setForeground(new java.awt.Color(0, 0, 0));
         jtable_campos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -436,7 +434,6 @@ public class Principal extends javax.swing.JFrame {
 
         jb_modify.setBackground(new java.awt.Color(153, 153, 0));
         jb_modify.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_modify.setForeground(new java.awt.Color(0, 0, 0));
         jb_modify.setText("Modificar");
         jb_modify.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_modify.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -621,17 +618,11 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jl_llaveP_BuscarRegistro.setBackground(new java.awt.Color(255, 255, 255));
         jl_llaveP_BuscarRegistro.setText("Llave Primaria");
-
-        jt_llavePrimariaBuscarRegistros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jt_llavePrimariaBuscarRegistrosActionPerformed(evt);
-            }
-        });
 
         jb_buscarLlaveBR.setBackground(new java.awt.Color(0, 51, 153));
         jb_buscarLlaveBR.setText("Buscar ");
@@ -642,8 +633,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jTable_buscarRegistro.setBackground(new java.awt.Color(255, 255, 255));
-        jTable_buscarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_buscarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -737,7 +726,6 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jb_addNewRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
-        jb_addNewRow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\png\\002-mas.png")); // NOI18N
         jb_addNewRow.setContentAreaFilled(false);
         jb_addNewRow.setPreferredSize(new java.awt.Dimension(38, 28));
         jb_addNewRow.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -745,23 +733,12 @@ public class Principal extends javax.swing.JFrame {
                 jb_addNewRowMouseClicked(evt);
             }
         });
-        jb_addNewRow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_addNewRowActionPerformed(evt);
-            }
-        });
 
         jb_deleteLastRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
-        jb_deleteLastRow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\png\\001-negativo.png")); // NOI18N
         jb_deleteLastRow.setContentAreaFilled(false);
         jb_deleteLastRow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_deleteLastRowMouseClicked(evt);
-            }
-        });
-        jb_deleteLastRow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_deleteLastRowActionPerformed(evt);
             }
         });
 
@@ -800,9 +777,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jTable_agregarRegistro.setBackground(new java.awt.Color(255, 255, 255));
         jTable_agregarRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jTable_agregarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_agregarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -840,7 +815,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addGap(0, 7, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -869,8 +844,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jTable_borrarRegistro.setBackground(new java.awt.Color(255, 255, 255));
-        jTable_borrarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_borrarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -936,9 +909,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jl_llaveP_BorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 34, Short.MAX_VALUE))
+                        .addComponent(jl_llaveP_BorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 38, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -986,8 +958,6 @@ public class Principal extends javax.swing.JFrame {
         });
         jd_modificarRegistro.getContentPane().add(jb_buscarLlaveModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 80, 36));
 
-        jTable_modificarRegistro.setBackground(new java.awt.Color(255, 255, 255));
-        jTable_modificarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_modificarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1001,7 +971,6 @@ public class Principal extends javax.swing.JFrame {
         jd_modificarRegistro.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 591, 140));
 
         jb_modificarRegistro.setBackground(new java.awt.Color(153, 153, 0));
-        jb_modificarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_modificarRegistro.setText("Modificar");
         jb_modificarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_modificarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1057,8 +1026,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel21.setBackground(new java.awt.Color(0, 0, 0));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable_listarRegistro.setBackground(new java.awt.Color(255, 255, 255));
-        jTable_listarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_listarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1175,7 +1142,6 @@ public class Principal extends javax.swing.JFrame {
 
         jb_reindexar.setBackground(new java.awt.Color(0, 153, 153));
         jb_reindexar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_reindexar.setForeground(new java.awt.Color(0, 0, 0));
         jb_reindexar.setText("Reindexar");
         jb_reindexar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_reindexar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1184,9 +1150,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jl_camposRein.setBackground(new java.awt.Color(255, 255, 255));
         jl_camposRein.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jl_camposRein.setForeground(new java.awt.Color(0, 0, 0));
         jl_camposRein.setModel(new DefaultListModel());
         jScrollPane9.setViewportView(jl_camposRein);
 
@@ -1231,7 +1195,6 @@ public class Principal extends javax.swing.JFrame {
 
         jb_nuevo.setBackground(new java.awt.Color(0, 153, 153));
         jb_nuevo.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_nuevo.setForeground(new java.awt.Color(0, 0, 0));
         jb_nuevo.setText("Nuevo");
         jb_nuevo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_nuevo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1243,7 +1206,6 @@ public class Principal extends javax.swing.JFrame {
 
         jb_salvar.setBackground(new java.awt.Color(0, 153, 153));
         jb_salvar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_salvar.setForeground(new java.awt.Color(0, 0, 0));
         jb_salvar.setText("Salvar");
         jb_salvar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_salvar.setEnabled(false);
@@ -1256,7 +1218,6 @@ public class Principal extends javax.swing.JFrame {
 
         jb_abrir.setBackground(new java.awt.Color(0, 153, 153));
         jb_abrir.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_abrir.setForeground(new java.awt.Color(0, 0, 0));
         jb_abrir.setText("Abrir");
         jb_abrir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_abrir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1268,7 +1229,6 @@ public class Principal extends javax.swing.JFrame {
 
         jb_cerrar.setBackground(new java.awt.Color(0, 153, 153));
         jb_cerrar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_cerrar.setForeground(new java.awt.Color(0, 0, 0));
         jb_cerrar.setText("Cerrar");
         jb_cerrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_cerrar.setEnabled(false);
@@ -1296,7 +1256,6 @@ public class Principal extends javax.swing.JFrame {
         jp_campo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jb_crearCampoJD.setBackground(new java.awt.Color(153, 153, 255));
-        jb_crearCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_crearCampoJD.setText("Crear");
         jb_crearCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_crearCampoJD.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1307,7 +1266,6 @@ public class Principal extends javax.swing.JFrame {
         jp_campo.add(jb_crearCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 100, 60));
 
         jb_listarCampoJD.setBackground(new java.awt.Color(153, 153, 255));
-        jb_listarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_listarCampoJD.setText("Listar");
         jb_listarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_listarCampoJD.setEnabled(false);
@@ -1319,7 +1277,6 @@ public class Principal extends javax.swing.JFrame {
         jp_campo.add(jb_listarCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, 60));
 
         jb_modificarCampoJD.setBackground(new java.awt.Color(153, 153, 255));
-        jb_modificarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_modificarCampoJD.setText("Modificar");
         jb_modificarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_modificarCampoJD.setEnabled(false);
@@ -1331,7 +1288,6 @@ public class Principal extends javax.swing.JFrame {
         jp_campo.add(jb_modificarCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 100, 60));
 
         jb_borrarCampoJD.setBackground(new java.awt.Color(153, 153, 255));
-        jb_borrarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_borrarCampoJD.setText("Borrar");
         jb_borrarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_borrarCampoJD.setEnabled(false);
@@ -1349,7 +1305,6 @@ public class Principal extends javax.swing.JFrame {
 
         jb_crearRegistro.setBackground(new java.awt.Color(102, 0, 153));
         jb_crearRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_crearRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_crearRegistro.setText("Crear Registro");
         jb_crearRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_crearRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1360,7 +1315,6 @@ public class Principal extends javax.swing.JFrame {
         jp_registro.add(jb_crearRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 120, 60));
 
         jb_ModificarRegistro.setBackground(new java.awt.Color(102, 0, 153));
-        jb_ModificarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_ModificarRegistro.setText("Modificar Registro");
         jb_ModificarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_ModificarRegistro.setEnabled(false);
@@ -1372,7 +1326,6 @@ public class Principal extends javax.swing.JFrame {
         jp_registro.add(jb_ModificarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 130, 60));
 
         jb_listarRegistros.setBackground(new java.awt.Color(102, 0, 153));
-        jb_listarRegistros.setForeground(new java.awt.Color(0, 0, 0));
         jb_listarRegistros.setText("Listar Registros");
         jb_listarRegistros.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_listarRegistros.setEnabled(false);
@@ -1384,13 +1337,11 @@ public class Principal extends javax.swing.JFrame {
         jp_registro.add(jb_listarRegistros, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 130, 60));
 
         jb_cargarRegristrosPrueba.setBackground(new java.awt.Color(102, 0, 153));
-        jb_cargarRegristrosPrueba.setForeground(new java.awt.Color(0, 0, 0));
         jb_cargarRegristrosPrueba.setText("Cargar Registros");
         jb_cargarRegristrosPrueba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jp_registro.add(jb_cargarRegristrosPrueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 130, 60));
 
         jb_buscarRegistro.setBackground(new java.awt.Color(102, 0, 153));
-        jb_buscarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_buscarRegistro.setText("Buscar Registro");
         jb_buscarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_buscarRegistro.setEnabled(false);
@@ -1402,24 +1353,17 @@ public class Principal extends javax.swing.JFrame {
         jp_registro.add(jb_buscarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 120, 60));
 
         jb_cruzarArchivos.setBackground(new java.awt.Color(102, 0, 153));
-        jb_cruzarArchivos.setForeground(new java.awt.Color(0, 0, 0));
         jb_cruzarArchivos.setText("Cruzar Archivos");
         jb_cruzarArchivos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jp_registro.add(jb_cruzarArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 120, 60));
 
         jb_borrarRegistro.setBackground(new java.awt.Color(102, 0, 153));
-        jb_borrarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_borrarRegistro.setText("Borrar Registro");
         jb_borrarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_borrarRegistro.setEnabled(false);
         jb_borrarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_borrarRegistroMouseClicked(evt);
-            }
-        });
-        jb_borrarRegistro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_borrarRegistroActionPerformed(evt);
             }
         });
         jp_registro.add(jb_borrarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 130, 60));
@@ -1430,7 +1374,6 @@ public class Principal extends javax.swing.JFrame {
         jp_indice.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jb_crearIndice.setBackground(new java.awt.Color(153, 102, 0));
-        jb_crearIndice.setForeground(new java.awt.Color(0, 0, 0));
         jb_crearIndice.setText("Crear Índices");
         jb_crearIndice.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_crearIndice.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1441,7 +1384,6 @@ public class Principal extends javax.swing.JFrame {
         jp_indice.add(jb_crearIndice, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 120, 50));
 
         jb_reindJD.setBackground(new java.awt.Color(153, 102, 0));
-        jb_reindJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_reindJD.setText("Reindexar");
         jb_reindJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_reindJD.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1456,12 +1398,10 @@ public class Principal extends javax.swing.JFrame {
         jp_estand.setBackground(new java.awt.Color(0, 0, 0));
 
         jb_exportarExcel.setBackground(new java.awt.Color(0, 153, 0));
-        jb_exportarExcel.setForeground(new java.awt.Color(0, 0, 0));
         jb_exportarExcel.setText("Exportar a Excel");
         jb_exportarExcel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jb_exportarXML.setBackground(new java.awt.Color(255, 255, 51));
-        jb_exportarXML.setForeground(new java.awt.Color(0, 0, 0));
         jb_exportarXML.setText("Exportar a XML");
         jb_exportarXML.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -1515,7 +1455,6 @@ public class Principal extends javax.swing.JFrame {
             if (seleccion == JFileChooser.APPROVE_OPTION) {
                 try {
                     archivoActual = null;
-                    nombreArchivo = jfc.getSelectedFile().getName();
                     path = jfc.getSelectedFile().getPath();
                     archivoActual = new RandomAccessFile(jfc.getSelectedFile().getPath() + ".txt", "rw");
                     metaData = new Metadata();
@@ -1536,7 +1475,6 @@ public class Principal extends javax.swing.JFrame {
     private void jb_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cerrarMouseClicked
         // TODO add your handling code here:
         if (jb_cerrar.isEnabled()) {
-            JOptionPane.showMessageDialog(this, "El archivo se ha cerrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
             try {
                 archivoActual.close();
                 //archivoCruzar.close();
@@ -1549,7 +1487,6 @@ public class Principal extends javax.swing.JFrame {
             registros = null;
             llaves = null;
             path = "";
-            nombreArchivo = "";
             llaveActual = null;
             jb_nuevo.setEnabled(true);
             jb_abrir.setEnabled(true);
@@ -1562,6 +1499,7 @@ public class Principal extends javax.swing.JFrame {
             jb_modificarCampoJD.setEnabled(false);
             jb_borrarCampoJD.setEnabled(false);
             jb_listarCampoJD.setEnabled(false);
+            JOptionPane.showMessageDialog(this, "El archivo se ha cerrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jb_cerrarMouseClicked
 
@@ -1572,32 +1510,33 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_crearCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoJDMouseClicked
         // TODO add your handling code here:
-        if (metaData.getCampos().size() <= 14 && arbolB.getRaiz() == null && jb_crearCampoJD.isEnabled()) {
-            jt_nombreCampo.setText("");
-            rb_int.setSelected(true);
-            rb_bool.setSelected(false);
-            rb_char.setSelected(false);
-            rb_double.setSelected(false);
-            rb_string.setSelected(false);
-            js_longitud.setValue(2);
-            if (buscarLlave()) {
-                rb_si.setSelected(false);
-                rb_si.setEnabled(false);
-                rb_no.setSelected(true);
+        if (arbolB.getRaiz() == null && jb_crearCampoJD.isEnabled()) {
+            if (metaData.getCampos().size() <= 14) {
+                jt_nombreCampo.setText("");
+                rb_int.setSelected(true);
+                rb_bool.setSelected(false);
+                rb_char.setSelected(false);
+                rb_double.setSelected(false);
+                rb_string.setSelected(false);
+                js_longitud.setValue(2);
+                if (buscarLlave()) {
+                    rb_si.setSelected(false);
+                    rb_si.setEnabled(false);
+                    rb_no.setSelected(true);
+                } else {
+                    rb_si.setEnabled(true);
+                    rb_si.setSelected(false);
+                    rb_no.setSelected(true);
+                }
+                jd_crearCampo.pack();
+                jd_crearCampo.setModal(true);
+                jd_crearCampo.setLocationRelativeTo(this);
+                jd_crearCampo.setVisible(true);
             } else {
-                rb_si.setEnabled(true);
-                rb_si.setSelected(false);
-                rb_no.setSelected(true);
+                Toolkit.getDefaultToolkit().beep();
+                JOptionPane.showMessageDialog(this, "Ha creado 15 campos, no se pueden crear más", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
-            jd_crearCampo.pack();
-            jd_crearCampo.setModal(true);
-            jd_crearCampo.setLocationRelativeTo(this);
-            jd_crearCampo.setVisible(true);
-        } else {
-            Toolkit.getDefaultToolkit().beep();
-            JOptionPane.showMessageDialog(this, "Ha creado 15 campos, no se pueden crear más", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
-
     }//GEN-LAST:event_jb_crearCampoJDMouseClicked
 
     private void jb_modificarCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarCampoJDMouseClicked
@@ -1695,7 +1634,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jb_salvar.isEnabled()) {
             try {
-                if (llaves.isEmpty()) {
+                if (metaData.getTamanoMeta() == archivoActual.length() && llaves.isEmpty()) {
                     metaData.escribirCampos(archivoActual);
                 } else {
                     guardarRegistros();
@@ -1703,7 +1642,7 @@ public class Principal extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(this, "Se ha guardado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Se ha guardado exitos amente", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jb_salvarMouseClicked
 
@@ -1722,15 +1661,9 @@ public class Principal extends javax.swing.JFrame {
                     metaData = new Metadata();
                     llaves = new ArrayList<>();
                     registros = new ArrayList<>();
-                    for (int i = 0; i < jfc.getSelectedFile().getName().length(); i++) {
-                        if (jfc.getSelectedFile().getName().charAt(i) != '.') {
-                            nombreArchivo += jfc.getSelectedFile().getName().charAt(i);
-                        } else {
-                            i = jfc.getSelectedFile().getName().length();
-                        }
-                    }
                     path = jfc.getSelectedFile().getPath();
-                    AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
+                    path = path.substring(0, path.length() - 4);
+                    AdministrarArbol adar = new AdministrarArbol(path + "Arbol.eagle");
                     if (adar.getArchivo().exists()) {
                         adar.setArbol(arbolB);
                         adar.cargarArchivo();
@@ -1740,6 +1673,7 @@ public class Principal extends javax.swing.JFrame {
                     jb_abrir.setEnabled(false);
                     jb_cerrar.setEnabled(true);
                     jb_salvar.setEnabled(true);
+
                     metaData.cargarCampos(archivoActual);
                     if (!metaData.getCampos().isEmpty()) {
                         jb_listarCampoJD.setEnabled(true);
@@ -1915,10 +1849,6 @@ public class Principal extends javax.swing.JFrame {
         jd_crearRegistros.setVisible(true);
     }//GEN-LAST:event_jb_crearRegistroMouseClicked
 
-    private void jt_llavePrimariaBuscarRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_llavePrimariaBuscarRegistrosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jt_llavePrimariaBuscarRegistrosActionPerformed
-
     private void jb_ModificarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ModificarRegistroMouseClicked
         if (jb_ModificarRegistro.isEnabled()) {
             jTable_modificarRegistro.setModel(new javax.swing.table.DefaultTableModel(
@@ -1947,25 +1877,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_listarRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarRegistrosMouseClicked
         if (jb_listarRegistros.isEnabled()) {
-            jTable_listarRegistro.setModel(new javax.swing.table.DefaultTableModel(
-                    new Object[][]{},
-                    new String[]{}
-            ));
-            DefaultTableModel modelo = (DefaultTableModel) jTable_listarRegistro.getModel();
-            String cabezas[] = new String[metaData.getCampos().size()];
-            for (int i = 0; i < cabezas.length; i++) {
-                cabezas[i] = metaData.getCampos().get(i).getNombre();
-            }
-            for (Object a : cabezas) {
-                modelo.addColumn(a);
-            }
-            jTable_listarRegistro.setModel(modelo);
             if (arbolB.getRaiz() != null) {
-                Llave[] temp = arbolB.getRaiz().traverse();
-                for (int i = 0; i < temp.length; i++) {
-                    if (temp[i] != null) {
+                ArrayList<Llave> llavesTemp = new ArrayList<>();
+                recorrerArbol(arbolB.getRaiz(), llavesTemp);
+                for (int i = 0; i < llavesTemp.size(); i++) {
+                    if (llavesTemp.get(i) != null) {
                         try {
-                            llenarTabla(jTable_listarRegistro, temp[i]);
+                            llenarTabla(jTable_listarRegistro, llavesTemp.get(i));
                         } catch (IOException ex) {
                             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -2043,19 +1961,6 @@ public class Principal extends javax.swing.JFrame {
             Llave temp = new Llave();
             temp.setLlave(jt_llavePrimariaBuscarRegistros.getText());
             NodoArbol nodo = arbolB.search(temp);
-            jTable_buscarRegistro.setModel(new javax.swing.table.DefaultTableModel(
-                    new Object[][]{},
-                    new String[]{}
-            ));
-            DefaultTableModel modelo = (DefaultTableModel) jTable_buscarRegistro.getModel();
-            String cabezas[] = new String[metaData.getCampos().size()];
-            for (int i = 0; i < cabezas.length; i++) {
-                cabezas[i] = metaData.getCampos().get(i).getNombre();
-            }
-            for (Object a : cabezas) {
-                modelo.addColumn(a);
-            }
-            jTable_buscarRegistro.setModel(modelo);
             if (nodo == null) {
                 JOptionPane.showMessageDialog(jd_buscarRegistros, "No se encontró la llave", "Información", JOptionPane.INFORMATION_MESSAGE);
                 jt_llavePrimariaBuscarRegistros.setText("");
@@ -2066,7 +1971,6 @@ public class Principal extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
             }
         }
     }//GEN-LAST:event_jb_buscarLlaveBRMouseClicked
@@ -2080,13 +1984,8 @@ public class Principal extends javax.swing.JFrame {
             Toolkit.getDefaultToolkit().beep();
             JOptionPane.showMessageDialog(jd_crearRegistros, "La tabla ya esta vacia", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
-
         jTable_agregarRegistro.setModel(modelo);
     }//GEN-LAST:event_jb_deleteLastRowMouseClicked
-
-    private void jb_addNewRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_addNewRowActionPerformed
-
-    }//GEN-LAST:event_jb_addNewRowActionPerformed
 
     private void jb_addNewRowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_addNewRowMouseClicked
         DefaultTableModel modelo = (DefaultTableModel) jTable_agregarRegistro.getModel();
@@ -2206,6 +2105,7 @@ public class Principal extends javax.swing.JFrame {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        JOptionPane.showMessageDialog(jd_borrarRegistro, "Ha borrado el registro", "Información", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jb_deleteRegistroMouseClicked
 
     private void jb_buscarLlaveModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscarLlaveModificarMouseClicked
@@ -2230,10 +2130,6 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_buscarLlaveModificarMouseClicked
 
-    private void jb_deleteLastRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_deleteLastRowActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jb_deleteLastRowActionPerformed
-
     private void jb_modificarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarRegistroMouseClicked
         // TODO add your handling code here:
         DefaultTableModel modelo = (DefaultTableModel) jTable_modificarRegistro.getModel();
@@ -2247,6 +2143,17 @@ public class Principal extends javax.swing.JFrame {
                 j = columns;
             } else {
                 data[0][j] = modelo.getValueAt(0, j);
+            }
+        }
+        Llave prueba = new Llave();
+        prueba.setLlave((String) data[0][0]);
+        if (arbolB.search(prueba) == null) {
+            flag = false;
+            JOptionPane.showMessageDialog(jd_modificarRegistro, "No pueden modificar la llave primaria", "Información", JOptionPane.INFORMATION_MESSAGE);
+            try {
+                llenarTabla(jTable_modificarRegistro, llaveActual);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (flag) {
@@ -2263,7 +2170,7 @@ public class Principal extends javax.swing.JFrame {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
-                if (metaData.getAvailList().vacia()) {
+                if (!metaData.getAvailList().vacia()) {
                     int i;
                     Llave temp = new Llave();
                     boolean flag2 = false;
@@ -2273,9 +2180,9 @@ public class Principal extends javax.swing.JFrame {
                             break;
                         }
                     }
-                    temp = metaData.getAvailList().elementoPosicion(i);
-                    posArchivo = metaData.getAvailList().elementoPosicion(i).getOffset();
                     if (flag2) {
+                        temp = metaData.getAvailList().elementoPosicion(i);
+                        posArchivo = metaData.getAvailList().elementoPosicion(i).getOffset();
                         if (i == 1 && i != metaData.getAvailList().size) {
                             try {
                                 archivoActual.seek(metaData.getPosAvailList());
@@ -2318,11 +2225,29 @@ public class Principal extends javax.swing.JFrame {
                             }
                         }
                         try {
-                            archivoActual.seek(metaData.getAvailList().elementoPosicion(i).getOffset());
+                            archivoActual.seek(posArchivo);
                             llaveActual.setOffset(metaData.getAvailList().elementoPosicion(i).getOffset());
                             llaveActual.setTamano(registro.length());
                             archivoActual.write(registro.getBytes());
                             metaData.getAvailList().borrarElemento(i);
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } else {
+                        Llave llaveTemp = new Llave();
+                        try {
+                            llaveTemp.setOffset(llaveActual.getOffset());
+                            llaveTemp.setTamano(registro.length());
+                            metaData.getAvailList().inserta(llaveTemp, metaData.getAvailList().size + 1);
+                            Llave llaveAnterior = metaData.getAvailList().elementoPosicion(metaData.getAvailList().size - 1);
+                            String nuevaPosAvail = "*" + llaveTemp.getOffset() + "$" + llaveAnterior.getTamano() + "*";
+                            archivoActual.seek(llaveAnterior.getOffset());
+                            archivoActual.write(nuevaPosAvail.getBytes());
+                            String ultimaAvail = "*-1$" + llaveTemp.getTamano() + "*";
+                            archivoActual.seek(llaveTemp.getOffset());
+                            archivoActual.write(ultimaAvail.getBytes());
+                            archivoActual.seek(archivoActual.length());
+                            archivoActual.write(registro.getBytes());
                         } catch (IOException ex) {
                             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -2334,27 +2259,28 @@ public class Principal extends javax.swing.JFrame {
                     temp.setOffset(posLlave);
                     temp.setTamano(tamaño);
                     metaData.getAvailList().inserta(temp, metaData.getAvailList().size + 1);
-                    Llave tempAnterior = metaData.getAvailList().elementoPosicion(metaData.getAvailList().size - 1);
-                    String nuevaPosAvail = "*" + temp.getOffset() + "$" + tempAnterior.getTamano() + "*";
+                    String nuevaPosAvail = temp.getOffset() + "$" + temp.getTamano();
                     try {
-                        archivoActual.seek(tempAnterior.getOffset());
+                        archivoActual.seek(metaData.getPosAvailList());
                         archivoActual.write(nuevaPosAvail.getBytes());
                         archivoActual.seek(temp.getOffset());
                         String ultimoPosAvail = "*-1$" + temp.getTamano() + "*";
                         archivoActual.write(ultimoPosAvail.getBytes());
+                        archivoActual.seek(archivoActual.length());
+                        archivoActual.write(registro.getBytes());
                     } catch (IOException ex) {
                         Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
+            JOptionPane.showMessageDialog(jd_modificarRegistro, "Se ha modificado el registro exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
-        JOptionPane.showMessageDialog(jd_modificarRegistro, "Se ha modificado el registro exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jb_modificarRegistroMouseClicked
 
     private void jb_crearIndiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearIndiceMouseClicked
         // TODO add your handling code here:
         if (arbolB.getRaiz() != null) {
-            AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
+            AdministrarArbol adar = new AdministrarArbol(path + "Arbol.eagle");
             adar.setArbol(arbolB);
             adar.escribirArchivo();
             JOptionPane.showMessageDialog(this, "Se ha guardado el archivo del arbol donde esta ubicado el archivo de texto", "Información", JOptionPane.INFORMATION_MESSAGE);
@@ -2507,13 +2433,9 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_crearCampoMouseClicked
 
-    private void jb_borrarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_borrarRegistroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jb_borrarRegistroActionPerformed
-
     private void jb_reindJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_reindJDMouseClicked
         // TODO add your handling code here:
-        if (jb_reindexar.isEnabled() && arbolB.getRaiz() == null) {
+        if (jb_reindexar.isEnabled() && arbolB.getRaiz() != null) {
             jl_camposRein.setModel(new DefaultListModel());
             DefaultListModel modelo = (DefaultListModel) jl_camposRein.getModel();
             for (int i = 0; i < metaData.getCampos().size(); i++) {
@@ -2574,7 +2496,6 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void guardarRegistros() throws IOException {
-        long acum = archivoActual.length() - metaData.getTamanoMeta();
         String saltoLinea = "\n";
         posArchivo = archivoActual.length();
         boolean flag = false;
@@ -2623,13 +2544,24 @@ public class Principal extends javax.swing.JFrame {
                 llaves.get(i).setOffset(posArchivo);
                 arbolB.insert(llaves.get(i));
                 archivoActual.seek(posArchivo);
+                long posTemp = posArchivo;
                 archivoActual.write(registros.get(i).getBytes());
                 posArchivo += registros.get(i).length();
-                acum += registros.get(i).length();
+                int acum = 0;
+                for (long j = posTemp; j >= 0; j--) {
+                    archivoActual.seek(j);
+                    byte[] temp = {archivoActual.readByte()};
+                    String tempString = new String(temp);
+                    if (tempString.equals("\n")) {
+                        j = -1;
+                    } else {
+                        acum++;
+                    }
+                }
                 if (acum >= 50) {
+                    archivoActual.seek(posArchivo);
                     archivoActual.write(saltoLinea.getBytes());
                     posArchivo++;
-                    acum = 0;
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -2661,16 +2593,12 @@ public class Principal extends javax.swing.JFrame {
         for (Object a : cabezas) {
             modeloT.addColumn(a);
         }
-        String rowT[] = new String[metaData.getCampos().size()];
-        modeloT.addRow(rowT);
         tabla.setModel(modeloT);
 
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         String row[] = new String[metaData.getCampos().size()];
-        archivoActual.seek(llave.getOffset());
         byte[] temp = new byte[300];
         int pos = 0;
-        archivoActual.seek(llave.getOffset());
         for (long i = llave.getOffset(); i < (llave.getOffset() + llave.getTamano()); i++) {
             archivoActual.seek(i);
             temp[pos] = archivoActual.readByte();
@@ -2683,6 +2611,17 @@ public class Principal extends javax.swing.JFrame {
         }
         modelo.addRow(row);
         tabla.setModel(modelo);
+    }
+
+    public void recorrerArbol(NodoArbol nodo, ArrayList<Llave> llaves) {
+        for (int i = 0; i < nodo.getKeyNumber(); i++) {
+            if (!nodo.isLeaf()) {
+                recorrerArbol(nodo.getChildren()[i], llaves);
+            }
+            if (llaves.size() <= 10) {
+                llaves.add(nodo.getKeys()[i]);
+            }
+        }
     }
 
     /**
@@ -2720,10 +2659,8 @@ public class Principal extends javax.swing.JFrame {
         });
     }
 
-    //revisar salvar despues de borrar
     RandomAccessFile archivoActual;
     String path;
-    String nombreArchivo;
     Metadata metaData;
     BTree arbolB = new BTree(6);
     ArrayList<String> registros;
