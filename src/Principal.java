@@ -54,7 +54,6 @@ public class Principal extends javax.swing.JFrame {
 
         jd_crearCampo = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jt_nombreCampo = new javax.swing.JTextField();
@@ -63,12 +62,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         rb_si = new javax.swing.JRadioButton();
         rb_no = new javax.swing.JRadioButton();
-        jb_crearCampo = new javax.swing.JButton();
         rb_int = new javax.swing.JRadioButton();
         rb_double = new javax.swing.JRadioButton();
         rb_char = new javax.swing.JRadioButton();
         rb_string = new javax.swing.JRadioButton();
         rb_bool = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
+        jb_crearCampo = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
         buttonGroup_llave = new javax.swing.ButtonGroup();
         buttonGroup_tipo = new javax.swing.ButtonGroup();
         jd_listarCampo = new javax.swing.JDialog();
@@ -76,6 +77,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtable_campos = new javax.swing.JTable();
+        jPanel8 = new javax.swing.JPanel();
         jd_modificarCampo = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -92,37 +94,46 @@ public class Principal extends javax.swing.JFrame {
         rb_stringMod = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         js_longitudMod = new javax.swing.JSpinner();
+        jPanel6 = new javax.swing.JPanel();
         jd_borrarCampo = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_camposDlt = new javax.swing.JList<>();
         jLabel11 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
         jb_deleteField = new javax.swing.JButton();
         buttonGroup_llaveMod = new javax.swing.ButtonGroup();
         buttonGroup_tipoMod = new javax.swing.ButtonGroup();
         jd_buscarRegistros = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
         jl_llaveP_BuscarRegistro = new javax.swing.JLabel();
         jt_llavePrimariaBuscarRegistros = new javax.swing.JTextField();
         jb_buscarLlaveBR = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable_buscarRegistro = new javax.swing.JTable();
-        jLabel14 = new javax.swing.JLabel();
         jd_crearRegistros = new javax.swing.JDialog();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable_agregarRegistro = new javax.swing.JTable();
-        jb_guardarRegistros = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jb_addNewRow = new javax.swing.JButton();
         jb_deleteLastRow = new javax.swing.JButton();
+        jPanel15 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jb_guardarRegistros = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable_agregarRegistro = new javax.swing.JTable();
         jd_borrarRegistro = new javax.swing.JDialog();
-        jl_llaveP_BorrarRegistro = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
         jt_LlavePrimariaBorrarRegistro = new javax.swing.JTextField();
         jb_deleteRegistro = new javax.swing.JToggleButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable_borrarRegistro = new javax.swing.JTable();
-        jb_buscarLLaveBoR = new javax.swing.JButton();
+        jPanel16 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        jb_buscarLLaveBoR = new javax.swing.JButton();
+        jl_llaveP_BorrarRegistro = new javax.swing.JLabel();
         jd_modificarRegistro = new javax.swing.JDialog();
         jl_llaveP_ModificarRegistro = new javax.swing.JLabel();
         jt_llavePrimariaModificar = new javax.swing.JTextField();
@@ -130,18 +141,25 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable_modificarRegistro = new javax.swing.JTable();
         jb_modificarRegistro = new javax.swing.JButton();
+        jPanel18 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
         jd_listarRegistros = new javax.swing.JDialog();
+        jPanel21 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable_listarRegistro = new javax.swing.JTable();
+        jPanel20 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jd_cruzarArchivo = new javax.swing.JDialog();
+        jPanel23 = new javax.swing.JPanel();
         jb_seleccionarArchivo = new javax.swing.JButton();
         jd_reindexar = new javax.swing.JDialog();
+        jPanel22 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
         jb_reindexar = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         jl_camposRein = new javax.swing.JList<>();
-        jLabel18 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jp_archivo = new javax.swing.JPanel();
@@ -160,9 +178,9 @@ public class Principal extends javax.swing.JFrame {
         jb_ModificarRegistro = new javax.swing.JButton();
         jb_listarRegistros = new javax.swing.JButton();
         jb_cargarRegristrosPrueba = new javax.swing.JButton();
-        jb_borrarRegistro = new javax.swing.JButton();
         jb_buscarRegistro = new javax.swing.JButton();
         jb_cruzarArchivos = new javax.swing.JButton();
+        jb_borrarRegistro = new javax.swing.JButton();
         jp_indice = new javax.swing.JPanel();
         jb_crearIndice = new javax.swing.JButton();
         jb_reindJD = new javax.swing.JButton();
@@ -170,24 +188,26 @@ public class Principal extends javax.swing.JFrame {
         jb_exportarExcel = new javax.swing.JButton();
         jb_exportarXML = new javax.swing.JButton();
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel3.setText("Crear Campo");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 30));
-
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         jLabel4.setText("LLave Primaria:");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Nombre:");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jt_nombreCampo.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jPanel3.add(jt_nombreCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 160, -1));
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tipo:");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, -1));
 
@@ -196,30 +216,30 @@ public class Principal extends javax.swing.JFrame {
         js_longitud.setEnabled(false);
         jPanel3.add(js_longitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 60, 30));
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Longitud:");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
+        rb_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup_llave.add(rb_si);
         rb_si.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_si.setForeground(new java.awt.Color(255, 255, 255));
         rb_si.setText("Sí");
         jPanel3.add(rb_si, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
+        rb_no.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup_llave.add(rb_no);
         rb_no.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_no.setForeground(new java.awt.Color(255, 255, 255));
         rb_no.setText("No");
         jPanel3.add(rb_no, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
-        jb_crearCampo.setText("Crear");
-        jb_crearCampo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_crearCampoMouseClicked(evt);
-            }
-        });
-        jPanel3.add(jb_crearCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, 30));
-
+        rb_int.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup_tipo.add(rb_int);
         rb_int.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_int.setForeground(new java.awt.Color(255, 255, 255));
         rb_int.setText("int");
         rb_int.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -228,8 +248,10 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel3.add(rb_int, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
+        rb_double.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup_tipo.add(rb_double);
         rb_double.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_double.setForeground(new java.awt.Color(255, 255, 255));
         rb_double.setText("double");
         rb_double.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -238,8 +260,10 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel3.add(rb_double, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
 
+        rb_char.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup_tipo.add(rb_char);
         rb_char.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_char.setForeground(new java.awt.Color(255, 255, 255));
         rb_char.setText("char");
         rb_char.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -248,8 +272,10 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel3.add(rb_char, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
 
+        rb_string.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup_tipo.add(rb_string);
         rb_string.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_string.setForeground(new java.awt.Color(255, 255, 255));
         rb_string.setText("String");
         rb_string.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -258,8 +284,10 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel3.add(rb_string, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
+        rb_bool.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup_tipo.add(rb_bool);
         rb_bool.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_bool.setForeground(new java.awt.Color(255, 255, 255));
         rb_bool.setText("boolean");
         rb_bool.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -268,24 +296,61 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel3.add(rb_bool, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Crear Campo");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 130, 30));
+
+        jb_crearCampo.setBackground(new java.awt.Color(0, 153, 51));
+        jb_crearCampo.setForeground(new java.awt.Color(255, 255, 255));
+        jb_crearCampo.setText("Crear");
+        jb_crearCampo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_crearCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearCampoMouseClicked(evt);
+            }
+        });
+        jPanel3.add(jb_crearCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 150, 30));
+
+        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 178, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 180, 40));
+
         javax.swing.GroupLayout jd_crearCampoLayout = new javax.swing.GroupLayout(jd_crearCampo.getContentPane());
         jd_crearCampo.getContentPane().setLayout(jd_crearCampoLayout);
         jd_crearCampoLayout.setHorizontalGroup(
             jd_crearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jd_crearCampoLayout.setVerticalGroup(
             jd_crearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
         );
 
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Listar Campos");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 130, 30));
 
+        jtable_campos.setBackground(new java.awt.Color(255, 255, 255));
         jtable_campos.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jtable_campos.setForeground(new java.awt.Color(0, 0, 0));
         jtable_campos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -309,9 +374,27 @@ public class Principal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtable_campos.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane1.setViewportView(jtable_campos);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 370, 240));
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel8.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 178, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 180, 40));
 
         javax.swing.GroupLayout jd_listarCampoLayout = new javax.swing.GroupLayout(jd_listarCampo.getContentPane());
         jd_listarCampo.getContentPane().setLayout(jd_listarCampoLayout);
@@ -324,6 +407,7 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
         );
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_camposMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
@@ -338,31 +422,38 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 160, 250));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Modificar Campos");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 170, 30));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Nombre:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 60, 30));
 
         jt_nombreCampoMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jPanel1.add(jt_nombreCampoMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 160, -1));
 
+        jb_modify.setBackground(new java.awt.Color(153, 153, 0));
         jb_modify.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_modify.setForeground(new java.awt.Color(0, 0, 0));
         jb_modify.setText("Modificar");
+        jb_modify.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_modify.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_modifyMouseClicked(evt);
             }
         });
-        jPanel1.add(jb_modify, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 120, 30));
+        jPanel1.add(jb_modify, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 120, 30));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Tipo:");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 50, -1));
 
         buttonGroup_tipoMod.add(rb_intMod);
         rb_intMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_intMod.setForeground(new java.awt.Color(255, 255, 255));
         rb_intMod.setText("int");
         rb_intMod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -373,6 +464,7 @@ public class Principal extends javax.swing.JFrame {
 
         buttonGroup_tipoMod.add(rb_doubleMod);
         rb_doubleMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_doubleMod.setForeground(new java.awt.Color(255, 255, 255));
         rb_doubleMod.setText("double");
         rb_doubleMod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -383,6 +475,7 @@ public class Principal extends javax.swing.JFrame {
 
         buttonGroup_tipoMod.add(rb_charMod);
         rb_charMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_charMod.setForeground(new java.awt.Color(255, 255, 255));
         rb_charMod.setText("char");
         rb_charMod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -393,6 +486,7 @@ public class Principal extends javax.swing.JFrame {
 
         buttonGroup_tipoMod.add(rb_boolMod);
         rb_boolMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_boolMod.setForeground(new java.awt.Color(255, 255, 255));
         rb_boolMod.setText("boolean");
         rb_boolMod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -403,6 +497,7 @@ public class Principal extends javax.swing.JFrame {
 
         buttonGroup_tipoMod.add(rb_stringMod);
         rb_stringMod.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        rb_stringMod.setForeground(new java.awt.Color(255, 255, 255));
         rb_stringMod.setText("String");
         rb_stringMod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -412,6 +507,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(rb_stringMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Longitud:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
 
@@ -419,6 +515,23 @@ public class Principal extends javax.swing.JFrame {
         js_longitudMod.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         js_longitudMod.setEnabled(false);
         jPanel1.add(js_longitudMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 60, 30));
+
+        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 178, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 180, 40));
 
         javax.swing.GroupLayout jd_modificarCampoLayout = new javax.swing.GroupLayout(jd_modificarCampo.getContentPane());
         jd_modificarCampo.getContentPane().setLayout(jd_modificarCampoLayout);
@@ -431,26 +544,47 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
         );
 
+        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_camposDlt.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jl_camposDlt.setModel(new DefaultListModel());
         jScrollPane3.setViewportView(jl_camposDlt);
 
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 200, 180));
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 200, 240));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Borrar Campos");
         jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 140, 30));
 
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 178, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 180, 40));
+
+        jb_deleteField.setBackground(new java.awt.Color(153, 0, 51));
         jb_deleteField.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jb_deleteField.setText("Borrar");
+        jb_deleteField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_deleteField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_deleteFieldMouseClicked(evt);
             }
         });
-        jPanel5.add(jb_deleteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 70, -1));
+        jPanel5.add(jb_deleteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 100, 30));
 
         javax.swing.GroupLayout jd_borrarCampoLayout = new javax.swing.GroupLayout(jd_borrarCampo.getContentPane());
         jd_borrarCampo.getContentPane().setLayout(jd_borrarCampoLayout);
@@ -460,9 +594,37 @@ public class Principal extends javax.swing.JFrame {
         );
         jd_borrarCampoLayout.setVerticalGroup(
             jd_borrarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
         );
 
+        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel10.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel10.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Buscar Registro");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel14)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
+
+        jl_llaveP_BuscarRegistro.setBackground(new java.awt.Color(255, 255, 255));
         jl_llaveP_BuscarRegistro.setText("Llave Primaria");
 
         jt_llavePrimariaBuscarRegistros.addActionListener(new java.awt.event.ActionListener() {
@@ -471,13 +633,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jb_buscarLlaveBR.setBackground(new java.awt.Color(0, 51, 153));
         jb_buscarLlaveBR.setText("Buscar ");
+        jb_buscarLlaveBR.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_buscarLlaveBR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_buscarLlaveBRMouseClicked(evt);
             }
         });
 
+        jTable_buscarRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        jTable_buscarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_buscarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -488,71 +654,91 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTable_buscarRegistro);
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
-        jLabel14.setText("Buscar Registro");
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jl_llaveP_BuscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14)
+                                .addComponent(jb_buscarLlaveBR, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(182, 182, 182)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_llaveP_BuscarRegistro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_buscarLlaveBR, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jd_buscarRegistrosLayout = new javax.swing.GroupLayout(jd_buscarRegistros.getContentPane());
         jd_buscarRegistros.getContentPane().setLayout(jd_buscarRegistrosLayout);
         jd_buscarRegistrosLayout.setHorizontalGroup(
             jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
-                    .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                        .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jl_llaveP_BuscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jb_buscarLlaveBR, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                                .addGap(220, 220, 220)
-                                .addComponent(jLabel14)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jd_buscarRegistrosLayout.setVerticalGroup(
             jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_buscarRegistrosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jl_llaveP_BuscarRegistro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(jd_buscarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_buscarLlaveBR)
-                    .addComponent(jt_llavePrimariaBuscarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jd_crearRegistros.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel12.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel12.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel12.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Agregar Registro");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel2)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
                 .addContainerGap())
         );
 
-        jTable_agregarRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jTable_agregarRegistro.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane4.setViewportView(jTable_agregarRegistro);
-
-        jb_guardarRegistros.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_guardarRegistros.setText("Guardar");
-        jb_guardarRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_guardarRegistrosMouseClicked(evt);
-            }
-        });
-
         jb_addNewRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
-        jb_addNewRow.setText("+");
+        jb_addNewRow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\png\\002-mas.png")); // NOI18N
+        jb_addNewRow.setContentAreaFilled(false);
         jb_addNewRow.setPreferredSize(new java.awt.Dimension(38, 28));
         jb_addNewRow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -566,7 +752,8 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jb_deleteLastRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
-        jb_deleteLastRow.setText("-");
+        jb_deleteLastRow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\png\\001-negativo.png")); // NOI18N
+        jb_deleteLastRow.setContentAreaFilled(false);
         jb_deleteLastRow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_deleteLastRowMouseClicked(evt);
@@ -578,69 +765,112 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jPanel15.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel15.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel15.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Rows");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel2.setText("Agregar Registro");
-
-        javax.swing.GroupLayout jd_crearRegistrosLayout = new javax.swing.GroupLayout(jd_crearRegistros.getContentPane());
-        jd_crearRegistros.getContentPane().setLayout(jd_crearRegistrosLayout);
-        jd_crearRegistrosLayout.setHorizontalGroup(
-            jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                        .addGap(296, 296, 296)
-                        .addComponent(jLabel2))
-                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(jLabel1))
-                            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jb_guardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                                        .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(25, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jd_crearRegistrosLayout.setVerticalGroup(
-            jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jd_crearRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jb_guardarRegistros)
-                        .addGap(0, 136, Short.MAX_VALUE))
-                    .addGroup(jd_crearRegistrosLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
                 .addContainerGap())
         );
 
-        jl_llaveP_BorrarRegistro.setText("Llave Primaria");
+        jb_guardarRegistros.setBackground(new java.awt.Color(0, 153, 51));
+        jb_guardarRegistros.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_guardarRegistros.setText("Guardar");
+        jb_guardarRegistros.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_guardarRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_guardarRegistrosMouseClicked(evt);
+            }
+        });
 
+        jTable_agregarRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        jTable_agregarRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jTable_agregarRegistro.setForeground(new java.awt.Color(0, 0, 0));
+        jTable_agregarRegistro.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(jTable_agregarRegistro);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jb_guardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jb_deleteLastRow)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)))
+                .addGap(24, 24, 24))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 7, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jb_guardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
+        );
+
+        jd_crearRegistros.getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 300));
+
+        jPanel17.setBackground(new java.awt.Color(0, 0, 0));
+
+        jb_deleteRegistro.setBackground(new java.awt.Color(153, 0, 51));
         jb_deleteRegistro.setText("Borrar ");
+        jb_deleteRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_deleteRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_deleteRegistroMouseClicked(evt);
             }
         });
 
+        jTable_borrarRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        jTable_borrarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_borrarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -651,66 +881,113 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(jTable_borrarRegistro);
 
+        jPanel16.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel16.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Borrar Registro");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addContainerGap())
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel15))
+        );
+
+        jb_buscarLLaveBoR.setBackground(new java.awt.Color(0, 51, 153));
         jb_buscarLLaveBoR.setText("Buscar");
+        jb_buscarLLaveBoR.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_buscarLLaveBoR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_buscarLLaveBoRMouseClicked(evt);
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
-        jLabel15.setText("Borrar Registro");
+        jl_llaveP_BorrarRegistro.setForeground(new java.awt.Color(255, 255, 255));
+        jl_llaveP_BorrarRegistro.setText("Llave Primaria");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(236, 236, 236)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addComponent(jt_LlavePrimariaBorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_buscarLLaveBoR, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_deleteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jl_llaveP_BorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 34, Short.MAX_VALUE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jl_llaveP_BorrarRegistro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_buscarLLaveBoR, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_deleteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jt_LlavePrimariaBorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jd_borrarRegistroLayout = new javax.swing.GroupLayout(jd_borrarRegistro.getContentPane());
         jd_borrarRegistro.getContentPane().setLayout(jd_borrarRegistroLayout);
         jd_borrarRegistroLayout.setHorizontalGroup(
             jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
-                .addGroup(jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jLabel15))
-                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jl_llaveP_BorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jt_LlavePrimariaBorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jb_buscarLLaveBoR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jb_deleteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jd_borrarRegistroLayout.setVerticalGroup(
             jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_borrarRegistroLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel15)
-                .addGap(15, 15, 15)
-                .addComponent(jl_llaveP_BorrarRegistro)
-                .addGap(6, 6, 6)
-                .addGroup(jd_borrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jt_LlavePrimariaBorrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_buscarLLaveBoR)
-                    .addComponent(jb_deleteRegistro))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jl_llaveP_ModificarRegistro.setText("Llave");
+        jd_modificarRegistro.setBackground(new java.awt.Color(0, 0, 0));
+        jd_modificarRegistro.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jl_llaveP_ModificarRegistro.setForeground(new java.awt.Color(255, 255, 255));
+        jl_llaveP_ModificarRegistro.setText("Llave");
+        jd_modificarRegistro.getContentPane().add(jl_llaveP_ModificarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 391, -1));
+        jd_modificarRegistro.getContentPane().add(jt_llavePrimariaModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 286, -1));
+
+        jb_buscarLlaveModificar.setBackground(new java.awt.Color(0, 0, 153));
         jb_buscarLlaveModificar.setText("Buscar");
+        jb_buscarLlaveModificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_buscarLlaveModificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_buscarLlaveModificarMouseClicked(evt);
             }
         });
+        jd_modificarRegistro.getContentPane().add(jb_buscarLlaveModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 80, 36));
 
+        jTable_modificarRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        jTable_modificarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_modificarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -721,55 +998,67 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jTable_modificarRegistro);
 
+        jd_modificarRegistro.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 591, 140));
+
+        jb_modificarRegistro.setBackground(new java.awt.Color(153, 153, 0));
+        jb_modificarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_modificarRegistro.setText("Modificar");
+        jb_modificarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_modificarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_modificarRegistroMouseClicked(evt);
             }
         });
+        jd_modificarRegistro.getContentPane().add(jb_modificarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 80, 36));
+
+        jPanel18.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel18.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel18.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Modifcar Registro");
 
-        javax.swing.GroupLayout jd_modificarRegistroLayout = new javax.swing.GroupLayout(jd_modificarRegistro.getContentPane());
-        jd_modificarRegistro.getContentPane().setLayout(jd_modificarRegistroLayout);
-        jd_modificarRegistroLayout.setHorizontalGroup(
-            jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
-                .addGroup(jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_llaveP_ModificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
-                                .addComponent(jt_llavePrimariaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jb_buscarLlaveModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jb_modificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(jLabel16)))
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-        jd_modificarRegistroLayout.setVerticalGroup(
-            jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificarRegistroLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel16)
-                .addGap(18, 18, 18)
-                .addComponent(jl_llaveP_ModificarRegistro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jd_modificarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jt_llavePrimariaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_buscarLlaveModificar)
-                    .addComponent(jb_modificarRegistro))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jd_modificarRegistro.getContentPane().add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 160, -1));
+
+        jPanel19.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 610, Short.MAX_VALUE)
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 270, Short.MAX_VALUE)
+        );
+
+        jd_modificarRegistro.getContentPane().add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 270));
+
+        jd_listarRegistros.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel21.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable_listarRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        jTable_listarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jTable_listarRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -780,398 +1069,421 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(jTable_listarRegistro);
 
+        jPanel21.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 347, 274));
+
+        jPanel20.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel20.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel20.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel17.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Listar Registro");
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel17)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17)
+        );
+
+        jPanel21.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 160, -1));
 
         javax.swing.GroupLayout jd_listarRegistrosLayout = new javax.swing.GroupLayout(jd_listarRegistros.getContentPane());
         jd_listarRegistros.getContentPane().setLayout(jd_listarRegistrosLayout);
         jd_listarRegistrosLayout.setHorizontalGroup(
             jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
-                .addGap(186, 186, 186)
-                .addComponent(jLabel17)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
         );
         jd_listarRegistrosLayout.setVerticalGroup(
             jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
         );
 
+        jPanel23.setBackground(new java.awt.Color(0, 0, 0));
+
+        jb_seleccionarArchivo.setBackground(new java.awt.Color(0, 0, 153));
         jb_seleccionarArchivo.setText("Seleccionar");
+        jb_seleccionarArchivo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_seleccionarArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_seleccionarArchivoMouseClicked(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(jb_seleccionarArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(207, Short.MAX_VALUE))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jb_seleccionarArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(294, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jd_cruzarArchivoLayout = new javax.swing.GroupLayout(jd_cruzarArchivo.getContentPane());
         jd_cruzarArchivo.getContentPane().setLayout(jd_cruzarArchivoLayout);
         jd_cruzarArchivoLayout.setHorizontalGroup(
             jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_cruzarArchivoLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jb_seleccionarArchivo)
-                .addContainerGap(336, Short.MAX_VALUE))
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jd_cruzarArchivoLayout.setVerticalGroup(
             jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_cruzarArchivoLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jb_seleccionarArchivo)
-                .addContainerGap(309, Short.MAX_VALUE))
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jd_reindexar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel22.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel24.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel24.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel24.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Campos");
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        jb_reindexar.setBackground(new java.awt.Color(0, 153, 153));
         jb_reindexar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_reindexar.setForeground(new java.awt.Color(0, 0, 0));
         jb_reindexar.setText("Reindexar");
+        jb_reindexar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_reindexar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_reindexarMouseClicked(evt);
             }
         });
 
+        jl_camposRein.setBackground(new java.awt.Color(255, 255, 255));
         jl_camposRein.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jl_camposRein.setForeground(new java.awt.Color(0, 0, 0));
         jl_camposRein.setModel(new DefaultListModel());
         jScrollPane9.setViewportView(jl_camposRein);
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel18.setText("Campos");
-
-        javax.swing.GroupLayout jd_reindexarLayout = new javax.swing.GroupLayout(jd_reindexar.getContentPane());
-        jd_reindexar.getContentPane().setLayout(jd_reindexarLayout);
-        jd_reindexarLayout.setHorizontalGroup(
-            jd_reindexarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_reindexarLayout.createSequentialGroup()
-                .addGroup(jd_reindexarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_reindexarLayout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel18))
-                    .addGroup(jd_reindexarLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_reindexarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jb_reindexar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100))
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_reindexar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
-        jd_reindexarLayout.setVerticalGroup(
-            jd_reindexarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_reindexarLayout.createSequentialGroup()
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jb_reindexar)
-                .addGap(21, 21, 21))
+                .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_reindexar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
+
+        jd_reindexar.getContentPane().add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 290));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
 
+        jp_archivo.setBackground(new java.awt.Color(0, 0, 0));
+        jp_archivo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_nuevo.setBackground(new java.awt.Color(0, 153, 153));
         jb_nuevo.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_nuevo.setForeground(new java.awt.Color(0, 0, 0));
         jb_nuevo.setText("Nuevo");
+        jb_nuevo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_nuevo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_nuevoMouseClicked(evt);
             }
         });
+        jp_archivo.add(jb_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 100, 62));
 
+        jb_salvar.setBackground(new java.awt.Color(0, 153, 153));
         jb_salvar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_salvar.setForeground(new java.awt.Color(0, 0, 0));
         jb_salvar.setText("Salvar");
+        jb_salvar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_salvar.setEnabled(false);
         jb_salvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_salvarMouseClicked(evt);
             }
         });
+        jp_archivo.add(jb_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 100, 60));
 
+        jb_abrir.setBackground(new java.awt.Color(0, 153, 153));
         jb_abrir.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_abrir.setForeground(new java.awt.Color(0, 0, 0));
         jb_abrir.setText("Abrir");
+        jb_abrir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_abrir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_abrirMouseClicked(evt);
             }
         });
+        jp_archivo.add(jb_abrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 100, 62));
 
+        jb_cerrar.setBackground(new java.awt.Color(0, 153, 153));
         jb_cerrar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_cerrar.setForeground(new java.awt.Color(0, 0, 0));
         jb_cerrar.setText("Cerrar");
+        jb_cerrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_cerrar.setEnabled(false);
         jb_cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_cerrarMouseClicked(evt);
             }
         });
+        jp_archivo.add(jb_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 100, 60));
 
+        jb_salir.setBackground(new java.awt.Color(153, 0, 0));
         jb_salir.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jb_salir.setText("Salir del Programa");
+        jb_salir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_salir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_salirMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jp_archivoLayout = new javax.swing.GroupLayout(jp_archivo);
-        jp_archivo.setLayout(jp_archivoLayout);
-        jp_archivoLayout.setHorizontalGroup(
-            jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_archivoLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_archivoLayout.createSequentialGroup()
-                        .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jb_nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                            .addComponent(jb_salvar, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
-                        .addGap(29, 29, 29)
-                        .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_abrir, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jp_archivoLayout.createSequentialGroup()
-                        .addGap(6, 214, Short.MAX_VALUE)
-                        .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jp_archivoLayout.setVerticalGroup(
-            jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_archivoLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
-                .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_abrir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jp_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
-                .addComponent(jb_salir)
-                .addContainerGap())
-        );
+        jp_archivo.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 130, 30));
 
         jTabbedPane1.addTab("Archivo", jp_archivo);
 
+        jp_campo.setBackground(new java.awt.Color(0, 0, 0));
+        jp_campo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_crearCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_crearCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_crearCampoJD.setText("Crear");
+        jb_crearCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_crearCampoJD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_crearCampoJDMouseClicked(evt);
             }
         });
+        jp_campo.add(jb_crearCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 100, 60));
 
+        jb_listarCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_listarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_listarCampoJD.setText("Listar");
+        jb_listarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_listarCampoJD.setEnabled(false);
         jb_listarCampoJD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_listarCampoJDMouseClicked(evt);
             }
         });
+        jp_campo.add(jb_listarCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, 60));
 
+        jb_modificarCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_modificarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_modificarCampoJD.setText("Modificar");
+        jb_modificarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_modificarCampoJD.setEnabled(false);
         jb_modificarCampoJD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_modificarCampoJDMouseClicked(evt);
             }
         });
+        jp_campo.add(jb_modificarCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 100, 60));
 
+        jb_borrarCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_borrarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_borrarCampoJD.setText("Borrar");
+        jb_borrarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_borrarCampoJD.setEnabled(false);
         jb_borrarCampoJD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_borrarCampoJDMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jp_campoLayout = new javax.swing.GroupLayout(jp_campo);
-        jp_campo.setLayout(jp_campoLayout);
-        jp_campoLayout.setHorizontalGroup(
-            jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_campoLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_crearCampoJD, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                    .addComponent(jb_modificarCampoJD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_borrarCampoJD, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(jb_listarCampoJD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(94, Short.MAX_VALUE))
-        );
-        jp_campoLayout.setVerticalGroup(
-            jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_campoLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_crearCampoJD, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_listarCampoJD, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jp_campoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_modificarCampoJD, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_borrarCampoJD, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94))
-        );
+        jp_campo.add(jb_borrarCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 100, 60));
 
         jTabbedPane1.addTab("Campos", jp_campo);
 
+        jp_registro.setBackground(new java.awt.Color(0, 0, 0));
+        jp_registro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_crearRegistro.setBackground(new java.awt.Color(102, 0, 153));
         jb_crearRegistro.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_crearRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_crearRegistro.setText("Crear Registro");
+        jb_crearRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_crearRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_crearRegistroMouseClicked(evt);
             }
         });
+        jp_registro.add(jb_crearRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 120, 60));
 
+        jb_ModificarRegistro.setBackground(new java.awt.Color(102, 0, 153));
+        jb_ModificarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_ModificarRegistro.setText("Modificar Registro");
+        jb_ModificarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_ModificarRegistro.setEnabled(false);
         jb_ModificarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_ModificarRegistroMouseClicked(evt);
             }
         });
+        jp_registro.add(jb_ModificarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 130, 60));
 
+        jb_listarRegistros.setBackground(new java.awt.Color(102, 0, 153));
+        jb_listarRegistros.setForeground(new java.awt.Color(0, 0, 0));
         jb_listarRegistros.setText("Listar Registros");
+        jb_listarRegistros.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_listarRegistros.setEnabled(false);
         jb_listarRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_listarRegistrosMouseClicked(evt);
             }
         });
+        jp_registro.add(jb_listarRegistros, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 130, 60));
 
+        jb_cargarRegristrosPrueba.setBackground(new java.awt.Color(102, 0, 153));
+        jb_cargarRegristrosPrueba.setForeground(new java.awt.Color(0, 0, 0));
         jb_cargarRegristrosPrueba.setText("Cargar Registros");
+        jb_cargarRegristrosPrueba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jp_registro.add(jb_cargarRegristrosPrueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 130, 60));
 
-        jb_borrarRegistro.setText("Borrar Registro");
-        jb_borrarRegistro.setEnabled(false);
-        jb_borrarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_borrarRegistroMouseClicked(evt);
-            }
-        });
-
+        jb_buscarRegistro.setBackground(new java.awt.Color(102, 0, 153));
+        jb_buscarRegistro.setForeground(new java.awt.Color(0, 0, 0));
         jb_buscarRegistro.setText("Buscar Registro");
+        jb_buscarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_buscarRegistro.setEnabled(false);
         jb_buscarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_buscarRegistroMouseClicked(evt);
             }
         });
+        jp_registro.add(jb_buscarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 120, 60));
 
+        jb_cruzarArchivos.setBackground(new java.awt.Color(102, 0, 153));
+        jb_cruzarArchivos.setForeground(new java.awt.Color(0, 0, 0));
         jb_cruzarArchivos.setText("Cruzar Archivos");
+        jb_cruzarArchivos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jp_registro.add(jb_cruzarArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 120, 60));
 
-        javax.swing.GroupLayout jp_registroLayout = new javax.swing.GroupLayout(jp_registro);
-        jp_registro.setLayout(jp_registroLayout);
-        jp_registroLayout.setHorizontalGroup(
-            jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_registroLayout.createSequentialGroup()
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_registroLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jb_crearRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jp_registroLayout.createSequentialGroup()
-                        .addContainerGap(24, Short.MAX_VALUE)
-                        .addComponent(jb_ModificarRegistro)
-                        .addGap(18, 18, 18)
-                        .addComponent(jb_borrarRegistro)
-                        .addGap(18, 18, 18)
-                        .addComponent(jb_listarRegistros)))
-                .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(jp_registroLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jb_cruzarArchivos, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jp_registroLayout.setVerticalGroup(
-            jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_registroLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_crearRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                    .addComponent(jb_buscarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 27, Short.MAX_VALUE)
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_registroLayout.createSequentialGroup()
-                        .addComponent(jb_ModificarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))
-                    .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jb_borrarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jb_listarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jp_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_cargarRegristrosPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_cruzarArchivos, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
+        jb_borrarRegistro.setBackground(new java.awt.Color(102, 0, 153));
+        jb_borrarRegistro.setForeground(new java.awt.Color(0, 0, 0));
+        jb_borrarRegistro.setText("Borrar Registro");
+        jb_borrarRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_borrarRegistro.setEnabled(false);
+        jb_borrarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_borrarRegistroMouseClicked(evt);
+            }
+        });
+        jb_borrarRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_borrarRegistroActionPerformed(evt);
+            }
+        });
+        jp_registro.add(jb_borrarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 130, 60));
 
         jTabbedPane1.addTab("Registros", jp_registro);
 
+        jp_indice.setBackground(new java.awt.Color(0, 0, 0));
+        jp_indice.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_crearIndice.setBackground(new java.awt.Color(153, 102, 0));
+        jb_crearIndice.setForeground(new java.awt.Color(0, 0, 0));
         jb_crearIndice.setText("Crear Índices");
+        jb_crearIndice.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jb_crearIndice.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_crearIndiceMouseClicked(evt);
             }
         });
+        jp_indice.add(jb_crearIndice, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 120, 50));
 
+        jb_reindJD.setBackground(new java.awt.Color(153, 102, 0));
+        jb_reindJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_reindJD.setText("Reindexar");
-
-        javax.swing.GroupLayout jp_indiceLayout = new javax.swing.GroupLayout(jp_indice);
-        jp_indice.setLayout(jp_indiceLayout);
-        jp_indiceLayout.setHorizontalGroup(
-            jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_indiceLayout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addGroup(jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_reindJD, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_crearIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(154, Short.MAX_VALUE))
-        );
-        jp_indiceLayout.setVerticalGroup(
-            jp_indiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_indiceLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jb_crearIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jb_reindJD, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
+        jb_reindJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_reindJD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_reindJDMouseClicked(evt);
+            }
+        });
+        jp_indice.add(jb_reindJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 120, 50));
 
         jTabbedPane1.addTab("Índices", jp_indice);
 
-        jb_exportarExcel.setText("Exportar a Excel");
+        jp_estand.setBackground(new java.awt.Color(0, 0, 0));
 
+        jb_exportarExcel.setBackground(new java.awt.Color(0, 153, 0));
+        jb_exportarExcel.setForeground(new java.awt.Color(0, 0, 0));
+        jb_exportarExcel.setText("Exportar a Excel");
+        jb_exportarExcel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jb_exportarXML.setBackground(new java.awt.Color(255, 255, 51));
+        jb_exportarXML.setForeground(new java.awt.Color(0, 0, 0));
         jb_exportarXML.setText("Exportar a XML");
+        jb_exportarXML.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jp_estandLayout = new javax.swing.GroupLayout(jp_estand);
         jp_estand.setLayout(jp_estandLayout);
         jp_estandLayout.setHorizontalGroup(
             jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_estandLayout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addGroup(jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_exportarXML, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_exportarExcel, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addComponent(jb_exportarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jb_exportarXML, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
         );
         jp_estandLayout.setVerticalGroup(
             jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_estandLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jb_exportarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jb_exportarXML, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addGap(129, 129, 129)
+                .addGroup(jp_estandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_exportarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_exportarXML, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Estandarización", jp_estand);
@@ -1227,7 +1539,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El archivo se ha cerrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
             try {
                 archivoActual.close();
-                archivoCruzar.close();
+                //archivoCruzar.close();
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1324,76 +1636,6 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_borrarCampoJDMouseClicked
 
-    private void jb_crearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoMouseClicked
-        // TODO add your handling code here:
-        if (jb_crearCampo.isEnabled()) {
-            String nombreCampo = jt_nombreCampo.getText();
-            String tipoCampo = "";
-            if (rb_int.isSelected()) {
-                tipoCampo = "int";
-            }
-            if (rb_double.isSelected()) {
-                tipoCampo = "double";
-            }
-            if (rb_char.isSelected()) {
-                tipoCampo = "char";
-            }
-            if (rb_string.isSelected()) {
-                tipoCampo = "String";
-            }
-            if (rb_bool.isSelected()) {
-                tipoCampo = "boolean";
-            }
-            int longitud = (int) js_longitud.getValue();
-            boolean llave = false;
-            if (rb_si.isSelected()) {
-                llave = true;
-            }
-
-            if (metaData.getCampos().size() <= 14) {
-                Campo nuevoCampo = new Campo(nombreCampo, tipoCampo, longitud, llave);
-                metaData.getCampos().add(nuevoCampo);
-                JOptionPane.showMessageDialog(jd_crearCampo, "El campo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-                if (nuevoCampo.isLlavePrimaria()) {
-                    for (int i = metaData.getCampos().size() - 1; i >= 1; i--) {
-                        Campo temp = nuevoCampo;
-                        metaData.getCampos().set(i, metaData.getCampos().get(i - 1));
-                        metaData.getCampos().set(i - 1, temp);
-                    }
-                }
-                if (buscarLlave()) {
-                    jTabbedPane1.setEnabledAt(2, true);
-                    jTabbedPane1.setEnabledAt(3, true);
-                    jTabbedPane1.setEnabledAt(4, true);
-                }
-            } else {
-                Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(jd_crearCampo, "Ya ha creado el máximo de campos que es 15", "Información", JOptionPane.INFORMATION_MESSAGE);
-            }
-
-            jt_nombreCampo.setText("");
-            rb_int.setSelected(true);
-            rb_bool.setSelected(false);
-            rb_char.setSelected(false);
-            rb_double.setSelected(false);
-            rb_string.setSelected(false);
-            js_longitud.setValue(2);
-            if (buscarLlave()) {
-                rb_si.setEnabled(false);
-                rb_no.setSelected(true);
-            } else {
-                rb_si.setEnabled(true);
-                rb_si.setSelected(true);
-                rb_no.setSelected(false);
-            }
-            if (metaData.getCampos().size() == 1) {
-                jb_listarCampoJD.setEnabled(true);
-                jb_borrarCampoJD.setEnabled(true);
-                jb_modificarCampoJD.setEnabled(true);
-            }
-        }
-    }//GEN-LAST:event_jb_crearCampoMouseClicked
-
     private void jb_listarCampoJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarCampoJDMouseClicked
         // TODO add your handling code here:
         if (jb_listarCampoJD.isEnabled()) {
@@ -1465,46 +1707,6 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_salvarMouseClicked
 
-    private void rb_stringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_stringMouseClicked
-        // TODO add your handling code here:
-        if (rb_string.isSelected()) {
-            js_longitud.setValue(0);
-            js_longitud.setEnabled(true);
-        }
-    }//GEN-LAST:event_rb_stringMouseClicked
-
-    private void rb_intMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_intMouseClicked
-        // TODO add your handling code here:
-        if (rb_int.isSelected()) {
-            js_longitud.setValue(2);
-            js_longitud.setEnabled(false);
-        }
-    }//GEN-LAST:event_rb_intMouseClicked
-
-    private void rb_doubleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_doubleMouseClicked
-        // TODO add your handling code here:
-        if (rb_double.isSelected()) {
-            js_longitud.setValue(8);
-            js_longitud.setEnabled(false);
-        }
-    }//GEN-LAST:event_rb_doubleMouseClicked
-
-    private void rb_charMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_charMouseClicked
-        // TODO add your handling code here:
-        if (rb_char.isSelected()) {
-            js_longitud.setValue(1);
-            js_longitud.setEnabled(false);
-        }
-    }//GEN-LAST:event_rb_charMouseClicked
-
-    private void rb_boolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_boolMouseClicked
-        // TODO add your handling code here:
-        if (rb_bool.isSelected()) {
-            js_longitud.setValue(1);
-            js_longitud.setEnabled(false);
-        }
-    }//GEN-LAST:event_rb_boolMouseClicked
-
     private void jb_abrirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_abrirMouseClicked
         // TODO add your handling code here:
         if (jb_abrir.isEnabled()) {
@@ -1529,8 +1731,10 @@ public class Principal extends javax.swing.JFrame {
                     }
                     path = jfc.getSelectedFile().getPath();
                     AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "Arbol.eagle");
-                    adar.setArbol(arbolB);
-                    adar.cargarArchivo();
+                    if (adar.getArchivo().exists()) {
+                        adar.setArbol(arbolB);
+                        adar.cargarArchivo();
+                    }
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
                     jb_abrir.setEnabled(false);
@@ -2179,19 +2383,150 @@ public class Principal extends javax.swing.JFrame {
     private void jb_seleccionarArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_seleccionarArchivoMouseClicked
         // TODO add your handling code here:
         archivoCruzar = null;
-            try {
-                JFileChooser jfc = new JFileChooser("./");
-                FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos de Texto", "txt");
-                jfc.addChoosableFileFilter(filtro);
-                jfc.setAcceptAllFileFilterUsed(false);
-                int seleccion = jfc.showOpenDialog(this);
-                if (seleccion == JFileChooser.APPROVE_OPTION) {
-                    archivoActual = new RandomAccessFile(jfc.getSelectedFile(), "rw");
-                    JOptionPane.showMessageDialog(this, "El archivo se ha abierto exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-                }
-            } catch (Exception e) {
+        try {
+            JFileChooser jfc = new JFileChooser("./");
+            FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos de Texto", "txt");
+            jfc.addChoosableFileFilter(filtro);
+            jfc.setAcceptAllFileFilterUsed(false);
+            int seleccion = jfc.showOpenDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                archivoActual = new RandomAccessFile(jfc.getSelectedFile(), "rw");
+                JOptionPane.showMessageDialog(this, "El archivo se ha abierto exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jb_seleccionarArchivoMouseClicked
+
+    private void rb_boolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_boolMouseClicked
+        // TODO add your handling code here:
+        if (rb_bool.isSelected()) {
+            js_longitud.setValue(1);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_boolMouseClicked
+
+    private void rb_stringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_stringMouseClicked
+        // TODO add your handling code here:
+        if (rb_string.isSelected()) {
+            js_longitud.setValue(0);
+            js_longitud.setEnabled(true);
+        }
+    }//GEN-LAST:event_rb_stringMouseClicked
+
+    private void rb_charMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_charMouseClicked
+        // TODO add your handling code here:
+        if (rb_char.isSelected()) {
+            js_longitud.setValue(1);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_charMouseClicked
+
+    private void rb_doubleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_doubleMouseClicked
+        // TODO add your handling code here:
+        if (rb_double.isSelected()) {
+            js_longitud.setValue(8);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_doubleMouseClicked
+
+    private void rb_intMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_intMouseClicked
+        // TODO add your handling code here:
+        if (rb_int.isSelected()) {
+            js_longitud.setValue(2);
+            js_longitud.setEnabled(false);
+        }
+    }//GEN-LAST:event_rb_intMouseClicked
+
+    private void jb_crearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCampoMouseClicked
+        // TODO add your handling code here:
+        if (jb_crearCampo.isEnabled()) {
+            String nombreCampo = jt_nombreCampo.getText();
+            String tipoCampo = "";
+            if (rb_int.isSelected()) {
+                tipoCampo = "int";
+            }
+            if (rb_double.isSelected()) {
+                tipoCampo = "double";
+            }
+            if (rb_char.isSelected()) {
+                tipoCampo = "char";
+            }
+            if (rb_string.isSelected()) {
+                tipoCampo = "String";
+            }
+            if (rb_bool.isSelected()) {
+                tipoCampo = "boolean";
+            }
+            int longitud = (int) js_longitud.getValue();
+            boolean llave = false;
+            if (rb_si.isSelected()) {
+                llave = true;
+            }
+
+            if (metaData.getCampos().size() <= 14) {
+                Campo nuevoCampo = new Campo(nombreCampo, tipoCampo, longitud, llave);
+                metaData.getCampos().add(nuevoCampo);
+                JOptionPane.showMessageDialog(jd_crearCampo, "El campo se ha creado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+                if (nuevoCampo.isLlavePrimaria()) {
+                    for (int i = metaData.getCampos().size() - 1; i >= 1; i--) {
+                        Campo temp = nuevoCampo;
+                        metaData.getCampos().set(i, metaData.getCampos().get(i - 1));
+                        metaData.getCampos().set(i - 1, temp);
+                    }
+                }
+                if (buscarLlave()) {
+                    jTabbedPane1.setEnabledAt(2, true);
+                    jTabbedPane1.setEnabledAt(3, true);
+                    jTabbedPane1.setEnabledAt(4, true);
+                }
+            } else {
+                Toolkit.getDefaultToolkit().beep();
+                JOptionPane.showMessageDialog(jd_crearCampo, "Ya ha creado el máximo de campos que es 15", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+            jt_nombreCampo.setText("");
+            rb_int.setSelected(true);
+            rb_bool.setSelected(false);
+            rb_char.setSelected(false);
+            rb_double.setSelected(false);
+            rb_string.setSelected(false);
+            js_longitud.setValue(2);
+            if (buscarLlave()) {
+                rb_si.setEnabled(false);
+                rb_no.setSelected(true);
+            } else {
+                rb_si.setEnabled(true);
+                rb_si.setSelected(true);
+                rb_no.setSelected(false);
+            }
+            if (metaData.getCampos().size() == 1) {
+                jb_listarCampoJD.setEnabled(true);
+                jb_borrarCampoJD.setEnabled(true);
+                jb_modificarCampoJD.setEnabled(true);
+            }
+        }
+    }//GEN-LAST:event_jb_crearCampoMouseClicked
+
+    private void jb_borrarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_borrarRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_borrarRegistroActionPerformed
+
+    private void jb_reindJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_reindJDMouseClicked
+        // TODO add your handling code here:
+        if (jb_reindexar.isEnabled() && arbolB.getRaiz() == null) {
+            jl_camposRein.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_camposRein.getModel();
+            for (int i = 0; i < metaData.getCampos().size(); i++) {
+                modelo.addElement(metaData.getCampos().get(i));
+            }
+            jl_camposRein.setModel(modelo);
+
+            jd_reindexar.pack();
+            jd_reindexar.setModal(true);
+            jd_reindexar.setLocationRelativeTo(this);
+            jd_reindexar.setVisible(true);
+        }
+    }//GEN-LAST:event_jb_reindJDMouseClicked
 
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
@@ -2204,6 +2539,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void llenarArbol(NodoArbol nodo, int ubicCampo, BTree arbol) throws IOException {
         int i;
+        System.out.println(arbolB.getRaiz().toString());
         for (i = 0; i < nodo.getKeyNumber(); i++) {
             if (!nodo.isLeaf()) {
                 llenarArbol(nodo.getChildren()[i], ubicCampo, arbol);
@@ -2410,6 +2746,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2419,10 +2756,29 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
