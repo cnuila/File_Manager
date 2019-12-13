@@ -17,12 +17,10 @@ public class LinkedList {
         if (inicio == null) {
             inicio = newNode;
             size++;
-            System.out.println("Se agrego el elemento exitosamente al primer nodo");
         } else if (posicion == 1) {
             tmp.setAnterior(newNode);
             newNode.setSiguiente(tmp);
             size++;
-            System.out.println("Se agrego el elemento exitosamente en la posicion 1");
         } else if (posicion == size + 1) {
             for (int i = 1; i <= posicion - 2; i++) {
                 tmp = tmp.getSiguiente();
@@ -30,7 +28,6 @@ public class LinkedList {
             tmp.setSiguiente(newNode);
             newNode.setAnterior(tmp);
             size++;
-            System.out.println("Se agrego el elemento exitosamente en la posicion " + posicion);
         } else if (posicion > 1 && posicion <= size) {
             for (int i = 1; i <= posicion - 1; i++) {
                 tmp = tmp.getSiguiente();
@@ -40,9 +37,6 @@ public class LinkedList {
             tmp.getAnterior().setSiguiente(newNode);
             tmp.setAnterior(newNode);
             size++;
-            System.out.println("Se agrego el elemento exitosamente en la posicion " + posicion);
-        } else {
-            System.out.println("No se agrego el elemento, Ingrese una posicion valida");
         }
     }
 
@@ -59,7 +53,6 @@ public class LinkedList {
                 inicio = null;
             }
             size = size - 1;
-            System.out.println("Elemento 1 borrado con exito");
         } else if (posicion == size) {
             for (int i = 1; i <= size - 1; i++) {
                 tmp = tmp.getSiguiente();
@@ -67,7 +60,6 @@ public class LinkedList {
             tmp.getAnterior().setSiguiente(null);
             tmp.setAnterior(null);
             size = size - 1;
-            System.out.println("Elemento " + posicion + " borrado con exito");
         } else if (posicion > 1 && posicion < size) {
             for (int i = 1; i <= posicion - 1; i++) {
                 tmp = tmp.getSiguiente();
@@ -77,9 +69,6 @@ public class LinkedList {
             tmp.setSiguiente(null);
             tmp.setAnterior(null);
             size = size - 1;
-            System.out.println("Elemento " + posicion + " borrado con exito");
-        } else {
-            System.out.println("No se borro ningun elemento");
         }
     }
 
@@ -102,7 +91,6 @@ public class LinkedList {
                 }
             return tmp.getData();
         } else {
-            System.out.println("Ingreso una posicion incorrecta");
             return null;
         }
     }
@@ -116,7 +104,6 @@ public class LinkedList {
             }
             return tmp.getData().getLlave();
         } else {
-            System.out.println("Ingreso una posicion incorrecta");
             return null;
         }
     }
@@ -130,7 +117,6 @@ public class LinkedList {
             }
             return tmp.getData().getLlave();
         } else {
-            System.out.println("Ingreso una posicion incorrecta");
             return null;
         }
     }

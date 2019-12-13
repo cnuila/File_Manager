@@ -1,0 +1,3 @@
+id: String[4]0;Nombre: String[4]1;Correo: String[4]1;
+Direccion: String[4]1;Pais: String[4]1;      
+***
