@@ -1295,7 +1295,7 @@ public class Principal extends javax.swing.JFrame {
         jp_campo.setBackground(new java.awt.Color(0, 0, 0));
         jp_campo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jb_crearCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_crearCampoJD.setBackground(new java.awt.Color(153, 153, 255));
         jb_crearCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_crearCampoJD.setText("Crear");
         jb_crearCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1306,7 +1306,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jp_campo.add(jb_crearCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 100, 60));
 
-        jb_listarCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_listarCampoJD.setBackground(new java.awt.Color(153, 153, 255));
         jb_listarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_listarCampoJD.setText("Listar");
         jb_listarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1318,7 +1318,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jp_campo.add(jb_listarCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, 60));
 
-        jb_modificarCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_modificarCampoJD.setBackground(new java.awt.Color(153, 153, 255));
         jb_modificarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_modificarCampoJD.setText("Modificar");
         jb_modificarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1330,7 +1330,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jp_campo.add(jb_modificarCampoJD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 100, 60));
 
-        jb_borrarCampoJD.setBackground(new java.awt.Color(204, 204, 255));
+        jb_borrarCampoJD.setBackground(new java.awt.Color(153, 153, 255));
         jb_borrarCampoJD.setForeground(new java.awt.Color(0, 0, 0));
         jb_borrarCampoJD.setText("Borrar");
         jb_borrarCampoJD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -2746,7 +2746,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2760,7 +2759,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
