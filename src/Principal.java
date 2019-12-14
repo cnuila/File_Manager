@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -2816,11 +2818,28 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_cruzarListaMouseClicked
 
     private void jb_exportarXMLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_exportarXMLMouseClicked
+        String nomArchivo = "usuarios";
+        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+        listaUsuarios.add(new Usuario(1,"Daniel", "95981802"));
+        listaUsuarios.add(new Usuario(2,"Carlos", "12345675"));
+        listaUsuarios.add(new Usuario(3,"Ana", "85433274"));
+        listaUsuarios.add(new Usuario(4,"Sebastian", "97654547"));
+        listaUsuarios.add(new Usuario(5,"Gabriela", "65748390"));
+        try {
+            crearXML(nomArchivo, listaUsuarios);
+            JOptionPane.showMessageDialog(jd_cruzarArchivo, "Se ha creado el archivo XML", "Información", JOptionPane.INFORMATION_MESSAGE);
+            //leerXML();b
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jb_exportarXMLMouseClicked
+
+    public static void crearXML(String nomArchivo, List<Usuario> listaUsuarios) throws TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
             DOMImplementation implementation = builder.getDOMImplementation();
-            Document document = (Document) implementation.createDocument(null, "RegistrosXML", null);
+            Document document = (Document) implementation.createDocument(null, nomArchivo, null);
             document.setXmlVersion("1.0");
 
             //NODO RAIZ
@@ -2850,19 +2869,14 @@ public class Principal extends javax.swing.JFrame {
             //GENERA XML
             Source source = new DOMSource(document);
             //DONDE SE GUARDARA
-            Result result = new StreamResult(new java.io.File("RegistosXML" + ".xml"));
+            Result result = new StreamResult(new java.io.File(nomArchivo + ".xml"));
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.transform(source, result);
 
         } catch (ParserConfigurationException e) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, e);
-        } catch (TransformerConfigurationException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (TransformerException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jb_exportarXMLMouseClicked
-
+    }
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
             if (metaData.getCampos().get(i).isLlavePrimaria()) {
