@@ -20,6 +20,21 @@ import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -739,6 +754,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jb_addNewRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
+        jb_addNewRow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/002-mas.png"))); // NOI18N
         jb_addNewRow.setContentAreaFilled(false);
         jb_addNewRow.setPreferredSize(new java.awt.Dimension(38, 28));
         jb_addNewRow.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -748,6 +764,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jb_deleteLastRow.setFont(new java.awt.Font("Segoe UI Symbol", 0, 10)); // NOI18N
+        jb_deleteLastRow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/001-negativo.png"))); // NOI18N
         jb_deleteLastRow.setContentAreaFilled(false);
         jb_deleteLastRow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -811,10 +828,10 @@ public class Principal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jb_guardarRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(jb_deleteLastRow)
+                                .addComponent(jb_deleteLastRow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jb_addNewRow, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel13Layout.createSequentialGroup()
@@ -1529,8 +1546,14 @@ public class Principal extends javax.swing.JFrame {
         jb_exportarExcel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jb_exportarXML.setBackground(new java.awt.Color(255, 255, 51));
+        jb_exportarXML.setForeground(new java.awt.Color(0, 0, 0));
         jb_exportarXML.setText("Exportar a XML");
         jb_exportarXML.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_exportarXML.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_exportarXMLMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp_estandLayout = new javax.swing.GroupLayout(jp_estand);
         jp_estand.setLayout(jp_estandLayout);
@@ -2792,6 +2815,54 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_cruzarListaMouseClicked
 
+    private void jb_exportarXMLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_exportarXMLMouseClicked
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        try {
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            DOMImplementation implementation = builder.getDOMImplementation();
+            Document document = (Document) implementation.createDocument(null, "RegistrosXML", null);
+            document.setXmlVersion("1.0");
+
+            //NODO RAIZ
+            Element raiz = document.getDocumentElement();
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                Element itemNode = document.createElement("USUARIO");
+
+                Element idNode = document.createElement("ID");
+                Text nodeIdValue = document.createTextNode("" + listaUsuarios.get(i).getIdUsuario());
+                idNode.appendChild(nodeIdValue);
+
+                Element NombreNode = document.createElement("NOMBRE");
+                Text nodeNombreValue = document.createTextNode("" + listaUsuarios.get(i).getNombre());
+                NombreNode.appendChild(nodeNombreValue);
+
+                Element TelefonoNode = document.createElement("TELEFONO");
+                Text nodeTelefonoValue = document.createTextNode("" + listaUsuarios.get(i).getTelefono());
+                TelefonoNode.appendChild(nodeTelefonoValue);
+
+                itemNode.appendChild(idNode);
+                itemNode.appendChild(NombreNode);
+                itemNode.appendChild(TelefonoNode);
+
+                raiz.appendChild(itemNode);
+            }
+
+            //GENERA XML
+            Source source = new DOMSource(document);
+            //DONDE SE GUARDARA
+            Result result = new StreamResult(new java.io.File("RegistosXML" + ".xml"));
+            Transformer transformer = TransformerFactory.newInstance().newTransformer();
+            transformer.transform(source, result);
+
+        } catch (ParserConfigurationException e) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, e);
+        } catch (TransformerConfigurationException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (TransformerException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jb_exportarXMLMouseClicked
+
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
             if (metaData.getCampos().get(i).isLlavePrimaria()) {
@@ -2992,7 +3063,22 @@ public class Principal extends javax.swing.JFrame {
             traverse(nodo.getChildren()[i], llaves);
         }
     }
-
+    public void traverse2(NodoArbol nodo, ArrayList<Llave> llaves) {
+        int i;
+        for (i = 0; i < nodo.getKeyNumber(); i++) {
+            if (!nodo.isLeaf()) {
+                traverse(nodo.getChildren()[i], llaves);
+            }
+//            if (llaves.size() <= 10) {
+//                llaves.add(nodo.getKeys()[i]);
+//            } else {
+//                break;
+//            }
+        }
+        if (!nodo.isLeaf()) {
+            traverse2(nodo.getChildren()[i], llaves);
+        }
+    }
     public void traverseInt(NodoArbol nodo, ArrayList<Integer> cantLlaves) {
         int i;
         for (i = 0; i < nodo.getKeyNumber(); i++) {
