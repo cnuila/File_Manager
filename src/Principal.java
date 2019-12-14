@@ -74,6 +74,13 @@ public class Principal extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         buttonGroup_llave = new javax.swing.ButtonGroup();
         buttonGroup_tipo = new javax.swing.ButtonGroup();
+        jd_borrarCampo = new javax.swing.JDialog();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_camposDlt = new javax.swing.JList<>();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jb_deleteField = new javax.swing.JButton();
         jd_listarCampo = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -97,13 +104,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         js_longitudMod = new javax.swing.JSpinner();
         jPanel6 = new javax.swing.JPanel();
-        jd_borrarCampo = new javax.swing.JDialog();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jl_camposDlt = new javax.swing.JList<>();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jb_deleteField = new javax.swing.JButton();
         buttonGroup_llaveMod = new javax.swing.ButtonGroup();
         buttonGroup_tipoMod = new javax.swing.ButtonGroup();
         jd_buscarRegistros = new javax.swing.JDialog();
@@ -146,15 +146,26 @@ public class Principal extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
+        jd_cruzarArchivo = new javax.swing.JDialog();
+        jPanel23 = new javax.swing.JPanel();
+        jb_seleccionarArchivo = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jl_camposCruzar = new javax.swing.JList<>();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jl_campoSeleccionado = new javax.swing.JList<>();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jb_cruzar = new javax.swing.JButton();
+        jb_cruzarLista = new javax.swing.JButton();
         jd_listarRegistros = new javax.swing.JDialog();
         jPanel21 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable_listarRegistro = new javax.swing.JTable();
         jPanel20 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jd_cruzarArchivo = new javax.swing.JDialog();
-        jPanel23 = new javax.swing.JPanel();
-        jb_seleccionarArchivo = new javax.swing.JButton();
+        jd_tablaCruzar = new javax.swing.JDialog();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTable_cruzar = new javax.swing.JTable();
         jd_reindexar = new javax.swing.JDialog();
         jPanel22 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
@@ -340,6 +351,59 @@ public class Principal extends javax.swing.JFrame {
         jd_crearCampoLayout.setVerticalGroup(
             jd_crearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+        );
+
+        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_camposDlt.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jl_camposDlt.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_camposDlt);
+
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 200, 240));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Borrar Campos");
+        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 140, 30));
+
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 178, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 180, 40));
+
+        jb_deleteField.setBackground(new java.awt.Color(153, 0, 51));
+        jb_deleteField.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jb_deleteField.setText("Borrar");
+        jb_deleteField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_deleteField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_deleteFieldMouseClicked(evt);
+            }
+        });
+        jPanel5.add(jb_deleteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 100, 30));
+
+        javax.swing.GroupLayout jd_borrarCampoLayout = new javax.swing.GroupLayout(jd_borrarCampo.getContentPane());
+        jd_borrarCampo.getContentPane().setLayout(jd_borrarCampoLayout);
+        jd_borrarCampoLayout.setHorizontalGroup(
+            jd_borrarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jd_borrarCampoLayout.setVerticalGroup(
+            jd_borrarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
         );
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
@@ -541,59 +605,6 @@ public class Principal extends javax.swing.JFrame {
         jd_modificarCampoLayout.setVerticalGroup(
             jd_modificarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
-        );
-
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jl_camposDlt.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jl_camposDlt.setModel(new DefaultListModel());
-        jScrollPane3.setViewportView(jl_camposDlt);
-
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 200, 240));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Borrar Campos");
-        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 140, 30));
-
-        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 178, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 180, 40));
-
-        jb_deleteField.setBackground(new java.awt.Color(153, 0, 51));
-        jb_deleteField.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jb_deleteField.setText("Borrar");
-        jb_deleteField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jb_deleteField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_deleteFieldMouseClicked(evt);
-            }
-        });
-        jPanel5.add(jb_deleteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 100, 30));
-
-        javax.swing.GroupLayout jd_borrarCampoLayout = new javax.swing.GroupLayout(jd_borrarCampo.getContentPane());
-        jd_borrarCampo.getContentPane().setLayout(jd_borrarCampoLayout);
-        jd_borrarCampoLayout.setHorizontalGroup(
-            jd_borrarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jd_borrarCampoLayout.setVerticalGroup(
-            jd_borrarCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
         );
 
         jPanel11.setBackground(new java.awt.Color(0, 0, 0));
@@ -996,7 +1007,7 @@ public class Principal extends javax.swing.JFrame {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel18Layout.setVerticalGroup(
@@ -1023,6 +1034,121 @@ public class Principal extends javax.swing.JFrame {
 
         jd_modificarRegistro.getContentPane().add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 270));
 
+        jPanel23.setBackground(new java.awt.Color(0, 0, 0));
+
+        jb_seleccionarArchivo.setBackground(new java.awt.Color(0, 0, 153));
+        jb_seleccionarArchivo.setText("Seleccionar Archivo");
+        jb_seleccionarArchivo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_seleccionarArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_seleccionarArchivoMouseClicked(evt);
+            }
+        });
+
+        jl_camposCruzar.setModel(new DefaultListModel());
+        jScrollPane10.setViewportView(jl_camposCruzar);
+
+        jl_campoSeleccionado.setModel(new DefaultListModel());
+        jScrollPane11.setViewportView(jl_campoSeleccionado);
+
+        jPanel25.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel25.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel25.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Cruzar Registros");
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jb_cruzar.setBackground(new java.awt.Color(0, 0, 153));
+        jb_cruzar.setText("Cruzar");
+        jb_cruzar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_cruzar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_cruzarMouseClicked(evt);
+            }
+        });
+
+        jb_cruzarLista.setBackground(new java.awt.Color(0, 0, 153));
+        jb_cruzarLista.setText("-->");
+        jb_cruzarLista.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_cruzarLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_cruzarListaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jb_seleccionarArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jb_cruzarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_cruzar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(118, 118, 118))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jb_cruzarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_seleccionarArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_cruzar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
+        );
+
+        javax.swing.GroupLayout jd_cruzarArchivoLayout = new javax.swing.GroupLayout(jd_cruzarArchivo.getContentPane());
+        jd_cruzarArchivo.getContentPane().setLayout(jd_cruzarArchivoLayout);
+        jd_cruzarArchivoLayout.setHorizontalGroup(
+            jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_cruzarArchivoLayout.setVerticalGroup(
+            jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         jd_listarRegistros.setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel21.setBackground(new java.awt.Color(0, 0, 0));
@@ -1038,7 +1164,7 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(jTable_listarRegistro);
 
-        jPanel21.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 347, 274));
+        jPanel21.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 630, 274));
 
         jPanel20.setBackground(new java.awt.Color(0, 0, 0));
         jPanel20.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -1052,68 +1178,56 @@ public class Principal extends javax.swing.JFrame {
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(jLabel17)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17)
+            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        jPanel21.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 160, -1));
+        jPanel21.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 160, -1));
 
         javax.swing.GroupLayout jd_listarRegistrosLayout = new javax.swing.GroupLayout(jd_listarRegistros.getContentPane());
         jd_listarRegistros.getContentPane().setLayout(jd_listarRegistrosLayout);
         jd_listarRegistrosLayout.setHorizontalGroup(
             jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+            .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
+                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jd_listarRegistrosLayout.setVerticalGroup(
             jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
         );
 
-        jPanel23.setBackground(new java.awt.Color(0, 0, 0));
+        jTable_cruzar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jb_seleccionarArchivo.setBackground(new java.awt.Color(0, 0, 153));
-        jb_seleccionarArchivo.setText("Seleccionar");
-        jb_seleccionarArchivo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jb_seleccionarArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_seleccionarArchivoMouseClicked(evt);
+            },
+            new String [] {
+
             }
-        });
+        ));
+        jScrollPane12.setViewportView(jTable_cruzar);
 
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(jb_seleccionarArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(207, Short.MAX_VALUE))
+        javax.swing.GroupLayout jd_tablaCruzarLayout = new javax.swing.GroupLayout(jd_tablaCruzar.getContentPane());
+        jd_tablaCruzar.getContentPane().setLayout(jd_tablaCruzarLayout);
+        jd_tablaCruzarLayout.setHorizontalGroup(
+            jd_tablaCruzarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_tablaCruzarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jb_seleccionarArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(294, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jd_cruzarArchivoLayout = new javax.swing.GroupLayout(jd_cruzarArchivo.getContentPane());
-        jd_cruzarArchivo.getContentPane().setLayout(jd_cruzarArchivoLayout);
-        jd_cruzarArchivoLayout.setHorizontalGroup(
-            jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jd_cruzarArchivoLayout.setVerticalGroup(
-            jd_cruzarArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_cruzarArchivoLayout.createSequentialGroup()
-                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jd_tablaCruzarLayout.setVerticalGroup(
+            jd_tablaCruzarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_tablaCruzarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jd_reindexar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1362,6 +1476,12 @@ public class Principal extends javax.swing.JFrame {
         jb_cruzarArchivos.setBackground(new java.awt.Color(102, 0, 153));
         jb_cruzarArchivos.setText("Cruzar Archivos");
         jb_cruzarArchivos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_cruzarArchivos.setEnabled(false);
+        jb_cruzarArchivos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_cruzarArchivosMouseClicked(evt);
+            }
+        });
         jp_registro.add(jb_cruzarArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 120, 60));
 
         jb_borrarRegistro.setBackground(new java.awt.Color(102, 0, 153));
@@ -1645,6 +1765,11 @@ public class Principal extends javax.swing.JFrame {
                     metaData.escribirCampos(archivoActual);
                 } else {
                     guardarRegistros();
+                    jb_ModificarRegistro.setEnabled(true);
+                    jb_borrarRegistro.setEnabled(true);
+                    jb_buscarRegistro.setEnabled(true);
+                    jb_listarRegistros.setEnabled(true);
+                    jb_cruzarArchivos.setEnabled(true);
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -1674,6 +1799,12 @@ public class Principal extends javax.swing.JFrame {
                     if (adar.getArchivo().exists()) {
                         adar.setArbol(arbolB);
                         adar.cargarArchivo();
+                        arbolB = adar.getArbol();
+                        jb_ModificarRegistro.setEnabled(true);
+                        jb_borrarRegistro.setEnabled(true);
+                        jb_buscarRegistro.setEnabled(true);
+                        jb_listarRegistros.setEnabled(true);
+                        jb_cruzarArchivos.setEnabled(true);
                     }
                     jTabbedPane1.setEnabledAt(1, true);
                     jb_nuevo.setEnabled(false);
@@ -2090,10 +2221,6 @@ public class Principal extends javax.swing.JFrame {
             String row[] = new String[metaData.getCampos().size()];
             modeloT.addRow(row);
             jTable_agregarRegistro.setModel(modeloT);
-            jb_ModificarRegistro.setEnabled(true);
-            jb_borrarRegistro.setEnabled(true);
-            jb_buscarRegistro.setEnabled(true);
-            jb_listarRegistros.setEnabled(true);
             jb_borrarCampoJD.setEnabled(false);
             jb_crearCampoJD.setEnabled(false);
             jb_modificarCampoJD.setEnabled(false);
@@ -2341,21 +2468,21 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_reindexarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_reindexarMouseClicked
         // TODO add your handling code here:
-        if (jl_camposRein.getSelectedIndex() >= 0) {
+        /*if (jl_camposRein.getSelectedIndex() >= 0) {
             BTree nuevoArbol = new BTree(6);
             try {
-                llenarArbol(arbolB.getRaiz(), jl_camposRein.getSelectedIndex(), nuevoArbol);
+                reindexar();
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
-            AdministrarArbol adar = new AdministrarArbol(path.substring(0, path.length() - 4) + "REINArbol.eagle");
+            /*AdministrarArbol adar = new AdministrarArbol(path + "Arbol.eagle");
             adar.setArbol(nuevoArbol);
             adar.escribirArchivo();
             JOptionPane.showMessageDialog(jd_reindexar, "Se han reindexado los registros exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
         } else {
             Toolkit.getDefaultToolkit().beep();
             JOptionPane.showMessageDialog(this, "Debe tener un campo seleccionado en la lista");
-        }
+        }*/
     }//GEN-LAST:event_jb_reindexarMouseClicked
 
     private void jb_seleccionarArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_seleccionarArchivoMouseClicked
@@ -2367,9 +2494,30 @@ public class Principal extends javax.swing.JFrame {
             jfc.addChoosableFileFilter(filtro);
             jfc.setAcceptAllFileFilterUsed(false);
             int seleccion = jfc.showOpenDialog(this);
+            String pathArchivoCruzar = "";
             if (seleccion == JFileChooser.APPROVE_OPTION) {
-                archivoActual = new RandomAccessFile(jfc.getSelectedFile(), "rw");
-                JOptionPane.showMessageDialog(this, "El archivo se ha abierto exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+                archivoCruzar = new RandomAccessFile(jfc.getSelectedFile(), "rw");
+                pathArchivoCruzar = jfc.getSelectedFile().getPath();
+                pathArchivoCruzar = pathArchivoCruzar.substring(0, pathArchivoCruzar.length() - 4);
+                JOptionPane.showMessageDialog(jd_cruzarArchivo, "El archivo se ha abierto exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+            metaDataCruzar = new Metadata();
+            metaDataCruzar.cargarCampos(archivoCruzar);
+            jl_camposCruzar.setModel(new DefaultListModel());
+            DefaultListModel modelo = (DefaultListModel) jl_camposCruzar.getModel();
+            for (int i = 0; i < metaDataCruzar.getCampos().size(); i++) {
+                modelo.addElement(metaDataCruzar.getCampos().get(i));
+            }
+            jl_camposCruzar.setModel(modelo);
+            jl_campoSeleccionado.setModel(new DefaultListModel());
+            AdministrarArbol adar = new AdministrarArbol(pathArchivoCruzar + "Arbol.eagle");
+            if (adar.getArchivo().exists()) {
+                adar.setArbol(arbolBCruzar);
+                adar.cargarArchivo();
+                arbolBCruzar = adar.getArbol();
+            } else {
+                archivoCruzar = null;
+                JOptionPane.showMessageDialog(jd_cruzarArchivo, "Debe crear indice del archivo", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
         }
@@ -2487,6 +2635,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_reindJDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_reindJDMouseClicked
         // TODO add your handling code here:
+        /*
         if (jb_reindexar.isEnabled() && arbolB.getRaiz() != null) {
             jl_camposRein.setModel(new DefaultListModel());
             DefaultListModel modelo = (DefaultListModel) jl_camposRein.getModel();
@@ -2499,7 +2648,7 @@ public class Principal extends javax.swing.JFrame {
             jd_reindexar.setModal(true);
             jd_reindexar.setLocationRelativeTo(this);
             jd_reindexar.setVisible(true);
-        }
+        }*/
     }//GEN-LAST:event_jb_reindJDMouseClicked
 
     private void jb_cargarRegristrosPruebaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cargarRegristrosPruebaMouseClicked
@@ -2529,6 +2678,7 @@ public class Principal extends javax.swing.JFrame {
                 jb_borrarRegistro.setEnabled(true);
                 jb_ModificarRegistro.setEnabled(true);
                 jb_buscarRegistro.setEnabled(true);
+                jb_cruzarArchivos.setEnabled(true);
                 JOptionPane.showMessageDialog(this, "Se ha cargado el archivo exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {
             }
@@ -2540,6 +2690,107 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jb_cargarRegristrosPruebaMouseClicked
+
+    private void jb_cruzarArchivosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cruzarArchivosMouseClicked
+        // TODO add your handling code here:
+        if (jb_cruzarArchivos.isEnabled()) {
+            jd_cruzarArchivo.pack();
+            jd_cruzarArchivo.setModal(true);
+            jd_cruzarArchivo.setLocationRelativeTo(this);
+            jd_cruzarArchivo.setVisible(true);
+        }
+    }//GEN-LAST:event_jb_cruzarArchivosMouseClicked
+
+    private void jb_cruzarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cruzarMouseClicked
+        // TODO add your handling code here:
+        if (archivoCruzar != null) {
+            DefaultListModel modelo = (DefaultListModel) jl_campoSeleccionado.getModel();
+            boolean flag = true;
+            ArrayList<Campo> camposBuscar = new ArrayList<>();
+            for (int i = 0; i < modelo.size(); i++) {
+                flag = false;
+                for (int j = 0; j < metaData.getCampos().size(); j++) {
+                    if (((Campo) modelo.getElementAt(i)).getNombre().equals(metaData.getCampos().get(j).getNombre())) {
+                        camposBuscar.add(metaData.getCampos().get(j));
+                        flag = true;
+                    }
+                }
+                if (!flag) {
+                    i = modelo.size();
+                }
+            }
+            if (flag) {
+                ArrayList<Llave> llavesCruzar = new ArrayList<>();
+                traverse(arbolB.getRaiz(), llavesCruzar);
+                traverse(arbolBCruzar.getRaiz(), llavesCruzar);
+                jTable_cruzar.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{},
+                        new String[]{}
+                ));
+                DefaultTableModel modeloT = (DefaultTableModel) jTable_cruzar.getModel();
+                String cabezas[] = new String[camposBuscar.size()];
+                for (int i = 0; i < cabezas.length; i++) {
+                    cabezas[i] = camposBuscar.get(i).getNombre();
+                }
+                for (Object a : cabezas) {
+                    modeloT.addColumn(a);
+                }
+                jTable_cruzar.setModel(modeloT);
+
+                DefaultTableModel modeloG = (DefaultTableModel) jTable_cruzar.getModel();
+                String row[] = new String[camposBuscar.size()];
+                RandomAccessFile archivo;
+                ArrayList<Integer> tempInt = new ArrayList<>();
+                traverseInt(arbolB.getRaiz(), tempInt);
+                int hastaAqui = tempInt.size();
+                for (int i = 0; i < llavesCruzar.size(); i++) {
+                    if (i < hastaAqui) {
+                        archivo = archivoActual;
+                    } else {
+                        archivo = archivoCruzar;
+                    }
+                    byte[] temp = new byte[300];
+                    int pos = 0;
+                    for (long j = llavesCruzar.get(i).getOffset(); j < (llavesCruzar.get(i).getOffset() + llavesCruzar.get(i).getTamano()); j++) {
+                        try {
+                            archivo.seek(j);
+                            temp[pos] = archivo.readByte();
+                            pos++;
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    String tempString = new String(temp);
+                    String[] registro = tempString.split("[|]");
+                    for (int j = 0; j < row.length; j++) {
+                        row[j] = registro[j];
+                    }
+                    modeloG.addRow(row);
+                    jTable_cruzar.setModel(modeloG);
+                }
+                jd_tablaCruzar.pack();
+                jd_tablaCruzar.setModal(true);
+                jd_tablaCruzar.setLocationRelativeTo(this);
+                jd_tablaCruzar.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(jd_cruzarArchivo, "Uno de los campos seleccionados no esta en los dos archivos", "Información", JOptionPane.INFORMATION_MESSAGE);
+                jl_campoSeleccionado.setModel(new DefaultListModel());
+            }
+        }
+    }//GEN-LAST:event_jb_cruzarMouseClicked
+
+    private void jb_cruzarListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cruzarListaMouseClicked
+        // TODO add your handling code here:
+        if (jl_camposCruzar.getSelectedIndex() >= 0) {
+            Campo campoTemp = metaDataCruzar.getCampos().get(jl_camposCruzar.getSelectedIndex());
+            DefaultListModel modelo = (DefaultListModel) jl_campoSeleccionado.getModel();
+            modelo.addElement(campoTemp);
+            jl_campoSeleccionado.setModel(modelo);
+        } else {
+            JOptionPane.showMessageDialog(jd_cruzarArchivo, "Debe seleccionar un objeto en la lista de la izquierda", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jb_cruzarListaMouseClicked
 
     public boolean buscarLlave() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
@@ -2577,6 +2828,27 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
+    /*public void reindexar() throws IOException{
+        int pos = 0;
+        byte[] registrosByte = new byte[(int)archivoActual.length()-metaData.getTamanoMeta()];
+        for (long i = metaData.getTamanoMeta(); i < archivoActual.length(); i++){
+            archivoActual.seek(i);
+            registrosByte[pos] = archivoActual.readByte();
+            pos++;
+        }
+        String registrosString = new String(registrosByte);
+        String registroString2 = "";
+        for (int i = 0; i < registrosString.length();i++){
+            if (registrosString.charAt(i) != '\n'){
+                registroString2 += registrosString.charAt(i);
+            }
+        }
+        String[] registrosArray = registroString2.split("[|]");
+        System.out.println(Arrays.toString(registrosArray));
+        for (long i = metaData.getTamanoMeta(); i < archivoActual.length(); i++){
+            
+        }
+    }*/
     public Campo encontrarLlavePrimaria() {
         for (int i = 0; i < metaData.getCampos().size(); i++) {
             if (metaData.getCampos().get(i).isLlavePrimaria()) {
@@ -2721,6 +2993,19 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
+    public void traverseInt(NodoArbol nodo, ArrayList<Integer> cantLlaves) {
+        int i;
+        for (i = 0; i < nodo.getKeyNumber(); i++) {
+            if (!nodo.isLeaf()) {
+                traverseInt(nodo.getChildren()[i], cantLlaves);
+            }
+            cantLlaves.add(1);
+        }
+        if (!nodo.isLeaf()) {
+            traverseInt(nodo.getChildren()[i], cantLlaves);
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -2757,6 +3042,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     RandomAccessFile archivoActual;
+    RandomAccessFile archivoCruzar;
+    Metadata metaDataCruzar;
+    BTree arbolBCruzar = new BTree(6);
     String path;
     Metadata metaData;
     BTree arbolB = new BTree(6);
@@ -2764,7 +3052,6 @@ public class Principal extends javax.swing.JFrame {
     ArrayList<Llave> llaves;
     long posArchivo;
     Llave llaveActual = null;
-    RandomAccessFile archivoCruzar;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup_llave;
     private javax.swing.ButtonGroup buttonGroup_llaveMod;
@@ -2780,6 +3067,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2804,6 +3092,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -2812,6 +3101,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2824,6 +3116,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable jTable_agregarRegistro;
     private javax.swing.JTable jTable_borrarRegistro;
     private javax.swing.JTable jTable_buscarRegistro;
+    private javax.swing.JTable jTable_cruzar;
     private javax.swing.JTable jTable_listarRegistro;
     private javax.swing.JTable jTable_modificarRegistro;
     private javax.swing.JButton jb_ModificarRegistro;
@@ -2841,7 +3134,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_crearCampoJD;
     private javax.swing.JButton jb_crearIndice;
     private javax.swing.JButton jb_crearRegistro;
+    private javax.swing.JButton jb_cruzar;
     private javax.swing.JButton jb_cruzarArchivos;
+    private javax.swing.JButton jb_cruzarLista;
     private javax.swing.JButton jb_deleteField;
     private javax.swing.JButton jb_deleteLastRow;
     private javax.swing.JToggleButton jb_deleteRegistro;
@@ -2870,6 +3165,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_modificarCampo;
     private javax.swing.JDialog jd_modificarRegistro;
     private javax.swing.JDialog jd_reindexar;
+    private javax.swing.JDialog jd_tablaCruzar;
+    private javax.swing.JList<String> jl_campoSeleccionado;
+    private javax.swing.JList<String> jl_camposCruzar;
     private javax.swing.JList<String> jl_camposDlt;
     private javax.swing.JList<String> jl_camposMod;
     private javax.swing.JList<String> jl_camposRein;

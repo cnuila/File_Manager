@@ -126,7 +126,6 @@ public class Metadata {
             int tamanoLlave = Integer.parseInt(infoLlaveArray[1]);
             llenarAvailList(archivo, posLlave, tamanoLlave);
         }
-
         for (int i = 0; i < ubicAst - 8; i++) {
             if (tempString.charAt(i) != '\n') {
                 metaDataTemp += tempString.charAt(i);
